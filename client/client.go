@@ -16,4 +16,12 @@ import (
 
 type (
 	Client interface {
-		Authenticate()
+		Authenticate() error
+		MakeMove() error
+		StartGame() error
+		JoinLobby() error
+		CreateLobby() error
+	}
+
+	Credentials struct {
+		Username st

@@ -4,4 +4,16 @@ package client
 
 import (
 	"bytes"
-	"encoding/jso
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"net/http"
+	"net/http/cookiejar"
+	"time"
+
+	"golang.org/x/net/publicsuffix"
+)
+
+type (
+	Client interface {
+		Authenticate()

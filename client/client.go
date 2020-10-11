@@ -24,4 +24,10 @@ type (
 	}
 
 	Credentials struct {
-		Username st
+		Username string
+	}
+	BoardBotClient[State any] struct {
+		Credentials Credentials
+		httpClient  *http.Client
+		domain      string
+		user

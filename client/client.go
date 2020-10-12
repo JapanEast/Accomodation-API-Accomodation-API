@@ -30,4 +30,13 @@ type (
 		Credentials Credentials
 		httpClient  *http.Client
 		domain      string
-		user
+		user        User
+	}
+
+	User struct {
+		Id   json.Number `json:"id"`
+		Name string      `json:"name"`
+	}
+)
+
+// NewBoardBotClient builds a BoardBotClie

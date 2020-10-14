@@ -41,4 +41,5 @@ type (
 
 // NewBoardBotClient builds a BoardBotClient with the users credentials, and server address.
 // Parameterized with the type of Game (via its state). You'll need to instantiate
-// multip
+// multiple clients if you want to manipulate different types of games.
+func NewBoardBotClient[State any](creds Credentials, addr str

@@ -39,4 +39,6 @@ type (
 	}
 )
 
-// NewBoardBotClient builds a BoardBotClie
+// NewBoardBotClient builds a BoardBotClient with the users credentials, and server address.
+// Parameterized with the type of Game (via its state). You'll need to instantiate
+// multip

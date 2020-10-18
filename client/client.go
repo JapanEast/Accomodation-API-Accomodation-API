@@ -48,4 +48,10 @@ func NewBoardBotClient[State any](creds Credentials, addr string) (*BoardBotClie
 		return nil, err
 	}
 
-	retu
+	return &BoardBotClient[State]{
+		Credentials: creds,
+		httpClient: &http.Client{
+			Jar:     jar,
+			Timeout: time.Duration(2) * time.Second,
+		},
+	

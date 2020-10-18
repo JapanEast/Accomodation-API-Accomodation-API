@@ -54,4 +54,10 @@ func NewBoardBotClient[State any](creds Credentials, addr string) (*BoardBotClie
 			Jar:     jar,
 			Timeout: time.Duration(2) * time.Second,
 		},
-	
+		domain: addr,
+	}, nil
+}
+
+// Authenticates the client. Stores auth cookie automatically, makes
+// Another call to get user information.
+fu

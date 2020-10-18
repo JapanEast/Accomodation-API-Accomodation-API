@@ -60,4 +60,6 @@ func NewBoardBotClient[State any](creds Credentials, addr string) (*BoardBotClie
 
 // Authenticates the client. Stores auth cookie automatically, makes
 // Another call to get user information.
-fu
+func (c *BoardBotClient[S]) Authenticate() error {
+	resp, err := c.httpClient.Get(c.domain + "/auth/login?name=" + c.Credentials.Username)
+	if 

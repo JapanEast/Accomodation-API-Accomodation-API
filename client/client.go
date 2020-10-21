@@ -62,4 +62,10 @@ func NewBoardBotClient[State any](creds Credentials, addr string) (*BoardBotClie
 // Another call to get user information.
 func (c *BoardBotClient[S]) Authenticate() error {
 	resp, err := c.httpClient.Get(c.domain + "/auth/login?name=" + c.Credentials.Username)
-	if 
+	if err != nil {
+		return err
+	}
+	if resp.StatusCode != 200 {
+		return fmt.Errorf("status code: %d", resp.StatusCode)
+	}
+	resp, e

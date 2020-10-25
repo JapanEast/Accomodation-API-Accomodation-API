@@ -73,4 +73,14 @@ func (c *BoardBotClient[S]) Authenticate() error {
 		return err
 	}
 	err = json.NewDecoder(resp.Body).Decode(&c.user)
-	defer resp.Bod
+	defer resp.Body.Close()
+
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// Post makes an HTTP post call with the supplied request, and Unmarshals
+// the response from JSON to the

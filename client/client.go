@@ -68,4 +68,9 @@ func (c *BoardBotClient[S]) Authenticate() error {
 	if resp.StatusCode != 200 {
 		return fmt.Errorf("status code: %d", resp.StatusCode)
 	}
-	resp, e
+	resp, err = c.httpClient.Get(c.domain + "/user")
+	if err != nil {
+		return err
+	}
+	err = json.NewDecoder(resp.Body).Decode(&c.user)
+	defer resp.Bod

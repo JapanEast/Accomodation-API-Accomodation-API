@@ -83,4 +83,6 @@ func (c *BoardBotClient[S]) Authenticate() error {
 }
 
 // Post makes an HTTP post call with the supplied request, and Unmarshals
-// the response from JSON to the
+// the response from JSON to the supplied request struct.
+func Post[Req any, Res any, S any](bbClient *BoardBotClient[S], path string, body Req) (Res, error) {
+	b, err := j

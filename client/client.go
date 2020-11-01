@@ -101,4 +101,8 @@ func Post[Req any, Res any, S any](bbClient *BoardBotClient[S], path string, bod
 		return resp, err
 	}
 
-	responseB
+	responseBody, _ := ioutil.ReadAll(httpResponse.Body)
+	defer httpResponse.Body.Close()
+
+	if httpResponse.StatusCode != 200 {
+		return resp, fmt.Errorf("

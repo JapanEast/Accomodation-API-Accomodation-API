@@ -92,3 +92,13 @@ func Post[Req any, Res any, S any](bbClient *BoardBotClient[S], path string, bod
 	}
 
 	req, err := http.NewRequest("POST", bbClient.domain+path, bytes.NewBuffer(b))
+	if err != nil {
+		return resp, err
+	}
+
+	httpResponse, err := bbClient.httpClient.Do(req)
+	if err != nil {
+		return resp, err
+	}
+
+	responseB

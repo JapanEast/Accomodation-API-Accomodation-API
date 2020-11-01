@@ -105,4 +105,8 @@ func Post[Req any, Res any, S any](bbClient *BoardBotClient[S], path string, bod
 	defer httpResponse.Body.Close()
 
 	if httpResponse.StatusCode != 200 {
-		return resp, fmt.Errorf("
+		return resp, fmt.Errorf("response status: %d. Response body: %s", httpResponse.StatusCode, string(responseBody))
+	}
+
+	if len(responseBody) == 0 {
+		return resp, nil

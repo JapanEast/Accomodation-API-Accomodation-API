@@ -124,4 +124,9 @@ func Post[Req any, Res any, S any](bbClient *BoardBotClient[S], path string, bod
 }
 
 // Get makes an HTTP Get call, and Unmarshals the response to the provided struct.
-func Get[Res any, S any](client 
+func Get[Res any, S any](client *BoardBotClient[S], path string) (Res, error) {
+	body, err := GetString(client, path)
+
+	var resp Res
+	if err != nil {
+		re

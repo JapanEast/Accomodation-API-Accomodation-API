@@ -118,4 +118,10 @@ func Post[Req any, Res any, S any](bbClient *BoardBotClient[S], path string, bod
 
 	err = json.Unmarshal(responseBody, &resp)
 	if err != nil {
-		re
+		return resp, err
+	}
+	return resp, nil
+}
+
+// Get makes an HTTP Get call, and Unmarshals the response to the provided struct.
+func Get[Res any, S any](client 

@@ -129,4 +129,14 @@ func Get[Res any, S any](client *BoardBotClient[S], path string) (Res, error) {
 
 	var resp Res
 	if err != nil {
-		re
+		return resp, nil
+	}
+
+	err = json.Unmarshal([]byte(body), &resp)
+	if err != nil {
+		return resp, err
+	}
+	return resp, nil
+}
+
+// GetString makes an HTTP GET call

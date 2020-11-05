@@ -139,4 +139,7 @@ func Get[Res any, S any](client *BoardBotClient[S], path string) (Res, error) {
 	return resp, nil
 }
 
-// GetString makes an HTTP GET call
+// GetString makes an HTTP GET call, and returns the body of the response
+// as a string
+func GetString[S any](client *BoardBotClient[S], path string) (string, error) {
+	

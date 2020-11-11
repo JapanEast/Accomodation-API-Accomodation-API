@@ -142,4 +142,9 @@ func Get[Res any, S any](client *BoardBotClient[S], path string) (Res, error) {
 // GetString makes an HTTP GET call, and returns the body of the response
 // as a string
 func GetString[S any](client *BoardBotClient[S], path string) (string, error) {
-	
+	httpResp, err := client.httpClient.Get(client.domain + path)
+	if err != nil {
+		return "", err
+	}
+
+	body, err := ioutil.ReadAll(httpR

@@ -9,4 +9,9 @@ import (
 
 func TestMoves(t *testing.T) {
 
-	bbClient, err := NewBoardBotClient[lockitdown.TransportSta
+	bbClient, err := NewBoardBotClient[lockitdown.TransportState](Credentials{
+		Username: "tester",
+	}, "http://localhost:8080")
+
+	if err != nil {
+		fmt.Printf("failed to start cl

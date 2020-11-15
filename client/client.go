@@ -151,4 +151,11 @@ func GetString[S any](client *BoardBotClient[S], path string) (string, error) {
 	defer httpResp.Body.Close()
 
 	if httpResp.StatusCode != 200 {
-		return "", fmt.Errorf("status code: %d, %s", httpResp.StatusCode, 
+		return "", fmt.Errorf("status code: %d, %s", httpResp.StatusCode, body)
+	}
+
+	if err != nil {
+		return "", err
+	}
+	return string(body), err
+}

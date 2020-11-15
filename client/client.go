@@ -147,4 +147,8 @@ func GetString[S any](client *BoardBotClient[S], path string) (string, error) {
 		return "", err
 	}
 
-	body, err := ioutil.ReadAll(httpR
+	body, err := ioutil.ReadAll(httpResp.Body)
+	defer httpResp.Body.Close()
+
+	if httpResp.StatusCode != 200 {
+		return "", fmt.Errorf("status code: %d, %s", httpResp.StatusCode, 

@@ -14,4 +14,10 @@ func TestMoves(t *testing.T) {
 	}, "http://localhost:8080")
 
 	if err != nil {
-		fmt.Printf("failed to start cl
+		fmt.Printf("failed to start client, %s\n", err.Error())
+		return
+	}
+
+	err = bbClient.Authenticate()
+	if err != nil {
+		fmt.Printf("could not authenticate %s", err.Error

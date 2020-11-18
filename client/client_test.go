@@ -20,4 +20,11 @@ func TestMoves(t *testing.T) {
 
 	err = bbClient.Authenticate()
 	if err != nil {
-		fmt.Printf("could not authenticate %s", err.Error
+		fmt.Printf("could not authenticate %s", err.Error())
+	}
+
+	resp, err := bbClient.GetPossibleMoves("3155e207-88c7-437e-bc9c-df820961ed07")
+
+	if err != nil {
+		fmt.Println(err.Error())
+	}

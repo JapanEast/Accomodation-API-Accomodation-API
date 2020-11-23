@@ -12,4 +12,7 @@ import (
 
 type (
 	Game[S any] struct {
-		Id        uu
+		Id        uuid.UUID   `json:"id"`
+		LobbyId   uuid.UUID   `json:"lobbyId"`
+		Players   []User      `json:"players"`
+		GameType  string      `json:

@@ -24,4 +24,13 @@ type (
 
 	Player struct {
 		Player   int         `json:"player"`
-		Username string      `json:
+		Username string      `json:"username"`
+		UserId   json.Number `json:"userId"`
+	}
+
+	MoveCommand struct {
+		Json any `json:"json"`
+	}
+
+	MoveResp struct {
+		Index  int    `

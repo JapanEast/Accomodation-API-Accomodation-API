@@ -19,4 +19,9 @@ type (
 		State     S           `json:"state"`
 		Status    string      `json:"status"`
 		NumMoves  int         `json:"numMoves"`
-		Starte
+		StartedAt json.Number `json:"startedAt"`
+	}
+
+	Player struct {
+		Player   int         `json:"player"`
+		Username string      `json:

@@ -15,4 +15,8 @@ type (
 		Id        uuid.UUID   `json:"id"`
 		LobbyId   uuid.UUID   `json:"lobbyId"`
 		Players   []User      `json:"players"`
-		GameType  string      `json:
+		GameType  string      `json:"gameType"`
+		State     S           `json:"state"`
+		Status    string      `json:"status"`
+		NumMoves  int         `json:"numMoves"`
+		Starte

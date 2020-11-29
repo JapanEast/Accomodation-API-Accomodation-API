@@ -33,4 +33,10 @@ type (
 	}
 
 	MoveResp struct {
-		Index  int    `
+		Index  int    `json:"index"`
+		Player Player `json:"player"`
+	}
+
+	MoveT struct {
+		Player int               `json:"player"`
+		Pos    in

@@ -39,4 +39,9 @@ type (
 
 	MoveT struct {
 		Player int               `json:"player"`
-		Pos    in
+		Pos    internal.Position `json:"pos"`
+		Action interface{}       `json:"action"`
+	}
+)
+
+func (c *BoardBotClient[S]) Game(gameId string) (Game[S], error) 

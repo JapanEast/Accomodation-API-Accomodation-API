@@ -48,4 +48,8 @@ func (c *BoardBotClient[S]) Game(gameId string) (Game[S], error) {
 	return Get[Game[S]](c, fmt.Sprintf("/api/game/%s", gameId))
 }
 
-func (c *BoardBotClient[S]) MakeMove(gameId string, move MoveCom
+func (c *BoardBotClient[S]) MakeMove(gameId string, move MoveCommand) (S, error) {
+	return Post[MoveCommand, S](c, fmt.Sprintf("/api/game/%s/move", gameId), move)
+}
+
+func (c *BoardBotClient[S]) GetPossibleMoves(gameId stri

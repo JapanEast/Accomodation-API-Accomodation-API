@@ -52,4 +52,6 @@ func (c *BoardBotClient[S]) MakeMove(gameId string, move MoveCommand) (S, error)
 	return Post[MoveCommand, S](c, fmt.Sprintf("/api/game/%s/move", gameId), move)
 }
 
-func (c *BoardBotClient[S]) GetPossibleMoves(gameId stri
+func (c *BoardBotClient[S]) GetPossibleMoves(gameId string) ([]MoveT, error) {
+	return Get[[]MoveT](c, fmt.Sprintf("/api/game/%s/potential-moves", gameId))
+}

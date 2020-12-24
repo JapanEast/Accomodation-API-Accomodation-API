@@ -47,3 +47,13 @@ func (c *BoardBotClient[S]) CreateLobby() (CreateLobbyResponse, error) {
 }
 
 func (c *BoardBotClient[S]) JoinLobby(lobbyId string) error {
+	req := JoinLobbyReq{}
+
+	_, err := Post[JoinLobbyReq, string](c, fmt.Sprintf("/api/lobby/%s/join", lobbyId), req)
+
+	return err
+}
+
+func (c *BoardBotClient[S]) StartGame(lobbyId string) (Game[S], error) {
+	return Post[Empty, Game[S]](c, fmt.Sprintf("/api/lobby/%s/start", lobbyId), Empty{})
+}

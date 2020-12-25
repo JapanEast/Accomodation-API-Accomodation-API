@@ -14,4 +14,9 @@ import (
 func main() {
 	server := flag.String("server", "http://localhost:8080", "Host of the boardbots server to play on.")
 	username := flag.String("username", "", "Username")
-	gameId := flag.Stri
+	gameId := flag.String("gameId", "", "Game ID")
+
+	flag.Parse()
+
+	if *gameId == "" || *username == "" {
+		fmt.Println("Require a game ID and use

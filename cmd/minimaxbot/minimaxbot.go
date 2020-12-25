@@ -12,4 +12,6 @@ import (
 )
 
 func main() {
-	server := flag.String("server", "http://loc
+	server := flag.String("server", "http://localhost:8080", "Host of the boardbots server to play on.")
+	username := flag.String("username", "", "Username")
+	gameId := flag.Stri

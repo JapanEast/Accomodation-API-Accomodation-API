@@ -19,4 +19,9 @@ func main() {
 	flag.Parse()
 
 	if *gameId == "" || *username == "" {
-		fmt.Println("Require a game ID and use
+		fmt.Println("Require a game ID and username")
+	}
+
+	bbClient, err := client.NewBoardBotClient[lockitdown.TransportState](client.Credentials{
+		Username: *username,
+	}, *serve

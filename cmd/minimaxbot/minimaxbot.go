@@ -24,4 +24,13 @@ func main() {
 
 	bbClient, err := client.NewBoardBotClient[lockitdown.TransportState](client.Credentials{
 		Username: *username,
-	}, *serve
+	}, *server)
+
+	if err != nil {
+		fmt.Printf("failed to start client, %s\n", err.Error())
+		return
+	}
+
+	err = bbClient.Authenticate()
+	if err != nil {
+		fmt.Pr

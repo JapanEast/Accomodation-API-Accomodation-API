@@ -45,4 +45,8 @@ func main() {
 	game := lockitdown.StateFromTransport(&tGame.State)
 
 	for game.Winner < 0 {
-		if
+		if playerPosition-1 != int(game.PlayerTurn) {
+			fmt.Println("waiting for turn")
+			time.Sleep(time.Second * 3)
+
+			tGame, er

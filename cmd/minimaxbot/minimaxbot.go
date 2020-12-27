@@ -40,4 +40,9 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	play
+	playerPosition := getPlayerPosition(tGame, bbClient.Credentials.Username)
+
+	game := lockitdown.StateFromTransport(&tGame.State)
+
+	for game.Winner < 0 {
+		if

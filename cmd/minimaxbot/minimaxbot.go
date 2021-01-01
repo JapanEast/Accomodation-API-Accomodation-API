@@ -58,4 +58,7 @@ func main() {
 			continue
 		}
 
-		root
+		root := &lockitdown.MinimaxNode{
+			GameState: game,
+			GameMove:  lockitdown.GameMove{},
+			Searcher:  lockitdown.PlayerPosition(play

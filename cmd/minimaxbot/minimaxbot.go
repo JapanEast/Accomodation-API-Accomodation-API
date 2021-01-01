@@ -49,4 +49,13 @@ func main() {
 			fmt.Println("waiting for turn")
 			time.Sleep(time.Second * 3)
 
-			tGame, er
+			tGame, err := bbClient.Game(*gameId)
+			if err != nil {
+				panic(err)
+			}
+
+			game = lockitdown.StateFromTransport(&tGame.State)
+			continue
+		}
+
+		root

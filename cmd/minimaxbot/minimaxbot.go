@@ -65,4 +65,8 @@ func main() {
 			Evaluator: lockitdown.ScoreGameState,
 		}
 
-		ctx, cancelFunc := context.WithTimeout(context.Background(), 10*time.Secon
+		ctx, cancelFunc := context.WithTimeout(context.Background(), 10*time.Second)
+		defer cancelFunc()
+		best := lockitdown.AlphaBeta(ctx, root, 10)
+
+		fmt.Printf("%s making move: %+v\n", bbClient.Credentials.Usern

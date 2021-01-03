@@ -69,4 +69,8 @@ func main() {
 		defer cancelFunc()
 		best := lockitdown.AlphaBeta(ctx, root, 10)
 
-		fmt.Printf("%s making move: %+v\n", bbClient.Credentials.Usern
+		fmt.Printf("%s making move: %+v\n", bbClient.Credentials.Username, best.GameMove)
+		movet := best.GameMove.ToTransport()
+		moveCommand := client.MoveCommand{
+			Json: client.MoveT{
+			

@@ -61,4 +61,8 @@ func main() {
 		root := &lockitdown.MinimaxNode{
 			GameState: game,
 			GameMove:  lockitdown.GameMove{},
-			Searcher:  lockitdown.PlayerPosition(play
+			Searcher:  lockitdown.PlayerPosition(playerPosition - 1),
+			Evaluator: lockitdown.ScoreGameState,
+		}
+
+		ctx, cancelFunc := context.WithTimeout(context.Background(), 10*time.Secon

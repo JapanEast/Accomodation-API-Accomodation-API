@@ -73,4 +73,9 @@ func main() {
 		movet := best.GameMove.ToTransport()
 		moveCommand := client.MoveCommand{
 			Json: client.MoveT{
-			
+				Player: playerPosition,
+				Pos: internal.Position{
+					Q: movet.Position.Q,
+					R: movet.Position.R,
+				},
+				Action: movet.Act

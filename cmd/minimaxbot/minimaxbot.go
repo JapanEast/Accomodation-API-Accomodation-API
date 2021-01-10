@@ -82,4 +82,12 @@ func main() {
 			},
 		}
 		fmt.Printf("Move Command: %v\n", moveCommand)
-		state, err := bbClient.MakeMove(*gameId, moveComma
+		state, err := bbClient.MakeMove(*gameId, moveCommand)
+		if err != nil {
+			panic(err)
+		}
+		game = lockitdown.StateFromTransport(&state)
+	}
+}
+
+func getPlayerPosition[S any

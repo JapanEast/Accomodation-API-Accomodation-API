@@ -78,4 +78,8 @@ func main() {
 					Q: movet.Position.Q,
 					R: movet.Position.R,
 				},
-				Action: movet.Act
+				Action: movet.Action,
+			},
+		}
+		fmt.Printf("Move Command: %v\n", moveCommand)
+		state, err := bbClient.MakeMove(*gameId, moveComma

@@ -90,4 +90,9 @@ func main() {
 	}
 }
 
-func getPlayerPosition[S any
+func getPlayerPosition[S any](game client.Game[S], username string) int {
+	for idx, user := range game.Players {
+		if user.Name == username {
+			return idx + 1
+		}
+	

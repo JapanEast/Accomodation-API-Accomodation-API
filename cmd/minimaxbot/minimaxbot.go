@@ -95,4 +95,6 @@ func getPlayerPosition[S any](game client.Game[S], username string) int {
 		if user.Name == username {
 			return idx + 1
 		}
-	
+	}
+	return -1
+}

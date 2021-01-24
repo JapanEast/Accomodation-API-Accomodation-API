@@ -3,4 +3,13 @@
 //
 // $> randobot -username=randobot -gameId=00000000-...-0000 -server=https://boardbots.dev
 //
-// It is recommend 
+// It is recommend to run setupbots before using randobot.
+package main
+
+import (
+	"flag"
+	"fmt"
+	"math/rand"
+	"time"
+
+	"github.com/rwsargent/board

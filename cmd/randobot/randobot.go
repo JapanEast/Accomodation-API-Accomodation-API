@@ -12,4 +12,9 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/rwsargent/board
+	"github.com/rwsargent/boardbots-go/client"
+	"github.com/rwsargent/boardbots-go/internal"
+	"github.com/rwsargent/boardbots-go/lockitdown"
+)
+
+var edges = []struct{ pos, 

@@ -17,4 +17,6 @@ import (
 	"github.com/rwsargent/boardbots-go/lockitdown"
 )
 
-var edges = []struct{ pos, 
+var edges = []struct{ pos, dir internal.Position }{
+	{pos: internal.Position{Q: 0, R: -5}, dir: internal.Position{Q: 0, R: 1}},
+	{pos: internal.Position{

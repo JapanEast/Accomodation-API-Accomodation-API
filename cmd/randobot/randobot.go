@@ -20,4 +20,6 @@ import (
 var edges = []struct{ pos, dir internal.Position }{
 	{pos: internal.Position{Q: 0, R: -5}, dir: internal.Position{Q: 0, R: 1}},
 	{pos: internal.Position{Q: 5, R: -5}, dir: internal.Position{Q: -1, R: 1}},
-	{pos: internal.Position{Q: 5, R: 0}, dir: internal.Position{Q: -1, R: 0}}
+	{pos: internal.Position{Q: 5, R: 0}, dir: internal.Position{Q: -1, R: 0}},
+	{pos: internal.Position{Q: 0, R: 5}, dir: internal.Position{Q: 0, R: -1}},
+	{pos: internal.Position{Q: -5, R: 5}, dir: internal.Position{Q: 1

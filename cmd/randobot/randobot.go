@@ -28,4 +28,6 @@ var edges = []struct{ pos, dir internal.Position }{
 
 func main() {
 
-	server := flag.Str
+	server := flag.String("server", "http://localhost:8080", "Host of the boardbots server to play on.")
+	username := flag.String("username", "", "Username")
+	gameId := flag.

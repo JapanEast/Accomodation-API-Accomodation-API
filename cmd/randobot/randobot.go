@@ -38,4 +38,9 @@ func main() {
 		fmt.Println("Require a game ID and username")
 	}
 
-	bbClient, err := clie
+	bbClient, err := client.NewBoardBotClient[lockitdown.TransportState](client.Credentials{
+		Username: *username,
+	}, *server)
+
+	if err != nil {
+		fmt.Printf("fa

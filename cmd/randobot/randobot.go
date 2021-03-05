@@ -43,4 +43,10 @@ func main() {
 	}, *server)
 
 	if err != nil {
-		fmt.Printf("fa
+		fmt.Printf("failed to start client, %s\n", err.Error())
+		return
+	}
+
+	err = bbClient.Authenticate()
+	if err != nil {
+		fmt.Printf("could not authenti

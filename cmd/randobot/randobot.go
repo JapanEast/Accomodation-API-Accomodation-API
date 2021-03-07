@@ -56,4 +56,11 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	playerPosition := getPlayerPosition(tGame, bbCli
+	playerPosition := getPlayerPosition(tGame, bbClient.Credentials.Username)
+
+	game := lockitdown.StateFromTransport(&tGame.State)
+
+	rand.Seed(63)
+
+	for game.Winner < 0 {
+		if playerPosi

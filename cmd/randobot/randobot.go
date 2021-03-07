@@ -49,4 +49,11 @@ func main() {
 
 	err = bbClient.Authenticate()
 	if err != nil {
-		fmt.Printf("could not authenti
+		fmt.Printf("could not authenticate %s", err.Error())
+	}
+
+	tGame, err := bbClient.Game(*gameId)
+	if err != nil {
+		panic(err)
+	}
+	playerPosition := getPlayerPosition(tGame, bbCli

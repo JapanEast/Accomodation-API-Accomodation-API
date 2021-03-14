@@ -75,3 +75,9 @@ func main() {
 			game = lockitdown.StateFromTransport(&tGame.State)
 			continue
 		}
+
+		playerMoves, err := movesForPlayer(bbClient, gameId, playerPosition)
+
+		var moveCommand client.MoveCommand
+
+		if len(playerMoves) ==

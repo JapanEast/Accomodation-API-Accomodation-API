@@ -63,4 +63,9 @@ func main() {
 	rand.Seed(63)
 
 	for game.Winner < 0 {
-		if playerPosi
+		if playerPosition-1 != int(game.PlayerTurn) {
+			fmt.Println("waiting for turn")
+			time.Sleep(time.Second * 3)
+
+			tGame, err := bbClient.Game(*gameId)
+	

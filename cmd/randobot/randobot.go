@@ -68,4 +68,10 @@ func main() {
 			time.Sleep(time.Second * 3)
 
 			tGame, err := bbClient.Game(*gameId)
-	
+			if err != nil {
+				panic(err)
+			}
+
+			game = lockitdown.StateFromTransport(&tGame.State)
+			continue
+		}

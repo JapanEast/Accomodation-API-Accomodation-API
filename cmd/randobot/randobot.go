@@ -80,4 +80,8 @@ func main() {
 
 		var moveCommand client.MoveCommand
 
-		if len(playerMoves) ==
+		if len(playerMoves) == 0 {
+			moveCommand = placeRobotMove(game, playerPosition)
+		} else {
+			moveCommand = client.MoveCommand{
+				Json: playerMoves[rand.Intn(len(playerMove

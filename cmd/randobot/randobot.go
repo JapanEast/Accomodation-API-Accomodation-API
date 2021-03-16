@@ -84,4 +84,9 @@ func main() {
 			moveCommand = placeRobotMove(game, playerPosition)
 		} else {
 			moveCommand = client.MoveCommand{
-				Json: playerMoves[rand.Intn(len(playerMove
+				Json: playerMoves[rand.Intn(len(playerMoves))],
+			}
+		}
+
+		fmt.Printf("%s making move: %+v\n", bbClient.Credentials.Username, moveCommand)
+		state, err := bbClient.MakeMove(*

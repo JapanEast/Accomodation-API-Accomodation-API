@@ -97,4 +97,5 @@ func main() {
 	}
 }
 
-func movesForPlayer(bbClient *client.B
+func movesForPlayer(bbClient *client.BoardBotClient[lockitdown.TransportState], gameId *string, playerPosition int) ([]client.MoveT, error) {
+	moves, err := bbClient.GetPossibleMoves(*g

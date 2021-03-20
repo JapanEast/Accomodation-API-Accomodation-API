@@ -89,4 +89,12 @@ func main() {
 		}
 
 		fmt.Printf("%s making move: %+v\n", bbClient.Credentials.Username, moveCommand)
-		state, err := bbClient.MakeMove(*
+		state, err := bbClient.MakeMove(*gameId, moveCommand)
+		if err != nil {
+			panic(err)
+		}
+		game = lockitdown.StateFromTransport(&state)
+	}
+}
+
+func movesForPlayer(bbClient *client.B

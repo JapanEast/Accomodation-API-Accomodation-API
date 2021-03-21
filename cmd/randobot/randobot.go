@@ -98,4 +98,12 @@ func main() {
 }
 
 func movesForPlayer(bbClient *client.BoardBotClient[lockitdown.TransportState], gameId *string, playerPosition int) ([]client.MoveT, error) {
-	moves, err := bbClient.GetPossibleMoves(*g
+	moves, err := bbClient.GetPossibleMoves(*gameId)
+	if err != nil {
+		panic(err)
+	}
+
+	playerMoves := make([]client.MoveT, 0, len(moves))
+
+	for _, move := range moves {
+		if

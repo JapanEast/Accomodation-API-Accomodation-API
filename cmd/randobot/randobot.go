@@ -106,4 +106,11 @@ func movesForPlayer(bbClient *client.BoardBotClient[lockitdown.TransportState], 
 	playerMoves := make([]client.MoveT, 0, len(moves))
 
 	for _, move := range moves {
-		if
+		if move.Player == playerPosition {
+			playerMoves = append(playerMoves, move)
+		}
+	}
+	return playerMoves, err
+}
+
+func placeRobotMove(game *lockitdown.G

@@ -120,4 +120,9 @@ func placeRobotMove(game *lockitdown.GameState, playerPosition int) client.MoveC
 		placePosition = edges[rand.Intn(len(edges))]
 	}
 
-	return client
+	return client.MoveCommand{
+		Json: client.MoveT{
+			Player: playerPosition,
+			Pos:    placePosition.pos,
+			Action: lockitdown.PlaceRobotT{
+				PlaceRobo

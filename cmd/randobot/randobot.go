@@ -125,4 +125,7 @@ func placeRobotMove(game *lockitdown.GameState, playerPosition int) client.MoveC
 			Player: playerPosition,
 			Pos:    placePosition.pos,
 			Action: lockitdown.PlaceRobotT{
-				PlaceRobo
+				PlaceRobot: struct {
+					Dir lockitdown.Pair `json:"dir"`
+				}{Dir: lockitdown.Pair{Q: placePosition.dir.Q, R: placePosition.dir.R}},
+			}

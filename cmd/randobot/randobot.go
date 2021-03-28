@@ -116,4 +116,8 @@ func movesForPlayer(bbClient *client.BoardBotClient[lockitdown.TransportState], 
 func placeRobotMove(game *lockitdown.GameState, playerPosition int) client.MoveCommand {
 	placePosition := edges[rand.Intn(len(edges))]
 
-	for bot := game.RobotAt(lockitdow
+	for bot := game.RobotAt(lockitdown.Pair{Q: placePosition.pos.Q, R: placePosition.pos.R}); bot != nil; {
+		placePosition = edges[rand.Intn(len(edges))]
+	}
+
+	return client

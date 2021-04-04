@@ -135,4 +135,9 @@ func placeRobotMove(game *lockitdown.GameState, playerPosition int) client.MoveC
 
 func getPlayerPosition[S any](game client.Game[S], username string) int {
 	for idx, user := range game.Players {
-		if us
+		if user.Name == username {
+			return idx + 1
+		}
+	}
+	return -1
+}

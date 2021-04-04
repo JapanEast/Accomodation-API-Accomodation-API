@@ -6,4 +6,10 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/rwsargent/boar
+	"github.com/rwsargent/boardbots-go/lockitdown"
+)
+
+type (
+	ScoreRequest struct {
+		GameType  string                    `json:"gameType"`
+		GameState lockitdown.TransportSt

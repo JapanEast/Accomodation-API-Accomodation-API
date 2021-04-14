@@ -25,3 +25,11 @@ type (
 func main() {
 
 	port := flag.String("port", ":8888", "server port")
+	flag.Parse()
+
+	http.HandleFunc("/api/score", score)
+
+	fmt.Printf("Now listening on port %s\n", *port)
+	http.ListenAndServe(*port, nil)
+
+	fmt.P

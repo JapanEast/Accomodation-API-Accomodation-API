@@ -37,4 +37,11 @@ func main() {
 
 func score(w http.ResponseWriter, req *http.Request) {
 	var scoreReqest ScoreRequest
-	err := json.NewDecoder(req.Body).Decod
+	err := json.NewDecoder(req.Body).Decode(&scoreReqest)
+	defer req.Body.Close()
+
+	fmt.Printf("Request:\n%+v\n", scoreReqest)
+
+	if err != nil {
+		fmt.Printf("error reading body, %v\n", err)
+	

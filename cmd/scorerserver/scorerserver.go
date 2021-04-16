@@ -32,4 +32,9 @@ func main() {
 	fmt.Printf("Now listening on port %s\n", *port)
 	http.ListenAndServe(*port, nil)
 
-	fmt.P
+	fmt.Println("done")
+}
+
+func score(w http.ResponseWriter, req *http.Request) {
+	var scoreReqest ScoreRequest
+	err := json.NewDecoder(req.Body).Decod

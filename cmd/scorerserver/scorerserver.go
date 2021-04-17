@@ -44,4 +44,7 @@ func score(w http.ResponseWriter, req *http.Request) {
 
 	if err != nil {
 		fmt.Printf("error reading body, %v\n", err)
-	
+		http.Error(w, err.Error(), http.StatusBadRequest)
+	}
+
+	state := lockitdown.StateFromTransport(&scoreReqest.GameState)

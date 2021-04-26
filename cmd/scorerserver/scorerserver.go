@@ -48,3 +48,7 @@ func score(w http.ResponseWriter, req *http.Request) {
 	}
 
 	state := lockitdown.StateFromTransport(&scoreReqest.GameState)
+	var score int
+	switch scoreReqest.Strategy {
+	default:
+		score = lockitdown.ScoreGameState(state, lockitdown.Player

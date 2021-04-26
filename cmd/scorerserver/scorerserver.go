@@ -51,4 +51,12 @@ func score(w http.ResponseWriter, req *http.Request) {
 	var score int
 	switch scoreReqest.Strategy {
 	default:
-		score = lockitdown.ScoreGameState(state, lockitdown.Player
+		score = lockitdown.ScoreGameState(state, lockitdown.PlayerPosition(scoreReqest.Player-1))
+	}
+
+	resp := ScoreResponse{
+		score,
+	}
+	fmt.Printf("Response:\n%+v\n", resp)
+
+	w.Header().Set("Content-

@@ -59,4 +59,6 @@ func score(w http.ResponseWriter, req *http.Request) {
 	}
 	fmt.Printf("Response:\n%+v\n", resp)
 
-	w.Header().Set("Content-
+	w.Header().Set("Content-Type", "application/json; charset=utf-8")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Con

@@ -61,4 +61,10 @@ func score(w http.ResponseWriter, req *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json; charset=utf-8")
 	w.Header().Set("Access-Control-Allow-Origin", "*")
-	w.Header().Set("Access-Control-Allow-Headers", "Con
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	err = json.NewEncoder(w).Encode(resp)
+
+	if err != nil {
+		fmt.Printf("error writing response, %v", err)
+	}
+}

@@ -20,4 +20,11 @@ type (
 
 var nodePool = sync.Pool{
 	New: func() any {
-		buf := make([]Node, 0, 
+		buf := make([]Node, 0, 128)
+		return &buf
+	},
+}
+
+func Minimax(node Node, depth int) Node {
+	nodeBuffer := *(nodePool.Get().(*[]Node))
+	children := node.Ch

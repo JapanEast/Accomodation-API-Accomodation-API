@@ -34,4 +34,10 @@ func Minimax(node Node, depth int) Node {
 		return node
 	}
 
-	var
+	var best Node
+	if node.ShouldMaximize() {
+		best = children[0]
+		best.SetScore(math.MinInt)
+		for _, child := range children {
+			child.Move()
+			child

@@ -40,4 +40,8 @@ func Minimax(node Node, depth int) Node {
 		best.SetScore(math.MinInt)
 		for _, child := range children {
 			child.Move()
-			child
+			childsBest := Minimax(child, depth-1)
+			if childsBest.Score() > best.Score() {
+				best.Release()
+				best = child
+				best.Se

@@ -27,4 +27,11 @@ var nodePool = sync.Pool{
 
 func Minimax(node Node, depth int) Node {
 	nodeBuffer := *(nodePool.Get().(*[]Node))
-	children := node.Ch
+	children := node.Children(nodeBuffer[:0])
+	defer nodePool.Put(&children)
+	if depth == 0 || len(children) == 0 {
+		node.Evaluate()
+		return node
+	}
+
+	var

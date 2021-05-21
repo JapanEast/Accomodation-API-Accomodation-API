@@ -44,4 +44,13 @@ func Minimax(node Node, depth int) Node {
 			if childsBest.Score() > best.Score() {
 				best.Release()
 				best = child
-				best.Se
+				best.SetScore(childsBest.Score())
+			}
+			child.Undo()
+			if child != best {
+				child.Release()
+			}
+		}
+	} else {
+		best = children[0]
+		best.Set

@@ -64,4 +64,11 @@ func Minimax(node Node, depth int) Node {
 			}
 			child.Undo()
 			if child != best {
-				ch
+				child.Release()
+			}
+		}
+	}
+
+	defer best.Release()
+	return best
+}

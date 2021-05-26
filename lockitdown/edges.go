@@ -14,4 +14,12 @@ type ByCorner []Placement
 func (a ByCorner) Len() int      { return len(a) }
 func (a ByCorner) Swap(i, j int) { a[i], a[j] = a[j], a[i] }
 func (a ByCorner) Less(i, j int) bool {
-	return min(a[i].position) 
+	return min(a[i].position) < min(a[j].position)
+}
+
+func edges(ringSize int) []Placement {
+	if cached, found := cache[ringSize]; found {
+		return cached
+	}
+
+	edges := make(

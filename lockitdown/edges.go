@@ -22,4 +22,13 @@ func edges(ringSize int) []Placement {
 		return cached
 	}
 
-	edges := make(
+	edges := make([]Placement, 0, (3*6)+(6*4*(ringSize-1)))
+
+	// Top left
+	cursor := Pair{
+		0,
+		-ringSize,
+	}
+	// idx := 0
+	for side := 0; side < 6; side++ {
+		dir := Ca

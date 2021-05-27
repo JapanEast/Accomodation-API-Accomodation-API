@@ -31,4 +31,8 @@ func edges(ringSize int) []Placement {
 	}
 	// idx := 0
 	for side := 0; side < 6; side++ {
-		dir := Ca
+		dir := Cardinals[side]
+		for hex := 0; hex < ringSize; hex++ {
+			cursor.Plus(dir)
+			for _, placeDirection := range Cardinals {
+				position := cursor.Copy

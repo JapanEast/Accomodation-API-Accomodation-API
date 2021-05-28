@@ -39,4 +39,13 @@ func edges(ringSize int) []Placement {
 				position.Plus(placeDirection)
 				if inBounds(ringSize, position) {
 					edges = append(edges, Placement{
-						position:  cursor.
+						position:  cursor.Copy(),
+						direction: placeDirection,
+					})
+					// idx++
+				}
+			}
+		}
+	}
+	sort.Sort(ByCorner(edges))
+	cache[ringSize] = edges

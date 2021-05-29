@@ -49,3 +49,11 @@ func edges(ringSize int) []Placement {
 	}
 	sort.Sort(ByCorner(edges))
 	cache[ringSize] = edges
+	return edges
+}
+
+func min(p Pair) int {
+	abQ := intAbs(p.Q)
+	abR := intAbs(p.R)
+	abS := intAbs(p.S())
+	if abQ < abR

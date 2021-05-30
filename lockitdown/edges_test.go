@@ -8,4 +8,11 @@ import (
 )
 
 func TestLength(t *testing.T) {
-	assert.L
+	assert.Len(t, edges(1), 18)
+	assert.Len(t, edges(2), 42)
+}
+
+func TestCardinalDirections(t *testing.T) {
+	edges := edges(1)
+	directions := make(map[Pair][]Pair)
+	f

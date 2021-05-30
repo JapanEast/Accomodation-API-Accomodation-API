@@ -68,3 +68,5 @@ func min(p Pair) int {
 		} else {
 			return abS
 		}
+	}
+}

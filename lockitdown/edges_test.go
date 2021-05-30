@@ -15,4 +15,6 @@ func TestLength(t *testing.T) {
 func TestCardinalDirections(t *testing.T) {
 	edges := edges(1)
 	directions := make(map[Pair][]Pair)
-	f
+	for _, edge := range edges {
+		if dir, found := directions[edge.position]; found {
+			directions[edge.position] = append(dir, edge.direction)

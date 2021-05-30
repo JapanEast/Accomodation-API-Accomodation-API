@@ -56,4 +56,15 @@ func min(p Pair) int {
 	abQ := intAbs(p.Q)
 	abR := intAbs(p.R)
 	abS := intAbs(p.S())
-	if abQ < abR
+	if abQ < abR {
+		if abQ < abS {
+			return abQ
+		} else {
+			return abS
+		}
+	} else {
+		if abR < abS {
+			return abR
+		} else {
+			return abS
+		}

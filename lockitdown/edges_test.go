@@ -18,3 +18,9 @@ func TestCardinalDirections(t *testing.T) {
 	for _, edge := range edges {
 		if dir, found := directions[edge.position]; found {
 			directions[edge.position] = append(dir, edge.direction)
+		} else {
+			dirs := make([]Pair, 0, 3)
+			directions[edge.position] = append(dirs, edge.direction)
+		}
+	}
+	for pos, dirs := range directi

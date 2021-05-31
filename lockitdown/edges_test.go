@@ -23,4 +23,12 @@ func TestCardinalDirections(t *testing.T) {
 			directions[edge.position] = append(dirs, edge.direction)
 		}
 	}
-	for pos, dirs := range directi
+	for pos, dirs := range directions {
+		assert.Lenf(t, dirs, 3, "%+v has %d directions", pos, len(dirs))
+	}
+}
+
+func TestSort(t *testing.T) {
+	edges := edges(2)
+
+	display := make([]string, len

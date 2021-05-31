@@ -31,4 +31,6 @@ func TestCardinalDirections(t *testing.T) {
 func TestSort(t *testing.T) {
 	edges := edges(2)
 
-	display := make([]string, len
+	display := make([]string, len(edges))
+	for i, edge := range edges {
+		display[i] = fmt.Sprintf("{%d,%d,%d}->%s", edge.position.Q, edge.position.R, edge.po

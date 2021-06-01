@@ -33,4 +33,12 @@ func TestSort(t *testing.T) {
 
 	display := make([]string, len(edges))
 	for i, edge := range edges {
-		display[i] = fmt.Sprintf("{%d,%d,%d}->%s", edge.position.Q, edge.position.R, edge.po
+		display[i] = fmt.Sprintf("{%d,%d,%d}->%s", edge.position.Q, edge.position.R, edge.position.S(), edge.direction.String())
+	}
+	fmt.Printf("%v\n", display)
+}
+
+func TestDirection(t *testing.T) {
+	edges := edges(3)
+
+	for _, edge 

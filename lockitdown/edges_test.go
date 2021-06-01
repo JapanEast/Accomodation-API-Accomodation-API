@@ -41,4 +41,8 @@ func TestSort(t *testing.T) {
 func TestDirection(t *testing.T) {
 	edges := edges(3)
 
-	for _, edge 
+	for _, edge := range edges {
+		next := edge.position.Copy()
+		next.Plus(edge.direction)
+
+		assert.LessOrEqual(t, next.Dist(), 3, "%s with direciton %s", edge.p

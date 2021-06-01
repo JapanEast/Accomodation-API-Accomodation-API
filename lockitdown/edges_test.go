@@ -45,4 +45,6 @@ func TestDirection(t *testing.T) {
 		next := edge.position.Copy()
 		next.Plus(edge.direction)
 
-		assert.LessOrEqual(t, next.Dist(), 3, "%s with direciton %s", edge.p
+		assert.LessOrEqual(t, next.Dist(), 3, "%s with direciton %s", edge.position.String(), edge.direction.String())
+	}
+}

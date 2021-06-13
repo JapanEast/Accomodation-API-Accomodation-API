@@ -96,3 +96,6 @@ func scoreBotPosition(robot *Robot, game *GameState) int {
 			}
 		}
 	}
+
+	return score
+}

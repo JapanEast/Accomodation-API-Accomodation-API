@@ -276,3 +276,123 @@ func (game *GameState) checkForTieBreaks(targeted map[*Robot][]*Robot) []*Robot 
 	tiebreaks := make([]*Robot, 0, 2)
 	for doomed, attackers := range targeted {
 		// TODO(rwsargent) update targeted to be a *Robot -> *Robot map.
+		// Skip doomed robots that are already locked down.
+		if len(attackers) > 1 && !doomed.IsLockedDown {
+			for _, attacker := range attackers {
+				for doomedAttacker, doomedAttackerAttackers := range targeted {
+					if doomedAttacker.Position == attacker.Position && len(doomedAttackerAttackers) > 1 {
+						tiebreaks = append(tiebreaks, doomed)
+					}
+				}
+			}
+		}
+	}
+	return tiebreaks
+}
+
+// Returns a map of locations of robots and which robots are pointing
+// at them.
+func (game *GameState) taretedRobots() map[*Robot][]*Robot {
+	targeted := make(map[*Robot][]*Robot)
+	for a := 0; a < len(game.Robots); a++ {
+		attacker := &game.Robots[a]
+		if !attacker.IsBeamEnabled || attacker.IsLockedDown || game.isCorridor(attacker.Position) {
+			continue
+		}
+		var closest *Robot
+		var dist int = math.MaxInt
+		for t := 0; t < len(game.Robots); t++ {
+			target := &game.Robots[t]
+			if target == attacker {
+				continue
+			}
+			if attackAxes[attacker.Direction](attacker.Position, target.Position) {
+				d := Pair{
+					Q: attacker.Position.Q - target.Position.Q,
+					R: attacker.Position.R - target.Position.R,
+				}.Dist()
+				if d < dist {
+					closest = target
+					dist = d
+				}
+			}
+		}
+		if closest != nil && closest.Player != attacker.Player {
+			if attackers, found := targeted[closest]; found {
+				targeted[closest] = append(attackers, attacker)
+			} else {
+				l := make([]*Robot, 0)
+				targeted[closest] = append(l, attacker)
+			}
+		}
+	}
+	// for _, attacker := range game.Robots {
+	// 	if !attacker.IsBeamEnabled || attacker.IsLockedDown || game.isCorridor(attacker.Position) {
+	// 		continue
+	// 	}
+
+	// 	// add hexes to contended
+	// 	cursor := Pair{
+	// 		Q: attacker.Position.Q,
+	// 		R: attacker.Position.R,
+	// 	}
+	// 	cursor.Plus(attacker.Direction)
+
+	// 	for ; !game.isCorridor(cursor); cursor.Plus(attacker.Direction) {
+	// 		if targetedBot, hit := game.Robots[cursor]; hit {
+	// 			if targetedBot.Player == attacker.Player {
+	// 				break
+	// 			}
+	// 			// Add to attackers list
+	// 			if attackers, found := targeted[cursor]; found {
+	// 				targeted[cursor] = append(attackers, attacker)
+	// 			} else {
+	// 				l := make([]*Robot, 0)
+	// 				targeted[cursor] = append(l, attacker)
+	// 			}
+	// 			break
+	// 		}
+	// 	}
+	// }
+
+	return targeted
+}
+
+func (game *GameState) isCorridor(pair Pair) bool {
+	board := game.GameDef.Board.HexaBoard
+	corridor := board.ArenaRadius + 1
+	return pair.Dist() == corridor
+}
+
+func (game *GameState) shutdownRobot(robotIdx int, attackers []*Robot) {
+	for _, attacker := range attackers {
+		game.Players[attacker.Player].Points += 1
+	}
+}
+
+func (game *GameState) checkGameOver() (bool, int) {
+	if game.GameDef.WinCondition == "Elimination" {
+		winner := 0
+		bots := make(map[int]int)
+		// Count all robots on the board
+		for _, robot := range game.Robots {
+			bots[int(robot.Player)] += 1
+		}
+		eliminated := 0
+		for position, player := range game.Players {
+			// XOR player, we'll un-XOR later to get survivor
+			winner ^= position
+			// If only two robots remain, the player is eliminated
+			if game.GameDef.RobotsPerPlayer-player.PlacedRobots+bots[position] <= 2 {
+				eliminated++
+				// remove it from winner aggregator
+				winner ^= position
+			}
+		}
+		// If all but one player is eliminated, the remaining player is the winner!
+		if eliminated+1 == len(game.Players) {
+			return true, winner
+		}
+	}
+	return false, 0
+}

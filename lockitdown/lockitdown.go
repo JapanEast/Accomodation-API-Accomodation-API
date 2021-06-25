@@ -396,3 +396,65 @@ func (game *GameState) checkGameOver() (bool, int) {
 	}
 	return false, 0
 }
+
+func (g *GameState) ToJson() (string, error) {
+	transportState := ConvertToTransport(g)
+	b, err := json.Marshal(transportState)
+	if err != nil {
+		return "", err
+	}
+	return string(b), nil
+}
+
+// as an optimization, PossibleMoves takes a buffer to avoid allocating every call.
+func (g *GameState) PossibleMoves(buf []GameMove) []GameMove {
+	it := NewMoveIterator(g)
+	for it.Next() {
+		m := it.Get()
+		buf = append(buf, *m)
+	}
+	return buf
+}
+
+func (g *GameState) playerBotsInCorridor() int {
+	corridorBots := 0
+	for _, bot := range g.Robots {
+		if bot.Player == g.PlayerTurn {
+			if g.isCorridor(bot.Position) {
+				corridorBots++
+			}
+		}
+	}
+	return corridorBots
+}
+
+func inBounds(size int, position Pair) bool {
+	return position.Dist() <= size
+}
+
+func (state *GameState) saveState() {
+	save := SaveState{
+		players:       []Player{},
+		bots:          make([]Robot, len(state.Robots)),
+		movesThisTurn: 0,
+		player:        0,
+	}
+	for _, player := range state.Players {
+		save.players = append(save.players, *player)
+	}
+	copy(save.bots, state.Robots)
+	save.player = state.PlayerTurn
+	save.movesThisTurn = state.MovesThisTurn
+	state.saveStack = append(state.saveStack, save)
+}
+
+func intAbs(num int) int {
+	if num < 0 {
+		return -num
+	}
+	return num
+}
+
+func (tiereak TieBreak) Error() string {
+	return fmt.Sprintf("Tiebreak: %s", tiereak.State)
+}

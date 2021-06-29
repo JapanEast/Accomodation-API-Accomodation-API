@@ -14,4 +14,10 @@ var TwoPlayerGameDef = GameDef{
 	Board: Board{
 		HexaBoard: BoardType{4},
 	},
-	Rob
+	RobotsPerPlayer: 6,
+	WinCondition:    "Elimination",
+	MovesPerTurn:    3,
+}
+
+func TestNewGame(t *testing.T) {
+	game := NewGame(Gam

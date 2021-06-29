@@ -20,4 +20,11 @@ var TwoPlayerGameDef = GameDef{
 }
 
 func TestNewGame(t *testing.T) {
-	game := NewGame(Gam
+	game := NewGame(GameDef{
+		Players: 2,
+	})
+	if game.PlayerTurn != 0 {
+		t.Errorf("Wrong player turn")
+	}
+	if len(game.Players) != 2 {
+		t.Erro

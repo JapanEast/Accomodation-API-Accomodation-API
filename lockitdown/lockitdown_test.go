@@ -42,4 +42,9 @@ func TestMoves(t *testing.T) {
 		err    error
 	}{
 		{&PlaceRobot{
-	
+			Robot:     Pair{0, 5},
+			Direction: Pair{0, -1},
+		}, 0, nil},
+		{&PlaceRobot{
+			Robot:     Pair{5, 0},
+			Direction: 

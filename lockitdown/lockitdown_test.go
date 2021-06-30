@@ -33,4 +33,13 @@ func TestNewGame(t *testing.T) {
 		t.Error("Improperly initialized robots")
 	}
 }
-func TestMoves(t *te
+func TestMoves(t *testing.T) {
+	game := NewGame(TwoPlayerGameDef)
+
+	tests := []struct {
+		move   Mover
+		player PlayerPosition
+		err    error
+	}{
+		{&PlaceRobot{
+	

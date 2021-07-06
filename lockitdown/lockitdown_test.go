@@ -62,4 +62,11 @@ func TestMoves(t *testing.T) {
 		}, 0, nil},
 		{&PlaceRobot{
 			Robot:     Pair{-5, 4},
-	
+			Direction: Pair{1, 0},
+		}, 1, nil},
+		{&TurnRobot{
+			Robot:     Pair{0, 4},
+			Direction: Right,
+		}, 0, nil},
+		{&TurnRobot{
+			Robot:     Pai

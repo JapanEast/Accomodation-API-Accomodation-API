@@ -97,4 +97,11 @@ func TestMoves(t *testing.T) {
 		{&TurnRobot{
 			Robot:     Pair{0, 4},
 			Direction: Right,
-		}, 0,
+		}, 0, nil},
+		{&PlaceRobot{
+			Robot:     Pair{0, -5},
+			Direction: Pair{0, 1},
+		}, 1, nil},
+		{&TurnRobot{
+			Robot:     Pair{0, 4},
+			Direction: 

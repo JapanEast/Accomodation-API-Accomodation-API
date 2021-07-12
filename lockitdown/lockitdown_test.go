@@ -123,4 +123,8 @@ func TestMoves(t *testing.T) {
 		},
 	}
 
-	for 
+	for _, tt := range tests {
+		m := NewMove(tt.move, tt.player)
+		err := game.Move(m)
+		if tt.err == nil && err != nil {
+			t.Errorf("expected no error, got %s

@@ -132,4 +132,9 @@ func TestMoves(t *testing.T) {
 		if tt.err != nil && err == nil {
 			t.Errorf("expected error %s, none recieved", tt.err.Error())
 		}
-		if tt.err != nil &&
+		if tt.err != nil && err != nil && tt.err.Error() != err.Error() {
+			t.Errorf("expected error %s, recieved %s", tt.err.Error(), err.Error())
+		}
+	}
+
+	assert.Equa

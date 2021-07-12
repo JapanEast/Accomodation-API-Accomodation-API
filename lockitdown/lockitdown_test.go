@@ -127,4 +127,9 @@ func TestMoves(t *testing.T) {
 		m := NewMove(tt.move, tt.player)
 		err := game.Move(m)
 		if tt.err == nil && err != nil {
-			t.Errorf("expected no error, got %s
+			t.Errorf("expected no error, got %s", err.Error())
+		}
+		if tt.err != nil && err == nil {
+			t.Errorf("expected error %s, none recieved", tt.err.Error())
+		}
+		if tt.err != nil &&

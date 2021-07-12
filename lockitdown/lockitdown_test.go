@@ -137,4 +137,5 @@ func TestMoves(t *testing.T) {
 		}
 	}
 
-	assert.Equa
+	assert.Equal(t, 1, game.Players[0].PlacedRobots, "wrong number of player 1 robots")
+	assert.Equal(t, 3, game.Players[1].PlacedRobots, "wrong number of pla

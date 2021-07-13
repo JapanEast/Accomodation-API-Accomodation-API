@@ -138,4 +138,9 @@ func TestMoves(t *testing.T) {
 	}
 
 	assert.Equal(t, 1, game.Players[0].PlacedRobots, "wrong number of player 1 robots")
-	assert.Equal(t, 3, game.Players[1].PlacedRobots, "wrong number of pla
+	assert.Equal(t, 3, game.Players[1].PlacedRobots, "wrong number of player 2 robots")
+	assert.Equal(t, 3, game.Players[1].Points, "wrong number of player 2 points")
+}
+
+func TestGameOver(t *testing.T) {
+	gameState := G

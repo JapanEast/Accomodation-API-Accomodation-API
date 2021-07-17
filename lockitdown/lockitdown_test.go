@@ -143,4 +143,12 @@ func TestMoves(t *testing.T) {
 }
 
 func TestGameOver(t *testing.T) {
-	gameState := G
+	gameState := GameState{
+		GameDef: TwoPlayerGameDef,
+		Players: []*Player{
+			{
+				Points:       0,
+				PlacedRobots: 6,
+			},
+			{
+				Points: 

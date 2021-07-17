@@ -151,4 +151,12 @@ func TestGameOver(t *testing.T) {
 				PlacedRobots: 6,
 			},
 			{
-				Points: 
+				Points:       9,
+				PlacedRobots: 3,
+			},
+		},
+		Robots: []Robot{
+			{
+				Position:      Pair{-4, 4},
+				Direction:     NE,
+			

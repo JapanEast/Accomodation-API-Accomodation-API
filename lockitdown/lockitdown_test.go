@@ -193,4 +193,11 @@ func TestGameOver(t *testing.T) {
 			},
 			{
 				Position:      Pair{0, 5},
-				Direct
+				Direction:     NW,
+				IsBeamEnabled: true,
+				IsLockedDown:  false,
+				Player:        0,
+			},
+		},
+		PlayerTurn:       0,
+		MovesThis

@@ -221,3 +221,15 @@ func TestGameOver(t *testing.T) {
 			&AdvanceRobot{
 				Robot: Pair{5, -5},
 			}, 0,
+			nil,
+		},
+		{
+			&AdvanceRobot{
+				Robot: Pair{0, 5},
+			},
+			0,
+			nil,
+		},
+	}
+
+	for _, tc := range testcase

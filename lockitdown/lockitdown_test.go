@@ -208,4 +208,16 @@ func TestGameOver(t *testing.T) {
 	testcases := []struct {
 		move   Mover
 		player PlayerPosition
-		resul
+		result error
+	}{
+		{
+			&AdvanceRobot{
+				Robot: Pair{4, -4},
+			},
+			0,
+			nil,
+		},
+		{
+			&AdvanceRobot{
+				Robot: Pair{5, -5},
+			}, 0,

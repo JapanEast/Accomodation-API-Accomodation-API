@@ -200,4 +200,12 @@ func TestGameOver(t *testing.T) {
 			},
 		},
 		PlayerTurn:       0,
-		MovesThis
+		MovesThisTurn:    3,
+		RequiresTieBreak: false,
+		Winner:           -1,
+	}
+
+	testcases := []struct {
+		move   Mover
+		player PlayerPosition
+		resul

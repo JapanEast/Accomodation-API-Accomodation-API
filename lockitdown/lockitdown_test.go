@@ -235,4 +235,11 @@ func TestGameOver(t *testing.T) {
 	for _, tc := range testcases {
 		m := NewMove(tc.move, tc.player)
 		err := gameState.Move(m)
-		assert.Nilf(t, err, "unexpected err for move %v", tc
+		assert.Nilf(t, err, "unexpected err for move %v", tc.move)
+		assert.Equal(t, -1, gameState.Winner)
+		if err != nil {
+			fmt.Println(gameState.ToJson())
+		}
+	}
+
+	err := gam

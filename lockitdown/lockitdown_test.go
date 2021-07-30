@@ -242,4 +242,11 @@ func TestGameOver(t *testing.T) {
 		}
 	}
 
-	err := gam
+	err := gameState.Move(NewMove(&TurnRobot{
+		Robot:     Pair{-4, 4},
+		Direction: Right,
+	}, 1))
+
+	fmt.Println(gameState.ToJson())
+
+	assert.EqualError(t, err, "winner

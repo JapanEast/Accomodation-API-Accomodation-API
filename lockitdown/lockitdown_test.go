@@ -249,4 +249,14 @@ func TestGameOver(t *testing.T) {
 
 	fmt.Println(gameState.ToJson())
 
-	assert.EqualError(t, err, "winner
+	assert.EqualError(t, err, "winner is 2")
+	assert.Equal(t, 1, gameState.Winner)
+}
+
+func TestPairCopy(t *testing.T) {
+	p1 := Pair{
+		Q: 32,
+		R: 12,
+	}
+
+	p2 := p1.Copy(

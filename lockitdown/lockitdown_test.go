@@ -259,4 +259,16 @@ func TestPairCopy(t *testing.T) {
 		R: 12,
 	}
 
-	p2 := p1.Copy(
+	p2 := p1.Copy()
+
+	p1.Q = 2
+	p1.R = 4
+
+	p2.Q = 5
+	p2.R = 7
+
+	assert.Equal(t, p1, Pair{2, 4})
+	assert.Equal(t, p2, Pair{5, 7})
+}
+
+func TestInBounds(t *tes

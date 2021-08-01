@@ -271,4 +271,15 @@ func TestPairCopy(t *testing.T) {
 	assert.Equal(t, p2, Pair{5, 7})
 }
 
-func TestInBounds(t *tes
+func TestInBounds(t *testing.T) {
+	testCases := []struct {
+		p        Pair
+		s        int
+		inBounds bool
+	}{
+		{
+			p:        Pair{-1, 1},
+			s:        1,
+			inBounds: true,
+		},
+	

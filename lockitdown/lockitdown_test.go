@@ -282,4 +282,11 @@ func TestInBounds(t *testing.T) {
 			s:        1,
 			inBounds: true,
 		},
-	
+	}
+
+	for _, tc := range testCases {
+		assert.Truef(t, inBounds(tc.s, tc.p), "%+v is not InBounds", tc.p)
+	}
+}
+
+func TestPossibleMoves(t *te

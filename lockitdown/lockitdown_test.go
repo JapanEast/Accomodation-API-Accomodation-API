@@ -304,4 +304,11 @@ func TestPossibleMoves(t *testing.T) {
 		NewMove(&PlaceRobot{
 			Robot:     Pair{0, -5},
 			Direction: SE,
-		}
+		}, 0),
+		NewMove(&PlaceRobot{
+			Robot:     Pair{0, 5},
+			Direction: NW,
+		}, 1),
+		NewMove(&AdvanceRobot{
+			Robot: Pair{-5, 0},
+		}, 0)

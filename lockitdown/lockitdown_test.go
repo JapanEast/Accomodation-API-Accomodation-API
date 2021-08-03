@@ -289,4 +289,10 @@ func TestInBounds(t *testing.T) {
 	}
 }
 
-func TestPossibleMoves(t *te
+func TestPossibleMoves(t *testing.T) {
+
+	game := NewGame(TwoPlayerGameDef)
+	initMoves := []*GameMove{
+		NewMove(&PlaceRobot{
+			Robot:     Pair{-5, 0},
+			D

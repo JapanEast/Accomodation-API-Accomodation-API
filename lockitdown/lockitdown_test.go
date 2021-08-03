@@ -311,4 +311,11 @@ func TestPossibleMoves(t *testing.T) {
 		}, 1),
 		NewMove(&AdvanceRobot{
 			Robot: Pair{-5, 0},
-		}, 0)
+		}, 0),
+		NewMove(&TurnRobot{
+			Robot:     Pair{-4, 0},
+			Direction: Left,
+		}, 0),
+		NewMove(&TurnRobot{
+			Robot:     Pair{-4, 0},
+			Direction

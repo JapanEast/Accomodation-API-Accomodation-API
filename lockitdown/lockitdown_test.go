@@ -295,4 +295,13 @@ func TestPossibleMoves(t *testing.T) {
 	initMoves := []*GameMove{
 		NewMove(&PlaceRobot{
 			Robot:     Pair{-5, 0},
-			D
+			Direction: E,
+		}, 0),
+		NewMove(&PlaceRobot{
+			Robot:     Pair{5, 0},
+			Direction: W,
+		}, 1),
+		NewMove(&PlaceRobot{
+			Robot:     Pair{0, -5},
+			Direction: SE,
+		}

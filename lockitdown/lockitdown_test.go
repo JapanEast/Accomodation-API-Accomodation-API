@@ -318,4 +318,13 @@ func TestPossibleMoves(t *testing.T) {
 		}, 0),
 		NewMove(&TurnRobot{
 			Robot:     Pair{-4, 0},
-			Direction
+			Direction: Left,
+		}, 0),
+	}
+
+	for _, initmove := range initMoves {
+		err := game.Move(initmove)
+		assert.Nil(t, err)
+	}
+
+	possibleMo

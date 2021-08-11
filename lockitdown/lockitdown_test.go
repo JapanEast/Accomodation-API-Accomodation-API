@@ -331,4 +331,10 @@ func TestPossibleMoves(t *testing.T) {
 
 	for _, possibleMove := range possibleMoves {
 		player := game.PlayerTurn
-		assert.Equal(t, 
+		assert.Equal(t, PlayerPosition(1), player)
+		err := game.Move(&possibleMove)
+		assert.Nil(t, err)
+		game.Undo(&possibleMove)
+	}
+
+	game.U

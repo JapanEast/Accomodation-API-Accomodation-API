@@ -337,4 +337,8 @@ func TestPossibleMoves(t *testing.T) {
 		game.Undo(&possibleMove)
 	}
 
-	game.U
+	game.Undo(initMoves[6])
+	game.Undo(initMoves[5])
+	game.Undo(initMoves[4])
+
+	assert.Equal(t, PlayerPosition(0), game.PlayerTurn

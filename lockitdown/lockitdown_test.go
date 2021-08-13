@@ -341,4 +341,10 @@ func TestPossibleMoves(t *testing.T) {
 	game.Undo(initMoves[5])
 	game.Undo(initMoves[4])
 
-	assert.Equal(t, PlayerPosition(0), game.PlayerTurn
+	assert.Equal(t, PlayerPosition(0), game.PlayerTurn)
+
+	game.Undo(initMoves[3])
+
+	assert.Equal(t, PlayerPosition(1), game.PlayerTurn)
+
+	nextMoves := game.PossibleMoves(make([]Ga

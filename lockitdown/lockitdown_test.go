@@ -360,4 +360,9 @@ func TestFakeMinimaxStressTest(t *testing.T) {
 	game := NewGame(TwoPlayerGameDef)
 
 	var recur func(*GameState, int)
-	recur 
+	recur = func(game *GameState, depth int) {
+		if depth == 0 {
+			return
+		}
+		moves := game.PossibleMoves([]GameMove{})
+		for _, move := range 

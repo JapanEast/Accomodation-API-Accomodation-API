@@ -355,4 +355,9 @@ func TestPossibleMoves(t *testing.T) {
 	game.Undo(next)
 }
 
-fun
+func TestFakeMinimaxStressTest(t *testing.T) {
+
+	game := NewGame(TwoPlayerGameDef)
+
+	var recur func(*GameState, int)
+	recur 

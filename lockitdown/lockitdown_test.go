@@ -347,4 +347,12 @@ func TestPossibleMoves(t *testing.T) {
 
 	assert.Equal(t, PlayerPosition(1), game.PlayerTurn)
 
-	nextMoves := game.PossibleMoves(make([]Ga
+	nextMoves := game.PossibleMoves(make([]GameMove, 0, 128))
+	next := &nextMoves[rand.Intn(len(nextMoves))]
+
+	err := game.Move(next)
+	assert.Nil(t, err)
+	game.Undo(next)
+}
+
+fun

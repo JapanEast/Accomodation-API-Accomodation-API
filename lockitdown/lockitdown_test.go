@@ -365,4 +365,9 @@ func TestFakeMinimaxStressTest(t *testing.T) {
 			return
 		}
 		moves := game.PossibleMoves([]GameMove{})
-		for _, move := range 
+		for _, move := range moves {
+			tState := ConvertToTransport(game)
+			err := game.Move(&move)
+			assert.Nil(t, err)
+
+			recur(game, depth-1)

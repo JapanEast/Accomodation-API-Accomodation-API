@@ -371,3 +371,9 @@ func TestFakeMinimaxStressTest(t *testing.T) {
 			assert.Nil(t, err)
 
 			recur(game, depth-1)
+
+			err = game.Undo(&move)
+			undoneTState := ConvertToTransport(game)
+			assert.Nil(t, err)
+
+			assert.Equal(t, tState.GameDef, und

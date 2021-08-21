@@ -376,4 +376,6 @@ func TestFakeMinimaxStressTest(t *testing.T) {
 			undoneTState := ConvertToTransport(game)
 			assert.Nil(t, err)
 
-			assert.Equal(t, tState.GameDef, und
+			assert.Equal(t, tState.GameDef, undoneTState.GameDef)
+			assert.ElementsMatch(t, tState.Players, undoneTState.Players)
+			assert.Equal(t, len(tState.Robots)

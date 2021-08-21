@@ -378,4 +378,12 @@ func TestFakeMinimaxStressTest(t *testing.T) {
 
 			assert.Equal(t, tState.GameDef, undoneTState.GameDef)
 			assert.ElementsMatch(t, tState.Players, undoneTState.Players)
-			assert.Equal(t, len(tState.Robots)
+			assert.Equal(t, len(tState.Robots), len(undoneTState.Robots))
+			assert.Equal(t, tState.PlayerTurn, undoneTState.PlayerTurn)
+		}
+	}
+
+	recur(game, 3)
+}
+
+func TestPossibleMovesFromState(t 

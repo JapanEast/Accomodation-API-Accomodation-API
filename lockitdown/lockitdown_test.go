@@ -386,4 +386,12 @@ func TestFakeMinimaxStressTest(t *testing.T) {
 	recur(game, 3)
 }
 
-func TestPossibleMovesFromState(t 
+func TestPossibleMovesFromState(t *testing.T) {
+	jsonState := `{
+		"gameDef": {
+		  "board": {
+			"HexaBoard": {
+			  "arenaRadius": 4
+			}
+		  },
+		  "max

@@ -394,4 +394,11 @@ func TestPossibleMovesFromState(t *testing.T) {
 			  "arenaRadius": 4
 			}
 		  },
-		  "max
+		  "maxRobotsInStaging": 2,
+		  "winCondition": "Elimination",
+		  "movesPerTurn": 3,
+		  "robotsPerPlayer": 6,
+		  "numPlayers": 2
+		},
+		"players": [
+		  {

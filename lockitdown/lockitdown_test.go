@@ -424,4 +424,17 @@ func TestPossibleMovesFromState(t *testing.T) {
 			  },
 			  "isLocked": false,
 			  "isBeamEnabled": false
-	
+			}
+		  ],
+		  [
+			{
+			  "q": -4,
+			  "r": -1
+			},
+			{
+			  "player": 2,
+			  "dir": {
+				"q": 0,
+				"r": 1
+			  },
+			  "isLocked

@@ -413,4 +413,15 @@ func TestPossibleMovesFromState(t *testing.T) {
 		"robots": [
 		  [
 			{
-			  "
+			  "q": -1,
+			  "r": -4
+			},
+			{
+			  "player": 1,
+			  "dir": {
+				"q": 0,
+				"r": 1
+			  },
+			  "isLocked": false,
+			  "isBeamEnabled": false
+	

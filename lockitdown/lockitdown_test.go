@@ -402,3 +402,15 @@ func TestPossibleMovesFromState(t *testing.T) {
 		},
 		"players": [
 		  {
+			"points": 0,
+			"placedRobots": 2
+		  },
+		  {
+			"points": 0,
+			"placedRobots": 1
+		  }
+		],
+		"robots": [
+		  [
+			{
+			  "

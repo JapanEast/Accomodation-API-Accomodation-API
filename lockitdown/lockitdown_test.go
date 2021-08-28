@@ -458,4 +458,11 @@ func TestPossibleMovesFromState(t *testing.T) {
 		  ]
 		],
 		"playerTurn": 2,
-		"status": "OnGoi
+		"status": "OnGoing",
+		"movesThisTurn": 0,
+		"requiresTieBreak": false
+	  }`
+
+	var tState TransportState
+	json.Unmarshal([]byte(jsonState), &tState)
+	state := 

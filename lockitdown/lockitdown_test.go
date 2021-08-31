@@ -465,4 +465,11 @@ func TestPossibleMovesFromState(t *testing.T) {
 
 	var tState TransportState
 	json.Unmarshal([]byte(jsonState), &tState)
-	state := 
+	state := StateFromTransport(&tState)
+
+	moves := state.PossibleMoves([]GameMove{})
+	fmt.Printf("%v\n", moves)
+}
+
+func BenchmarkPossibleMoves(b *testing.B) {
+	b.Sto

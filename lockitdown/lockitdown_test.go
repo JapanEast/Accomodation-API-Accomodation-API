@@ -472,4 +472,11 @@ func TestPossibleMovesFromState(t *testing.T) {
 }
 
 func BenchmarkPossibleMoves(b *testing.B) {
-	b.Sto
+	b.StopTimer()
+	game := NewGame(TwoPlayerGameDef)
+
+	game.Robots = []Robot{
+		{
+			Position:      Pair{0, -4},
+			Direction:     SE,
+			IsBeamEnabled: true,

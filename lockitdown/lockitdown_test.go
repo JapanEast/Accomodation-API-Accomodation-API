@@ -507,4 +507,10 @@ func BenchmarkPossibleMoves(b *testing.B) {
 			Position:      Pair{-4, 4},
 			Direction:     NE,
 			IsBeamEnabled: true,
-			IsL
+			IsLockedDown:  false,
+			Player:        1,
+		}, {
+			Position:      Pair{-4, 0},
+			Direction:     E,
+			IsBeamEnabled: true,
+			IsLockedDown:  false,

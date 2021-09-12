@@ -514,3 +514,13 @@ func BenchmarkPossibleMoves(b *testing.B) {
 			Direction:     E,
 			IsBeamEnabled: true,
 			IsLockedDown:  false,
+			Player:        1,
+		},
+	}
+	b.StartTimer()
+	for i := 0; i < b.N; i++ {
+		game.PossibleMoves([]GameMove{})
+	}
+}
+
+func TestNilGameMo

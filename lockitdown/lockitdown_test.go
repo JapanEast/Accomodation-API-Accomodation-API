@@ -523,4 +523,12 @@ func BenchmarkPossibleMoves(b *testing.B) {
 	}
 }
 
-func TestNilGameMo
+func TestNilGameMoveFromState(t *testing.T) {
+	jsonState := `{
+		"gameDef": {
+		  "board": {
+			"HexaBoard": {
+			  "arenaRadius": 4
+			}
+		  },
+		  "maxRobotsInSt

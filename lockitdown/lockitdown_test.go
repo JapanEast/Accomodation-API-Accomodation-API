@@ -538,3 +538,16 @@ func TestNilGameMoveFromState(t *testing.T) {
 		  "numPlayers": 2
 		},
 		"players": [
+		  {
+			"points": 0,
+			"placedRobots": 1
+		  },
+		  {
+			"points": 0,
+			"placedRobots": 1
+		  }
+		],
+		"robots": [
+		  [
+			{
+			  

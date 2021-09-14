@@ -574,4 +574,13 @@ func TestNilGameMoveFromState(t *testing.T) {
 				"q": 1,
 				"r": 0
 			  },
-			  "isL
+			  "isLocked": false,
+			  "isBeamEnabled": false
+			}
+		  ]
+		],
+		"playerTurn": 1,
+		"status": "OnGoing",
+		"movesThisTurn": 0,
+		"requiresTieBreak": false
+	

@@ -550,4 +550,16 @@ func TestNilGameMoveFromState(t *testing.T) {
 		"robots": [
 		  [
 			{
-			  
+			  "q": -3,
+			  "r": -2
+			},
+			{
+			  "player": 1,
+			  "dir": {
+				"q": 1,
+				"r": 0
+			  },
+			  "isLocked": false,
+			  "isBeamEnabled": false
+			}
+		 

@@ -594,4 +594,10 @@ func TestNilGameMoveFromState(t *testing.T) {
 		GameMove:     GameMove{},
 		Searcher:     1,
 		Evaluator:    ScoreGameState,
-		MinimaxValue
+		MinimaxValue: 0,
+	}
+
+	move := MinimaxWithIterator(&root, 3)
+	assert.NotNil(t, move)
+	assert.NotNil(t, move.GameMove)
+	assert.NotNil(t, mov

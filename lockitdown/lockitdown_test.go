@@ -583,4 +583,10 @@ func TestNilGameMoveFromState(t *testing.T) {
 		"status": "OnGoing",
 		"movesThisTurn": 0,
 		"requiresTieBreak": false
-	
+	  }`
+
+	var tState TransportState
+	json.Unmarshal([]byte(jsonState), &tState)
+	state := StateFromTransport(&tState)
+
+	root :

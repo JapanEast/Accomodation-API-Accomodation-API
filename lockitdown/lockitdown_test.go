@@ -589,4 +589,9 @@ func TestNilGameMoveFromState(t *testing.T) {
 	json.Unmarshal([]byte(jsonState), &tState)
 	state := StateFromTransport(&tState)
 
-	root :
+	root := MinimaxNode{
+		GameState:    state,
+		GameMove:     GameMove{},
+		Searcher:     1,
+		Evaluator:    ScoreGameState,
+		MinimaxValue

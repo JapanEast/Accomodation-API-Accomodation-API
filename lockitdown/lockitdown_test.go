@@ -600,4 +600,10 @@ func TestNilGameMoveFromState(t *testing.T) {
 	move := MinimaxWithIterator(&root, 3)
 	assert.NotNil(t, move)
 	assert.NotNil(t, move.GameMove)
-	assert.NotNil(t, mov
+	assert.NotNil(t, move.GameMove.Mover)
+}
+
+func TestFromState(t *testing.T) {
+	state := gameFromJson(`{
+		"gameDef": {
+		  "board": {

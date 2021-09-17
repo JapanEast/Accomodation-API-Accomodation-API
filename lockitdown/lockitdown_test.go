@@ -607,3 +607,11 @@ func TestFromState(t *testing.T) {
 	state := gameFromJson(`{
 		"gameDef": {
 		  "board": {
+			"HexaBoard": {
+			  "arenaRadius": 4
+			}
+		  },
+		  "maxRobotsInStaging": 2,
+		  "winCondition": "Elimination",
+		  "movesPerTurn": 3,
+	

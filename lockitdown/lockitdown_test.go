@@ -614,4 +614,14 @@ func TestFromState(t *testing.T) {
 		  "maxRobotsInStaging": 2,
 		  "winCondition": "Elimination",
 		  "movesPerTurn": 3,
-	
+		  "robotsPerPlayer": 6,
+		  "numPlayers": 2
+		},
+		"players": [
+		  {
+			"points": 0,
+			"placedRobots": 2
+		  },
+		  {
+			"points": 0,
+			"placedRo

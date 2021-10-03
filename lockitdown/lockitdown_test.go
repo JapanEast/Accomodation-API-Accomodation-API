@@ -624,4 +624,18 @@ func TestFromState(t *testing.T) {
 		  },
 		  {
 			"points": 0,
-			"placedRo
+			"placedRobots": 2
+		  }
+		],
+		"robots": [
+		  [
+			{
+			  "q": -3,
+			  "r": -2
+			},
+			{
+			  "player": 1,
+			  "dir": {
+				"q": 1,
+				"r": -1
+			  },

@@ -706,4 +706,11 @@ func TestFromState(t *testing.T) {
 	move := MinimaxWithIterator(&root, 3)
 	assert.NotNil(t, move)
 	assert.NotNil(t, move.GameMove)
-	assert.NotNil(t, move.GameMove.Mov
+	assert.NotNil(t, move.GameMove.Mover)
+}
+
+func TestEnterNoTieBreak(t *testing.T) {
+	game := NewGame(TwoPlayerGameDef)
+	game.Robots = []Robot{
+		{
+			Position:    

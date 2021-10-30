@@ -664,3 +664,12 @@ func TestFromState(t *testing.T) {
 			  "r": -5
 			},
 			{
+			  "player": 2,
+			  "dir": {
+				"q": -1,
+				"r": 0
+			  },
+			  "isLocked": false,
+			  "isBeamEnabled": false
+			}
+		  ],

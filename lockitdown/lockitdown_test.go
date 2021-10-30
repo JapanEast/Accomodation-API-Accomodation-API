@@ -695,4 +695,11 @@ func TestFromState(t *testing.T) {
 		"requiresTieBreak": false
 	  }`)
 
-	root 
+	root := MinimaxNode{
+		GameState:    state,
+		GameMove:     GameMove{},
+		Searcher:     1,
+		Evaluator:    ScoreGameState,
+		MinimaxValue: 0,
+	}
+

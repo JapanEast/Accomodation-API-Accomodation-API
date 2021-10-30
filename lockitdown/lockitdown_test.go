@@ -713,4 +713,11 @@ func TestEnterNoTieBreak(t *testing.T) {
 	game := NewGame(TwoPlayerGameDef)
 	game.Robots = []Robot{
 		{
-			Position:    
+			Position:      Pair{-4, 4},
+			Direction:     NE,
+			IsBeamEnabled: true,
+			IsLockedDown:  false,
+			Player:        0,
+		},
+		{
+			Position:      Pa

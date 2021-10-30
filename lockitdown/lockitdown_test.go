@@ -673,3 +673,16 @@ func TestFromState(t *testing.T) {
 			  "isBeamEnabled": false
 			}
 		  ],
+		  [
+			{
+			  "q": 0,
+			  "r": -4
+			},
+			{
+			  "player": 1,
+			  "dir": {
+				"q": 1,
+				"r": 0
+			  },
+			  "isLocked": false,
+			  "isBeam

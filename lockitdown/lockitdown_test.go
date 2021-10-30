@@ -685,4 +685,14 @@ func TestFromState(t *testing.T) {
 				"r": 0
 			  },
 			  "isLocked": false,
-			  "isBeam
+			  "isBeamEnabled": true
+			}
+		  ]
+		],
+		"playerTurn": 2,
+		"status": "OnGoing",
+		"movesThisTurn": 2,
+		"requiresTieBreak": false
+	  }`)
+
+	root 

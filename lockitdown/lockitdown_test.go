@@ -703,3 +703,7 @@ func TestFromState(t *testing.T) {
 		MinimaxValue: 0,
 	}
 
+	move := MinimaxWithIterator(&root, 3)
+	assert.NotNil(t, move)
+	assert.NotNil(t, move.GameMove)
+	assert.NotNil(t, move.GameMove.Mov

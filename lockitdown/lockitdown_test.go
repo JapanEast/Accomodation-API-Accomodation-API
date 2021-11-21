@@ -743,4 +743,14 @@ func TestEnterNoTieBreak(t *testing.T) {
 	}
 	game.PlayerTurn = 1
 
-	move := AdvanceRob
+	move := AdvanceRobot{
+		Robot: Pair{5, -5},
+	}
+	err := game.Move(&GameMove{
+		Player: 1,
+		Mover:  &move,
+	})
+	assert.Nil(t, err)
+}
+
+func TestTu

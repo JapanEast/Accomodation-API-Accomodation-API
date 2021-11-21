@@ -734,4 +734,13 @@ func TestEnterNoTieBreak(t *testing.T) {
 			Player:        1,
 		},
 		{
-			Position:      Pair{
+			Position:      Pair{5, -5},
+			Direction:     SW,
+			IsBeamEnabled: false,
+			IsLockedDown:  false,
+			Player:        1,
+		},
+	}
+	game.PlayerTurn = 1
+
+	move := AdvanceRob

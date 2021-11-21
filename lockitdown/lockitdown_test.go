@@ -753,4 +753,9 @@ func TestEnterNoTieBreak(t *testing.T) {
 	assert.Nil(t, err)
 }
 
-func TestTu
+func TestTurnLocksDownBot(t *testing.T) {
+	game := NewGame(TwoPlayerGameDef)
+	game.Robots = []Robot{
+		{
+			Position:      Pair{-4, 4},
+			Directio

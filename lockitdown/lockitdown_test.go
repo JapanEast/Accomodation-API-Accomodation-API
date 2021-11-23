@@ -758,4 +758,10 @@ func TestTurnLocksDownBot(t *testing.T) {
 	game.Robots = []Robot{
 		{
 			Position:      Pair{-4, 4},
-			Directio
+			Direction:     NE,
+			IsBeamEnabled: true,
+			IsLockedDown:  false,
+			Player:        0,
+		},
+		{
+			Position:      Pair{

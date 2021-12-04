@@ -801,4 +801,9 @@ func TestTurnLocksDownBot(t *testing.T) {
 	err := game.Move(&GameMove{0, &move})
 	assert.Nil(t, err)
 
-	assert.True(t, game.RobotA
+	assert.True(t, game.RobotAt(Pair{-4, 4}).IsLockedDown)
+	assert.False(t, game.RobotAt(Pair{4, -4}).IsLockedDown)
+}
+
+func TestTargeted(t *testing.T) {
+	game := NewGame(

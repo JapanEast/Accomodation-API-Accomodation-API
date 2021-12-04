@@ -806,4 +806,10 @@ func TestTurnLocksDownBot(t *testing.T) {
 }
 
 func TestTargeted(t *testing.T) {
-	game := NewGame(
+	game := NewGame(TwoPlayerGameDef)
+	game.Robots = []Robot{
+		{
+			Position:      Pair{0, 0},
+			Direction:     SW,
+			IsBeamEnabled: true,
+			IsLockedDown:  false,

@@ -795,4 +795,10 @@ func TestTurnLocksDownBot(t *testing.T) {
 
 	move := TurnRobot{
 		Robot:     Pair{-4, 4},
-	
+		Direction: Left,
+	}
+	fmt.Println(game.ToJson())
+	err := game.Move(&GameMove{0, &move})
+	assert.Nil(t, err)
+
+	assert.True(t, game.RobotA

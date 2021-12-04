@@ -779,4 +779,11 @@ func TestTurnLocksDownBot(t *testing.T) {
 		},
 		{
 			Position:      Pair{4, -4},
+			Direction:     SW,
+			IsBeamEnabled: false,
+			IsLockedDown:  true,
+			Player:        1,
+		},
+		{
+			Position:      Pair{4, 0},
 			Direction:   

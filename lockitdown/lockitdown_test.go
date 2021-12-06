@@ -837,4 +837,12 @@ func TestTargeted(t *testing.T) {
 			Player:        0,
 		},
 	}
-	targ
+	targeted := game.taretedRobots()
+	assert.Len(t, targeted, 3)
+
+}
+
+func TestMoveIntoPotentialTieBreak(t *testing.T) {
+	game := gameFromJson(`{
+		"gameDef": {
+		

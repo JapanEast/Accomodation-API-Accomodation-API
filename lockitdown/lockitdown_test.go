@@ -845,4 +845,12 @@ func TestTargeted(t *testing.T) {
 func TestMoveIntoPotentialTieBreak(t *testing.T) {
 	game := gameFromJson(`{
 		"gameDef": {
-		
+		  "board": {
+			"HexaBoard": {
+			  "arenaRadius": 4
+			}
+		  },
+		  "numOfPlayers": 0,
+		  "movesPerTurn": 3,
+		  "robotsPerPlayer": 6,
+		  "winCon

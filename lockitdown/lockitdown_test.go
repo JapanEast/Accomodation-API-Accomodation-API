@@ -827,4 +827,14 @@ func TestTargeted(t *testing.T) {
 			Direction:     SW,
 			IsBeamEnabled: true,
 			IsLockedDown:  false,
-			Player:
+			Player:        1,
+		},
+		{
+			Position:      Pair{0, -4},
+			Direction:     SE,
+			IsBeamEnabled: true,
+			IsLockedDown:  false,
+			Player:        0,
+		},
+	}
+	targ

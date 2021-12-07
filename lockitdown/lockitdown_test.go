@@ -888,4 +888,15 @@ func TestMoveIntoPotentialTieBreak(t *testing.T) {
 			},
 			{
 			  "player": 1,
-			
+			  "dir": {
+				"q": 0,
+				"r": -1
+			  },
+			  "isLocked": false,
+			  "isBeamEnabled": true
+			}
+		  ],
+		  [
+			{
+			  "q": 5,
+			  "r": -

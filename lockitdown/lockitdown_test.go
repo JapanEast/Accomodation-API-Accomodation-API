@@ -853,4 +853,13 @@ func TestMoveIntoPotentialTieBreak(t *testing.T) {
 		  "numOfPlayers": 0,
 		  "movesPerTurn": 3,
 		  "robotsPerPlayer": 6,
-		  "winCon
+		  "winCondition": "Elimination"
+		},
+		"players": [
+		  {
+			"points": 0,
+			"placedRobots": 3
+		  },
+		  {
+			"points": 0,
+			"placedRobots": 

@@ -862,4 +862,19 @@ func TestMoveIntoPotentialTieBreak(t *testing.T) {
 		  },
 		  {
 			"points": 0,
-			"placedRobots": 
+			"placedRobots": 3
+		  }
+		],
+		"robots": [
+		  [
+			{
+			  "q": -3,
+			  "r": 3
+			},
+			{
+			  "player": 1,
+			  "dir": {
+				"q": 1,
+				"r": -1
+			  },
+	

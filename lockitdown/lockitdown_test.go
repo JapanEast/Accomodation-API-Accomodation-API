@@ -913,3 +913,13 @@ func TestMoveIntoPotentialTieBreak(t *testing.T) {
 		  ],
 		  [
 			{
+			  "q": 1,
+			  "r": 3
+			},
+			{
+			  "player": 2,
+			  "dir": {
+				"q": -1,
+				"r": 0
+			  },
+			  "isLocked": false,

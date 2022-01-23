@@ -949,4 +949,14 @@ func TestMoveIntoPotentialTieBreak(t *testing.T) {
 			{
 			  "player": 1,
 			  "dir": {
-				"q": 
+				"q": 0,
+				"r": 1
+			  },
+			  "isLocked": false,
+			  "isBeamEnabled": true
+			}
+		  ]
+		],
+		"playerTurn": 2,
+		"status": "OnGoing",
+		"movesThisTu

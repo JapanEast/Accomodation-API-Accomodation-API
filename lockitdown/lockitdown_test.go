@@ -959,4 +959,11 @@ func TestMoveIntoPotentialTieBreak(t *testing.T) {
 		],
 		"playerTurn": 2,
 		"status": "OnGoing",
-		"movesThisTu
+		"movesThisTurn": 1,
+		"requiresTieBreak": true
+	  }`)
+
+	err := game.Move(&GameMove{
+		Player: 1,
+		Mover: &AdvanceRobot{
+			Robot: Pair{1, 3},

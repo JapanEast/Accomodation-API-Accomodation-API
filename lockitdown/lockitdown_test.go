@@ -976,4 +976,10 @@ func TestMoveIntoPotentialTieBreak(t *testing.T) {
 
 func gameFromJson(jsonState string) *GameState {
 	var tGame TransportState
-	err := json.Unmarshal([]byt
+	err := json.Unmarshal([]byte(jsonState), &tGame)
+	if err != nil {
+		panic(err)
+	}
+
+	return StateFromTransport(&tGame)
+}

@@ -1,4 +1,13 @@
 package lockitdown
 
 import (
-	"conte
+	"context"
+	"fmt"
+	"math"
+	"sync"
+
+	"github.com/rwsargent/boardbots-go/internal/minimax"
+)
+
+type (
+	Evaluator func(*GameState, PlayerPosition) 

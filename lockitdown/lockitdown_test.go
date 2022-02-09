@@ -967,3 +967,13 @@ func TestMoveIntoPotentialTieBreak(t *testing.T) {
 		Player: 1,
 		Mover: &AdvanceRobot{
 			Robot: Pair{1, 3},
+		},
+	})
+
+	assert.Nil(t, err)
+
+}
+
+func gameFromJson(jsonState string) *GameState {
+	var tGame TransportState
+	err := json.Unmarshal([]byt

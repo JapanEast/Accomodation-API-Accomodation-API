@@ -17,4 +17,15 @@ type (
 		GameMove     GameMove
 		Searcher     PlayerPosition
 		Evaluator    Evaluator
-		Minimax
+		MinimaxValue int
+	}
+)
+
+var nodePool = sync.Pool{
+	New: func() any {
+		return &MinimaxNode{}
+	},
+}
+
+func (n *MinimaxNode) Evaluate() {
+	n.MinimaxValue = n.Ev

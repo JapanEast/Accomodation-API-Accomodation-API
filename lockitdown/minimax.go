@@ -28,4 +28,8 @@ var nodePool = sync.Pool{
 }
 
 func (n *MinimaxNode) Evaluate() {
-	n.MinimaxValue = n.Ev
+	n.MinimaxValue = n.Evaluator(n.GameState, n.Searcher)
+}
+
+func (n *MinimaxNode) Children(nodeBuffer []minimax.Node) []minimax.Node {
+	moveBuffer := moveBufferPool.Get(

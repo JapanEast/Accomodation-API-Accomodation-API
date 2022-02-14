@@ -38,4 +38,8 @@ func (n *MinimaxNode) Children(nodeBuffer []minimax.Node) []minimax.Node {
 	nextMoves := n.GameState.PossibleMoves([]GameMove{})
 
 	for _, nextMove := range nextMoves {
-		node 
+		node := nodePool.Get().(*MinimaxNode)
+		node.GameState = n.GameState
+		node.GameMove = nextMove
+		node.Searcher = n.Searcher
+		node.Eva

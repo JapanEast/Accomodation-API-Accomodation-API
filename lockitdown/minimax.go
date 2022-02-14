@@ -42,4 +42,11 @@ func (n *MinimaxNode) Children(nodeBuffer []minimax.Node) []minimax.Node {
 		node.GameState = n.GameState
 		node.GameMove = nextMove
 		node.Searcher = n.Searcher
-		node.Eva
+		node.Evaluator = n.Evaluator
+		nodeBuffer = append(nodeBuffer, node)
+	}
+	return nodeBuffer
+}
+
+func (n *MinimaxNode) ShouldMaximize() bool {
+	return n.Searche

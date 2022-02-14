@@ -32,4 +32,10 @@ func (n *MinimaxNode) Evaluate() {
 }
 
 func (n *MinimaxNode) Children(nodeBuffer []minimax.Node) []minimax.Node {
-	moveBuffer := moveBufferPool.Get(
+	moveBuffer := moveBufferPool.Get().(*[]*GameMove)
+	defer moveBufferPool.Put(moveBuffer)
+
+	nextMoves := n.GameState.PossibleMoves([]GameMove{})
+
+	for _, nextMove := range nextMoves {
+		node 

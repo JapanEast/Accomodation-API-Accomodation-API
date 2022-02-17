@@ -49,4 +49,10 @@ func (n *MinimaxNode) Children(nodeBuffer []minimax.Node) []minimax.Node {
 }
 
 func (n *MinimaxNode) ShouldMaximize() bool {
-	return n.Searche
+	return n.Searcher == n.GameState.PlayerTurn
+}
+
+func (n *MinimaxNode) Move() {
+	err := n.GameState.Move(&n.GameMove)
+	if err != nil {
+		json, _ := n.GameStat

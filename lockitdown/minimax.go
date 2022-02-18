@@ -55,4 +55,13 @@ func (n *MinimaxNode) ShouldMaximize() bool {
 func (n *MinimaxNode) Move() {
 	err := n.GameState.Move(&n.GameMove)
 	if err != nil {
-		json, _ := n.GameStat
+		json, _ := n.GameState.ToJson()
+		panic(fmt.Errorf("%s.\n\n%s", err, json))
+	}
+}
+
+func (n *MinimaxNode) Undo() {
+	n.GameState.Undo(&n.GameMove)
+}
+
+func (n *MinimaxNode

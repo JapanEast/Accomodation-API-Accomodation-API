@@ -72,4 +72,10 @@ func (n *MinimaxNode) SetScore(score int) {
 	n.MinimaxValue = score
 }
 
-func (n *MinimaxNode) Release
+func (n *MinimaxNode) Release() {
+	movePool.Put(&n.GameMove)
+	nodePool.Put(n)
+}
+
+func MinimaxWithIterator(node *MinimaxNode, depth int) MinimaxNode {
+	it := NewMoveIt

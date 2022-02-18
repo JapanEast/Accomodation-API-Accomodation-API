@@ -64,4 +64,12 @@ func (n *MinimaxNode) Undo() {
 	n.GameState.Undo(&n.GameMove)
 }
 
-func (n *MinimaxNode
+func (n *MinimaxNode) Score() int {
+	return n.MinimaxValue
+}
+
+func (n *MinimaxNode) SetScore(score int) {
+	n.MinimaxValue = score
+}
+
+func (n *MinimaxNode) Release

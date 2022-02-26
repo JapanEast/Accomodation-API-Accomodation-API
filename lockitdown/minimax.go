@@ -78,4 +78,11 @@ func (n *MinimaxNode) Release() {
 }
 
 func MinimaxWithIterator(node *MinimaxNode, depth int) MinimaxNode {
-	it := NewMoveIt
+	it := NewMoveIterator(node.GameState)
+	if depth == 0 || !it.Next() {
+		node.Evaluate()
+		return *node
+	}
+
+	var best, child = MinimaxNode{}, MinimaxNode{
+		

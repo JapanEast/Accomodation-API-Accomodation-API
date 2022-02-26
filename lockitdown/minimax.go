@@ -85,4 +85,10 @@ func MinimaxWithIterator(node *MinimaxNode, depth int) MinimaxNode {
 	}
 
 	var best, child = MinimaxNode{}, MinimaxNode{
-		
+		GameState: node.GameState,
+		Evaluator: node.Evaluator,
+		Searcher:  node.Searcher,
+	}
+	// var bestMove GameMove
+
+	var comparator func(int, int

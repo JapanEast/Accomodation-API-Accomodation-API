@@ -91,4 +91,13 @@ func MinimaxWithIterator(node *MinimaxNode, depth int) MinimaxNode {
 	}
 	// var bestMove GameMove
 
-	var comparator func(int, int
+	var comparator func(int, int) bool
+	if node.ShouldMaximize() {
+		best.SetScore(math.MinInt)
+		comparator = gt
+	} else {
+		best.SetScore(math.MaxInt)
+		comparator = lt
+	}
+
+	for 

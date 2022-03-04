@@ -100,4 +100,11 @@ func MinimaxWithIterator(node *MinimaxNode, depth int) MinimaxNode {
 		comparator = lt
 	}
 
-	for 
+	for it.Next() {
+		child.GameMove = *it.Get()
+
+		if child.GameMove.Mover == nil {
+			panic(fmt.Sprintf("depth: %d, parent: %+v", depth, node))
+		}
+
+		child.Mov

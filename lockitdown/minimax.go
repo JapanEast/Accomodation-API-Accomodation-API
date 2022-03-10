@@ -111,4 +111,12 @@ func MinimaxWithIterator(node *MinimaxNode, depth int) MinimaxNode {
 		childsBest := MinimaxWithIterator(&child, depth-1)
 		if comparator(childsBest.Score(), best.Score()) {
 			best = child
-			best.Set
+			best.SetScore(childsBest.Score())
+		}
+		child.Undo()
+
+		if child.GameMove.Mover != best.GameMove.Mover {
+			ReleaseMover(child.GameMove.Mover)
+		}
+	}
+	return bes

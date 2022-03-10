@@ -107,4 +107,8 @@ func MinimaxWithIterator(node *MinimaxNode, depth int) MinimaxNode {
 			panic(fmt.Sprintf("depth: %d, parent: %+v", depth, node))
 		}
 
-		child.Mov
+		child.Move()
+		childsBest := MinimaxWithIterator(&child, depth-1)
+		if comparator(childsBest.Score(), best.Score()) {
+			best = child
+			best.Set

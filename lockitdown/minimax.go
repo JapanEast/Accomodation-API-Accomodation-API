@@ -127,4 +127,14 @@ func AlphaBeta(ctx context.Context, root *MinimaxNode, depth int) MinimaxNode {
 }
 
 func alphaBeta(ctx context.Context, node *MinimaxNode, depth, alpha, beta int) MinimaxNode {
-	it := NewMoveIterator(node.GameSt
+	it := NewMoveIterator(node.GameState)
+	done := ctx.Done()
+	select {
+	case <-done:
+		return *node
+	default:
+		// Continue
+	}
+	if depth == 0 || !it.Next() {
+		node.Evaluate()
+		retu

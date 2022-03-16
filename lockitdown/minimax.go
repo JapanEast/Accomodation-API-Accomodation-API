@@ -123,4 +123,8 @@ func MinimaxWithIterator(node *MinimaxNode, depth int) MinimaxNode {
 }
 
 func AlphaBeta(ctx context.Context, root *MinimaxNode, depth int) MinimaxNode {
-	return alphaBeta(ctx, root, depth, math.MinInt, math.Ma
+	return alphaBeta(ctx, root, depth, math.MinInt, math.MaxInt)
+}
+
+func alphaBeta(ctx context.Context, node *MinimaxNode, depth, alpha, beta int) MinimaxNode {
+	it := NewMoveIterator(node.GameSt

@@ -119,4 +119,8 @@ func MinimaxWithIterator(node *MinimaxNode, depth int) MinimaxNode {
 			ReleaseMover(child.GameMove.Mover)
 		}
 	}
-	return bes
+	return best
+}
+
+func AlphaBeta(ctx context.Context, root *MinimaxNode, depth int) MinimaxNode {
+	return alphaBeta(ctx, root, depth, math.MinInt, math.Ma

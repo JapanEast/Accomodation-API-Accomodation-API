@@ -153,4 +153,11 @@ func alphaBeta(ctx context.Context, node *MinimaxNode, depth, alpha, beta int) M
 
 			if child.GameMove.Mover == nil {
 				state, _ := child.GameState.ToJson()
-				panic(fmt.Sprintf("depth: %d, parent: %+v\nstate: %s", depth, no
+				panic(fmt.Sprintf("depth: %d, parent: %+v\nstate: %s", depth, node, state))
+			}
+
+			child.Move()
+			childsBest := alphaBeta(ctx, &child, depth-1, alpha, beta)
+			child.Undo()
+
+			if childsBest.Score() > best.Scor

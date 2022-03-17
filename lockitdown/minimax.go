@@ -137,4 +137,10 @@ func alphaBeta(ctx context.Context, node *MinimaxNode, depth, alpha, beta int) M
 	}
 	if depth == 0 || !it.Next() {
 		node.Evaluate()
-		retu
+		return *node
+	}
+
+	var best, child = MinimaxNode{}, MinimaxNode{
+		GameState: node.GameState,
+		Evaluator: node.Evaluator,
+		Searcher:  no

@@ -179,4 +179,8 @@ func alphaBeta(ctx context.Context, node *MinimaxNode, depth, alpha, beta int) M
 			child.GameMove = *it.Get()
 
 			if child.GameMove.Mover == nil {
-				p
+				panic(fmt.Sprintf("depth: %d, parent: %+v", depth, node))
+			}
+
+			child.Move()
+			childsBest := alphaBeta(ctx, &child, depth-1, alpha

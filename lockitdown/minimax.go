@@ -160,4 +160,11 @@ func alphaBeta(ctx context.Context, node *MinimaxNode, depth, alpha, beta int) M
 			childsBest := alphaBeta(ctx, &child, depth-1, alpha, beta)
 			child.Undo()
 
-			if childsBest.Score() > best.Scor
+			if childsBest.Score() > best.Score() {
+				best = child
+				best.SetScore(childsBest.Score())
+			}
+			if childsBest.Score() >= beta {
+				break
+			}
+			alpha = 

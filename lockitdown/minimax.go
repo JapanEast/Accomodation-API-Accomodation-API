@@ -151,4 +151,6 @@ func alphaBeta(ctx context.Context, node *MinimaxNode, depth, alpha, beta int) M
 		for it.Next() {
 			child.GameMove = *it.Get()
 
-			i
+			if child.GameMove.Mover == nil {
+				state, _ := child.GameState.ToJson()
+				panic(fmt.Sprintf("depth: %d, parent: %+v\nstate: %s", depth, no

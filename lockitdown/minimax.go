@@ -183,4 +183,11 @@ func alphaBeta(ctx context.Context, node *MinimaxNode, depth, alpha, beta int) M
 			}
 
 			child.Move()
-			childsBest := alphaBeta(ctx, &child, depth-1, alpha
+			childsBest := alphaBeta(ctx, &child, depth-1, alpha, beta)
+			child.Undo()
+
+			if childsBest.Score() < best.Score() {
+				best = child
+				best.SetScore(childsBest.Score())
+			}
+			if childsBest.Sc

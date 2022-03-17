@@ -173,4 +173,10 @@ func alphaBeta(ctx context.Context, node *MinimaxNode, depth, alpha, beta int) M
 				ReleaseMover(child.GameMove.Mover)
 			}
 		}
-	} e
+	} else {
+		best.SetScore(math.MaxInt)
+		for it.Next() {
+			child.GameMove = *it.Get()
+
+			if child.GameMove.Mover == nil {
+				p

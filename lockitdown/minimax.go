@@ -143,4 +143,12 @@ func alphaBeta(ctx context.Context, node *MinimaxNode, depth, alpha, beta int) M
 	var best, child = MinimaxNode{}, MinimaxNode{
 		GameState: node.GameState,
 		Evaluator: node.Evaluator,
-		Searcher:  no
+		Searcher:  node.Searcher,
+	}
+
+	if node.ShouldMaximize() {
+		best.SetScore(math.MinInt)
+		for it.Next() {
+			child.GameMove = *it.Get()
+
+			i

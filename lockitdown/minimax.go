@@ -196,4 +196,20 @@ func alphaBeta(ctx context.Context, node *MinimaxNode, depth, alpha, beta int) M
 			beta = intMin(beta, childsBest.Score())
 
 			if child.GameMove.Mover != best.GameMove.Mover {
-				ReleaseMover(child.Gam
+				ReleaseMover(child.GameMove.Mover)
+			}
+		}
+	}
+
+	return best
+}
+
+func gt(a int, b int) bool {
+	return a > b
+}
+
+func lt(a int, b int) bool {
+	return a < b
+}
+
+func intMax(a, b

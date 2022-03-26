@@ -212,4 +212,16 @@ func lt(a int, b int) bool {
 	return a < b
 }
 
-func intMax(a, b
+func intMax(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func intMin(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}

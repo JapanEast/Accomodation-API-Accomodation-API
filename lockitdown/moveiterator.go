@@ -28,4 +28,8 @@ var (
 	}
 )
 
-func NewMoveIterator(game *GameState
+func NewMoveIterator(game *GameState) *MoveIterator {
+	botCache := make(map[Pair]*Robot)
+	for i := 0; i < len(game.Robots); i++ {
+		robot := &game.Robots[i]
+		botCache[robot.Posit

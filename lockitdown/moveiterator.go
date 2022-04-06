@@ -20,4 +20,12 @@ var (
 	}
 
 	turnPool = sync.Pool{
-		New: func() any { return ne
+		New: func() any { return new(TurnRobot) },
+	}
+
+	placePool = sync.Pool{
+		New: func() any { return new(PlaceRobot) },
+	}
+)
+
+func NewMoveIterator(game *GameState

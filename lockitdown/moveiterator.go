@@ -32,4 +32,10 @@ func NewMoveIterator(game *GameState) *MoveIterator {
 	botCache := make(map[Pair]*Robot)
 	for i := 0; i < len(game.Robots); i++ {
 		robot := &game.Robots[i]
-		botCache[robot.Posit
+		botCache[robot.Position] = &game.Robots[i]
+	}
+	it := &MoveIterator{
+		game:        game,
+		currentMove: new(GameMove),
+		moveBuf:     [3]GameMove{},
+		edgeIndex:

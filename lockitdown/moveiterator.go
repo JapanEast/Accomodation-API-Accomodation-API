@@ -38,4 +38,13 @@ func NewMoveIterator(game *GameState) *MoveIterator {
 		game:        game,
 		currentMove: new(GameMove),
 		moveBuf:     [3]GameMove{},
-		edgeIndex:
+		edgeIndex:   0,
+		moveIdx:     -1,
+		robotIndex:  0,
+		botCache:    botCache,
+	}
+	return it
+}
+
+func (it *MoveIterator) Get() *GameMove {
+	return i

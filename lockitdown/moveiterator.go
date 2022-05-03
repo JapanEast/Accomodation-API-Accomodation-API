@@ -56,3 +56,7 @@ func (it *MoveIterator) Next() bool {
 }
 
 func (it *MoveIterator) findNext() {
+	// Check to see if we have any buffered moves
+	// already calculated
+	for it.moveIdx >= 0 && it.moveIdx < len(it.moveBuf) {
+		ne

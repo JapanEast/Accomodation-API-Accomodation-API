@@ -76,4 +76,10 @@ func (it *MoveIterator) findNext() {
 	for _, bot := range it.game.Robots {
 		if bot.Player == it.game.PlayerTurn && !bot.IsLockedDown {
 			botIdx++
-			if bo
+			if botIdx == it.robotIndex {
+				it.robotIndex++
+				it.moveIdx = 0
+				// Advance bot
+				advancePosition := Pair{
+					Q: bot.Position.Q,
+					R: b

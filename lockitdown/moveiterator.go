@@ -47,4 +47,12 @@ func NewMoveIterator(game *GameState) *MoveIterator {
 }
 
 func (it *MoveIterator) Get() *GameMove {
-	return i
+	return it.currentMove
+}
+
+func (it *MoveIterator) Next() bool {
+	it.findNext()
+	return it.currentMove != nil
+}
+
+func (it *MoveIterator) findNext() {

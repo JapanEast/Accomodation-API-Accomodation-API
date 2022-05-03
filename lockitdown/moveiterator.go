@@ -59,4 +59,13 @@ func (it *MoveIterator) findNext() {
 	// Check to see if we have any buffered moves
 	// already calculated
 	for it.moveIdx >= 0 && it.moveIdx < len(it.moveBuf) {
-		ne
+		next := &it.moveBuf[it.moveIdx]
+		it.currentMove = next
+
+		it.moveIdx++
+		if it.currentMove.Mover != nil {
+			return
+		}
+	}
+
+	// Che

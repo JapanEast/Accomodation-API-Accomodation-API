@@ -68,4 +68,7 @@ func (it *MoveIterator) findNext() {
 		}
 	}
 
-	// Che
+	// Check all owned bots. robotIndex refers to the next bot
+	// to buffer moves for.
+
+	ringSize := it.game.GameDef.Board.HexaBoard.ArenaRadiu

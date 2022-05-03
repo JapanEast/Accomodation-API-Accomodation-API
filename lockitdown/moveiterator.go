@@ -71,4 +71,9 @@ func (it *MoveIterator) findNext() {
 	// Check all owned bots. robotIndex refers to the next bot
 	// to buffer moves for.
 
-	ringSize := it.game.GameDef.Board.HexaBoard.ArenaRadiu
+	ringSize := it.game.GameDef.Board.HexaBoard.ArenaRadius + 1
+	botIdx := -1
+	for _, bot := range it.game.Robots {
+		if bot.Player == it.game.PlayerTurn && !bot.IsLockedDown {
+			botIdx++
+			if bo

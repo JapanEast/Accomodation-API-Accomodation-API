@@ -82,4 +82,9 @@ func (it *MoveIterator) findNext() {
 				// Advance bot
 				advancePosition := Pair{
 					Q: bot.Position.Q,
-					R: b
+					R: bot.Position.R,
+				}
+				advancePosition.Plus(bot.Direction)
+
+				if _, blocked := it.botCache[advancePosition]; !blocked &&
+	

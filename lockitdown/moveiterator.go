@@ -87,4 +87,6 @@ func (it *MoveIterator) findNext() {
 				advancePosition.Plus(bot.Direction)
 
 				if _, blocked := it.botCache[advancePosition]; !blocked &&
-	
+					inBounds(it.game.GameDef.Board.HexaBoard.ArenaRadius+1, advancePosition) {
+					advance := advancePool.Get().(*AdvanceRobot)
+				

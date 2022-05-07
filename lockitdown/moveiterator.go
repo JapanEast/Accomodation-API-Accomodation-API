@@ -93,4 +93,8 @@ func (it *MoveIterator) findNext() {
 					it.moveBuf[0].Mover = advance
 					it.moveBuf[0].Player = it.game.PlayerTurn
 				} else {
-					it.moveBuf[0].M
+					it.moveBuf[0].Mover = nil
+				}
+
+				addTurn(&it.moveBuf[1], Left, ringSize, bot, it.game)
+				addTurn(&it.moveBuf[2], Right, ringSize, bot, it.gam

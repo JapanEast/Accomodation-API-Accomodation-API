@@ -101,4 +101,10 @@ func (it *MoveIterator) findNext() {
 
 				// Find the first non-nil move
 				for it.moveIdx < len(it.moveBuf) && it.moveBuf[it.moveIdx].Mover == nil {
-					it.moveI
+					it.moveIdx++
+				}
+				if it.moveIdx >= len(it.moveBuf) {
+					// no moves for this robot
+					continue
+				}
+				it.currentMove = &it.move

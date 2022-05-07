@@ -97,4 +97,8 @@ func (it *MoveIterator) findNext() {
 				}
 
 				addTurn(&it.moveBuf[1], Left, ringSize, bot, it.game)
-				addTurn(&it.moveBuf[2], Right, ringSize, bot, it.gam
+				addTurn(&it.moveBuf[2], Right, ringSize, bot, it.game)
+
+				// Find the first non-nil move
+				for it.moveIdx < len(it.moveBuf) && it.moveBuf[it.moveIdx].Mover == nil {
+					it.moveI

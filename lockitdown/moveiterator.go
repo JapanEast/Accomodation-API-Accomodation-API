@@ -117,4 +117,8 @@ func (it *MoveIterator) findNext() {
 	if it.game.MovesThisTurn == 3 && it.game.playerBotsInCorridor() < 2 {
 		edges := edges(it.game.GameDef.Board.HexaBoard.ArenaRadius + 1)
 		for it.edgeIndex < len(edges) {
-			edge := edges[it.edge
+			edge := edges[it.edgeIndex]
+			it.edgeIndex++
+			if _, blocked := it.botCache[edge.position]; !blocked {
+				place := placePool.Get().(*PlaceRobot)
+				place.Robot = edge.pos

@@ -107,4 +107,11 @@ func (it *MoveIterator) findNext() {
 					// no moves for this robot
 					continue
 				}
-				it.currentMove = &it.move
+				it.currentMove = &it.moveBuf[it.moveIdx]
+				it.moveIdx++ // advance cursor for prep next
+				return
+			}
+		}
+	}
+
+	if it.game.MovesThisTurn == 3 && it.game.pla

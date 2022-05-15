@@ -121,4 +121,11 @@ func (it *MoveIterator) findNext() {
 			it.edgeIndex++
 			if _, blocked := it.botCache[edge.position]; !blocked {
 				place := placePool.Get().(*PlaceRobot)
-				place.Robot = edge.pos
+				place.Robot = edge.position
+				place.Direction = edge.direction
+				it.currentMove.Mover = place
+				it.currentMove.Player = it.game.PlayerTurn
+				return
+			}
+		}
+	

@@ -128,4 +128,10 @@ func (it *MoveIterator) findNext() {
 				return
 			}
 		}
-	
+	}
+	movePool.Put(it.currentMove)
+	it.currentMove = nil
+	return
+}
+
+func addTurn(gameMove *GameMove, direction TurnDirection, arenaRadius in

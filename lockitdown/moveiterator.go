@@ -134,4 +134,9 @@ func (it *MoveIterator) findNext() {
 	return
 }
 
-func addTurn(gameMove *GameMove, direction TurnDirection, arenaRadius in
+func addTurn(gameMove *GameMove, direction TurnDirection, arenaRadius int, bot Robot, g *GameState) {
+	turn := bot.Direction.Copy()
+	turn.Rotate(direction)
+
+	pos := bot.Position.Copy()
+	pos.Plus(turn)

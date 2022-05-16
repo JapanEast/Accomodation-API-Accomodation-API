@@ -140,3 +140,9 @@ func addTurn(gameMove *GameMove, direction TurnDirection, arenaRadius int, bot R
 
 	pos := bot.Position.Copy()
 	pos.Plus(turn)
+
+	if inBounds(arenaRadius, pos) {
+		turn := turnPool.Get().(*TurnRobot)
+		turn.Direction = direction
+		turn.Robot = bot.Position
+		gameMove.Mov

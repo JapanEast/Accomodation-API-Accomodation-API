@@ -9,4 +9,11 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestIteratorThirdPly(t 
+func TestIteratorThirdPly(t *testing.T) {
+
+	gameState := NewGame(TwoPlayerGameDef)
+
+	gameState.Robots = []Robot{
+		{
+			Position:      Pair{-5, 0},
+			Direction:

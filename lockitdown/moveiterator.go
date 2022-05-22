@@ -153,4 +153,12 @@ func addTurn(gameMove *GameMove, direction TurnDirection, arenaRadius int, bot R
 }
 
 func ReleaseMover(mover Mover) {
-	switch v :=
+	switch v := mover.(type) {
+	case *AdvanceRobot:
+		advancePool.Put(v)
+	case *TurnRobot:
+		turnPool.Put(v)
+	case *PlaceRobot:
+		placePool.Put(v)
+	}
+}

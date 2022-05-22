@@ -145,4 +145,12 @@ func addTurn(gameMove *GameMove, direction TurnDirection, arenaRadius int, bot R
 		turn := turnPool.Get().(*TurnRobot)
 		turn.Direction = direction
 		turn.Robot = bot.Position
-		gameMove.Mov
+		gameMove.Mover = turn
+		gameMove.Player = g.PlayerTurn
+	} else {
+		gameMove.Mover = nil
+	}
+}
+
+func ReleaseMover(mover Mover) {
+	switch v :=

@@ -23,4 +23,10 @@ func TestIteratorThirdPly(t *testing.T) {
 		},
 		{
 			Position:      Pair{5, 0},
-			Dire
+			Direction:     W,
+			IsBeamEnabled: false,
+			IsLockedDown:  false,
+			Player:        0,
+		},
+		{
+			Position:      Pair{-5, 5

@@ -16,4 +16,11 @@ func TestIteratorThirdPly(t *testing.T) {
 	gameState.Robots = []Robot{
 		{
 			Position:      Pair{-5, 0},
-			Direction:
+			Direction:     E,
+			IsBeamEnabled: false,
+			IsLockedDown:  false,
+			Player:        0,
+		},
+		{
+			Position:      Pair{5, 0},
+			Dire

@@ -43,4 +43,11 @@ func TestIteratorThirdPly(t *testing.T) {
 			Player:        1,
 		},
 	}
-	gameState.PlayerTurn = PlayerPositi
+	gameState.PlayerTurn = PlayerPosition(0)
+
+	it := NewMoveIterator(gameState)
+
+	for i := 0; i < 6; i++ {
+		assert.True(t, it.Next())
+		m := it.Get()
+		assert.N

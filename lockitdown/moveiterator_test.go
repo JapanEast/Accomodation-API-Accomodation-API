@@ -36,4 +36,11 @@ func TestIteratorThirdPly(t *testing.T) {
 			Player:        1,
 		},
 		{
-			Position:      Pair{5
+			Position:      Pair{5, -5},
+			Direction:     SW,
+			IsBeamEnabled: false,
+			IsLockedDown:  false,
+			Player:        1,
+		},
+	}
+	gameState.PlayerTurn = PlayerPositi

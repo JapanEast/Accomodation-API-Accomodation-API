@@ -63,4 +63,10 @@ func TestNewGameIterator(t *testing.T) {
 
 	it := NewMoveIterator(game)
 
-	for i := 0; i < (6*3)+(6*4*4)
+	for i := 0; i < (6*3)+(6*4*4); i++ {
+		assert.True(t, it.Next())
+		m := it.Get()
+		assert.NotNil(t, m)
+		assert.NotNilf(t, m.Mover, "failed on %d iteration", i)
+	}
+	assert.False

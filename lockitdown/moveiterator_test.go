@@ -57,4 +57,10 @@ func TestIteratorThirdPly(t *testing.T) {
 	assert.False(t, it.Next())
 }
 
-func Te
+func TestNewGameIterator(t *testing.T) {
+
+	game := NewGame(TwoPlayerGameDef)
+
+	it := NewMoveIterator(game)
+
+	for i := 0; i < (6*3)+(6*4*4)

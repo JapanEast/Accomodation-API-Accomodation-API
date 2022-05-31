@@ -50,4 +50,11 @@ func TestIteratorThirdPly(t *testing.T) {
 	for i := 0; i < 6; i++ {
 		assert.True(t, it.Next())
 		m := it.Get()
-		assert.N
+		assert.NotNil(t, m)
+		assert.NotNilf(t, m.Mover, "failed on %d iteration", i)
+	}
+
+	assert.False(t, it.Next())
+}
+
+func Te

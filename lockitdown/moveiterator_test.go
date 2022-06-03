@@ -69,4 +69,11 @@ func TestNewGameIterator(t *testing.T) {
 		assert.NotNil(t, m)
 		assert.NotNilf(t, m.Mover, "failed on %d iteration", i)
 	}
-	assert.False
+	assert.False(t, it.Next())
+}
+
+func TestFullMoveIterator(t *testing.T) {
+	game := NewGame(TwoPlayerGameDef)
+	it := NewMoveIterator(game)
+
+	game.Robots 

@@ -76,4 +76,13 @@ func TestFullMoveIterator(t *testing.T) {
 	game := NewGame(TwoPlayerGameDef)
 	it := NewMoveIterator(game)
 
-	game.Robots 
+	game.Robots = []Robot{
+		{
+			Position:      Pair{-4, 0},
+			Direction:     E,
+			IsBeamEnabled: false,
+			IsLockedDown:  false,
+			Player:        0,
+		},
+		{
+			Position: 

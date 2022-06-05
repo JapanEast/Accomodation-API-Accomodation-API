@@ -85,4 +85,12 @@ func TestFullMoveIterator(t *testing.T) {
 			Player:        0,
 		},
 		{
-			Position: 
+			Position:      Pair{4, 0},
+			Direction:     W,
+			IsBeamEnabled: false,
+			IsLockedDown:  false,
+			Player:        1,
+		},
+	}
+
+	for i := 0; i < (6*3)+(6*4*

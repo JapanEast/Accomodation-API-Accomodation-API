@@ -93,4 +93,8 @@ func TestFullMoveIterator(t *testing.T) {
 		},
 	}
 
-	for i := 0; i < (6*3)+(6*4*
+	for i := 0; i < (6*3)+(6*4*4)+3; i++ {
+		assert.Truef(t, it.Next(), "failed on %d iteration", i)
+		m := it.Get()
+		assert.NotNil(t, m)
+		assert.Not

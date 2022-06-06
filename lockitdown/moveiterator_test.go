@@ -97,4 +97,12 @@ func TestFullMoveIterator(t *testing.T) {
 		assert.Truef(t, it.Next(), "failed on %d iteration", i)
 		m := it.Get()
 		assert.NotNil(t, m)
-		assert.Not
+		assert.NotNilf(t, m.Mover, "failed on %d iteration", i)
+	}
+
+	assert.False(t, it.Next())
+}
+
+func TestIteratorFromState(t *testing.T) {
+
+	ga

@@ -113,4 +113,11 @@ func TestIteratorFromState(t *testing.T) {
 			}
 		  },
 		  "maxRobotsInStaging": 2,
-		  "winCon
+		  "winCondition": "Elimination",
+		  "movesPerTurn": 3,
+		  "robotsPerPlayer": 6,
+		  "numPlayers": 2
+		},
+		"players": [
+		  {
+			"points": 0,

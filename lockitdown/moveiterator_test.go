@@ -105,4 +105,12 @@ func TestFullMoveIterator(t *testing.T) {
 
 func TestIteratorFromState(t *testing.T) {
 
-	ga
+	gamjson := `{
+		"gameDef": {
+		  "board": {
+			"HexaBoard": {
+			  "arenaRadius": 4
+			}
+		  },
+		  "maxRobotsInStaging": 2,
+		  "winCon

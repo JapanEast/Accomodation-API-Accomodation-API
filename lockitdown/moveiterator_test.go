@@ -141,4 +141,17 @@ func TestIteratorFromState(t *testing.T) {
 				"r": -1
 			  },
 			  "isLocked": false,
-			  "isBeamEnabled": 
+			  "isBeamEnabled": false
+			}
+		  ],
+		  [
+			{
+			  "q": 2,
+			  "r": -5
+			},
+			{
+			  "player": 2,
+			  "dir": {
+				"q": 1,
+				"r": 0
+			  },

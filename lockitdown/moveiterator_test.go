@@ -197,3 +197,10 @@ func TestIteratorFromState(t *testing.T) {
 	  }`
 
 	var tGame TransportState
+
+	err := json.Unmarshal([]byte(gamjson), &tGame)
+	assert.Nil(t, err)
+
+	state := StateFromTransport(&tGame)
+
+	it := NewMoveIterator(state)

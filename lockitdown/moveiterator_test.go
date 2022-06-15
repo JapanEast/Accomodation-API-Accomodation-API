@@ -204,3 +204,14 @@ func TestIteratorFromState(t *testing.T) {
 	state := StateFromTransport(&tGame)
 
 	it := NewMoveIterator(state)
+
+	i := 0
+	for it.Next() {
+		m := it.Get()
+		assert.NotNil(t, m)
+		assert.NotNilf(t, m.Mover, "iter: %d\n", i)
+		i++
+	}
+}
+
+func

@@ -188,3 +188,12 @@ func TestIteratorFromState(t *testing.T) {
 			  "isLocked": false,
 			  "isBeamEnabled": true
 			}
+		  ]
+		],
+		"playerTurn": 2,
+		"status": "OnGoing",
+		"movesThisTurn": 2,
+		"requiresTieBreak": false
+	  }`
+
+	var tGame TransportState

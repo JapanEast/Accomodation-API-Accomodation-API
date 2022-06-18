@@ -214,4 +214,10 @@ func TestIteratorFromState(t *testing.T) {
 	}
 }
 
-func
+func TestWrongMoveFromState(t *testing.T) {
+	state := gameFromJson(`{
+		"gameDef": {
+		  "board": {
+			"HexaBoard": {
+			  "arenaRadius": 4
+			}

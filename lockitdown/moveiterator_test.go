@@ -221,3 +221,10 @@ func TestWrongMoveFromState(t *testing.T) {
 			"HexaBoard": {
 			  "arenaRadius": 4
 			}
+		  },
+		  "maxRobotsInStaging": 2,
+		  "winCondition": "Elimination",
+		  "movesPerTurn": 3,
+		  "robotsPerPlayer": 6,
+		  "numPlayers": 2
+		

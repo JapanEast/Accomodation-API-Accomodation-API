@@ -238,4 +238,16 @@ func TestWrongMoveFromState(t *testing.T) {
 			"placedRobots": 2
 		  }
 		],
-		"robots": 
+		"robots": [
+		  [
+			{
+			  "q": -5,
+			  "r": 5
+			},
+			{
+			  "player": 1,
+			  "dir": {
+				"q": 1,
+				"r": -1
+			  },
+			  "isLocked": false,

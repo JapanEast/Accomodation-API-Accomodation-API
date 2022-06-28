@@ -263,4 +263,17 @@ func TestWrongMoveFromState(t *testing.T) {
 			  "player": 2,
 			  "dir": {
 				"q": -1,
-		
+				"r": 1
+			  },
+			  "isLocked": false,
+			  "isBeamEnabled": false
+			}
+		  ],
+		  [
+			{
+			  "q": 0,
+			  "r": 5
+			},
+			{
+			  "player": 2,
+			  "di

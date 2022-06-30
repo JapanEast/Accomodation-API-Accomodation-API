@@ -313,4 +313,9 @@ func TestWrongMoveFromState(t *testing.T) {
 		Evaluator:    ScoreGameState,
 		MinimaxValue: 0,
 	}
-	move := AlphaBeta(context.Back
+	move := AlphaBeta(context.Background(), &root, 9)
+
+	fmt.Printf("%+v\n", move)
+	err := state.Move(&move.GameMove)
+	assert.Nil(t, err)
+}

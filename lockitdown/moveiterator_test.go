@@ -300,4 +300,11 @@ func TestWrongMoveFromState(t *testing.T) {
 			}
 		  ]
 		],
-		"play
+		"playerTurn": 2,
+		"status": "OnGoing",
+		"movesThisTurn": 1,
+		"requiresTieBreak": false
+	  }`)
+
+	root := MinimaxNode{
+		GameState:  

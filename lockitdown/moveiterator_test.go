@@ -307,4 +307,10 @@ func TestWrongMoveFromState(t *testing.T) {
 	  }`)
 
 	root := MinimaxNode{
-		GameState:  
+		GameState:    state,
+		GameMove:     GameMove{},
+		Searcher:     1,
+		Evaluator:    ScoreGameState,
+		MinimaxValue: 0,
+	}
+	move := AlphaBeta(context.Back

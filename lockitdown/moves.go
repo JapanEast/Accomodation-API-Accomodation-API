@@ -29,3 +29,12 @@ type (
 	InnerTurnRobotT struct {
 		Side string `json:"side"`
 	}
+	TurnRobotT struct {
+		Turn InnerTurnRobotT `json:"Turn"`
+	}
+
+	PlaceRobot struct {
+		Robot, Direction Pair
+	}
+
+	InnerPl

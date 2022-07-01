@@ -21,3 +21,11 @@ type (
 		Action   any  `json:"action"`
 	}
 
+	TurnRobot struct {
+		Robot     Pair
+		Direction TurnDirection
+	}
+
+	InnerTurnRobotT struct {
+		Side string `json:"side"`
+	}

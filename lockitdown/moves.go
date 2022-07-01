@@ -12,3 +12,12 @@ type (
 	}
 
 	GameMove struct {
+		Player PlayerPosition
+		Mover
+	}
+
+	BoardbotsMove struct {
+		Position Pair `json:"pos"`
+		Action   any  `json:"action"`
+	}
+

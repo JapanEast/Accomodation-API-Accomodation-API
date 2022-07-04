@@ -37,4 +37,17 @@ type (
 		Robot, Direction Pair
 	}
 
-	InnerPl
+	InnerPlaceRobotT struct {
+		Dir Pair `json:"dir"`
+	}
+
+	PlaceRobotT struct {
+		PlaceRobot InnerPlaceRobotT
+	}
+
+	AdvanceRobot struct {
+		Robot Pair
+	}
+)
+
+fu

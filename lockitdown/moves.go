@@ -50,4 +50,10 @@ type (
 	}
 )
 
-fu
+func NewMove(m Mover, p PlayerPosition) *GameMove {
+	return &GameMove{
+		Player: p,
+		Mover:  m,
+	}
+}
+func (m *GameMove) Move(state *

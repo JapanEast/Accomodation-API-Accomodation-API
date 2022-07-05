@@ -60,4 +60,9 @@ func (m *GameMove) Move(state *GameState) error {
 	return m.Mover.Move(state, m.Player)
 }
 
-func (m *AdvanceRobot) Move(game *GameState, player PlayerPosition) err
+func (m *AdvanceRobot) Move(game *GameState, player PlayerPosition) error {
+	robot := game.RobotAt(m.Robot)
+	if robot == nil {
+		return fmt.Errorf("no robot at location %v", m.Robot)
+	}
+	if robot.IsLockedDown {

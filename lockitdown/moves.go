@@ -56,4 +56,8 @@ func NewMove(m Mover, p PlayerPosition) *GameMove {
 		Mover:  m,
 	}
 }
-func (m *GameMove) Move(state *
+func (m *GameMove) Move(state *GameState) error {
+	return m.Mover.Move(state, m.Player)
+}
+
+func (m *AdvanceRobot) Move(game *GameState, player PlayerPosition) err

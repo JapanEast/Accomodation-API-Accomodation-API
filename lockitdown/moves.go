@@ -73,4 +73,8 @@ func (m *AdvanceRobot) Move(game *GameState, player PlayerPosition) error {
 	}
 	advanceSpot := robot.Position.Copy()
 	advanceSpot.Plus(robot.Direction)
-	if block := game.RobotAt(advanceSpot);
+	if block := game.RobotAt(advanceSpot); block != nil {
+		// Undo move
+		return errors.New("cannot advance, another bot in the way")
+	}
+	robot.Position.Plus(ro

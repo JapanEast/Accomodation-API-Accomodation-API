@@ -66,3 +66,7 @@ func (m *AdvanceRobot) Move(game *GameState, player PlayerPosition) error {
 		return fmt.Errorf("no robot at location %v", m.Robot)
 	}
 	if robot.IsLockedDown {
+		return errors.New("cannot advance, robot is locked down")
+	}
+	if robot.Player != player {
+		return fmt.Errorf("cannot move %s, it belongs to Pla

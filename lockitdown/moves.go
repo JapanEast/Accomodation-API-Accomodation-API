@@ -77,4 +77,11 @@ func (m *AdvanceRobot) Move(game *GameState, player PlayerPosition) error {
 		// Undo move
 		return errors.New("cannot advance, another bot in the way")
 	}
-	robot.Position.Plus(ro
+	robot.Position.Plus(robot.Direction)
+
+	game.MovesThisTurn -= 1
+
+	// // Evaluate state before turning on beam
+	game.resolveMove()
+
+	robot.IsBeamEnabled = !ga

@@ -97,4 +97,9 @@ func (m AdvanceRobot) ToTransport() BoardbotsMove {
 }
 
 func (m AdvanceRobot) String() string {
-	return fmt.Sprintf("Move %s", m.Ro
+	return fmt.Sprintf("Move %s", m.Robot.String())
+}
+
+func (m *PlaceRobot) Move(game *GameState, player PlayerPosition) error {
+	if game.MovesThisTurn != 3 {
+		return errors.New(

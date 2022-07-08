@@ -89,4 +89,12 @@ func (m *AdvanceRobot) Move(game *GameState, player PlayerPosition) error {
 }
 
 func (m AdvanceRobot) ToTransport() BoardbotsMove {
-	return
+	return BoardbotsMove{
+		Position: m.Robot,
+		Action:   "Advance",
+	}
+
+}
+
+func (m AdvanceRobot) String() string {
+	return fmt.Sprintf("Move %s", m.Ro

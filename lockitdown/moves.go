@@ -84,4 +84,9 @@ func (m *AdvanceRobot) Move(game *GameState, player PlayerPosition) error {
 	// // Evaluate state before turning on beam
 	game.resolveMove()
 
-	robot.IsBeamEnabled = !ga
+	robot.IsBeamEnabled = !game.isCorridor(robot.Position) && !robot.IsLockedDown
+	return nil
+}
+
+func (m AdvanceRobot) ToTransport() BoardbotsMove {
+	return

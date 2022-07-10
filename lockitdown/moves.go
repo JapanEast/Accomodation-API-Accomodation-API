@@ -108,4 +108,12 @@ func (m *PlaceRobot) Move(game *GameState, player PlayerPosition) error {
 		return errors.New("must place robot in corridor")
 	}
 
-	rob
+	robotsInCorridor := 0
+	for _, robot := range game.Robots {
+		if robot.Player == player {
+			if game.isCorridor(robot.Position) {
+				robotsInCorridor++
+			}
+		}
+	}
+	if robot

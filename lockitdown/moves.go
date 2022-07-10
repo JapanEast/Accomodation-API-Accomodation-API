@@ -121,4 +121,11 @@ func (m *PlaceRobot) Move(game *GameState, player PlayerPosition) error {
 	}
 
 	game.Robots = append(game.Robots, Robot{
-		Position
+		Position:      m.Robot,
+		Direction:     m.Direction,
+		IsBeamEnabled: true,
+		IsLockedDown:  false,
+		Player:        player,
+	})
+
+	game.Mo

@@ -102,4 +102,10 @@ func (m AdvanceRobot) String() string {
 
 func (m *PlaceRobot) Move(game *GameState, player PlayerPosition) error {
 	if game.MovesThisTurn != 3 {
-		return errors.New(
+		return errors.New("can only place a robot on your first action of the turn")
+	}
+	if !game.isCorridor(m.Robot) {
+		return errors.New("must place robot in corridor")
+	}
+
+	rob

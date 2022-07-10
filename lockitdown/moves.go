@@ -116,4 +116,9 @@ func (m *PlaceRobot) Move(game *GameState, player PlayerPosition) error {
 			}
 		}
 	}
-	if robot
+	if robotsInCorridor > 1 {
+		return errors.New("can only have two robots in the corridor at a time")
+	}
+
+	game.Robots = append(game.Robots, Robot{
+		Position

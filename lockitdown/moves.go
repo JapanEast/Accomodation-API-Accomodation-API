@@ -128,4 +128,11 @@ func (m *PlaceRobot) Move(game *GameState, player PlayerPosition) error {
 		Player:        player,
 	})
 
-	game.Mo
+	game.MovesThisTurn = 0
+	game.Players[player].PlacedRobots += 1
+
+	return nil
+}
+
+func (m PlaceRobot) String() string {
+	return fmt.Sprintf("Place 

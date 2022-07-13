@@ -140,4 +140,13 @@ func (m PlaceRobot) String() string {
 
 func (m PlaceRobot) ToTransport() BoardbotsMove {
 	return BoardbotsMove{
-	
+		Position: m.Robot,
+		Action: PlaceRobotT{
+			PlaceRobot: InnerPlaceRobotT{
+				Dir: m.Direction,
+			},
+		},
+	}
+}
+
+func (m *TurnRo

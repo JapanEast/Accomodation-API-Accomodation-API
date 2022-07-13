@@ -149,4 +149,7 @@ func (m PlaceRobot) ToTransport() BoardbotsMove {
 	}
 }
 
-func (m *TurnRo
+func (m *TurnRobot) Move(game *GameState, player PlayerPosition) error {
+	var robot *Robot
+	if robot = game.RobotAt(m.Robot); robot == nil {
+		return fmt

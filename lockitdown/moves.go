@@ -135,4 +135,9 @@ func (m *PlaceRobot) Move(game *GameState, player PlayerPosition) error {
 }
 
 func (m PlaceRobot) String() string {
-	return fmt.Sprintf("Place 
+	return fmt.Sprintf("Place %s: dir: %s", m.Robot.String(), m.Direction.String())
+}
+
+func (m PlaceRobot) ToTransport() BoardbotsMove {
+	return BoardbotsMove{
+	

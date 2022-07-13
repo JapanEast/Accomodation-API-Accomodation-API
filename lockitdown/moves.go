@@ -152,4 +152,7 @@ func (m PlaceRobot) ToTransport() BoardbotsMove {
 func (m *TurnRobot) Move(game *GameState, player PlayerPosition) error {
 	var robot *Robot
 	if robot = game.RobotAt(m.Robot); robot == nil {
-		return fmt
+		return fmt.Errorf("cannot find robot %v", m.Robot)
+	}
+	if robot.Player != player {
+		return fmt.Errorf("cannot move %s, it belongs to Player %d",

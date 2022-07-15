@@ -155,4 +155,9 @@ func (m *TurnRobot) Move(game *GameState, player PlayerPosition) error {
 		return fmt.Errorf("cannot find robot %v", m.Robot)
 	}
 	if robot.Player != player {
-		return fmt.Errorf("cannot move %s, it belongs to Player %d",
+		return fmt.Errorf("cannot move %s, it belongs to Player %d", m.Robot.String(), robot.Player)
+	}
+	robot.IsBeamEnabled = false
+	game.activeBot = robot
+	robot.Direction.Rotate(m.Direction)
+	game.resol

@@ -169,4 +169,12 @@ func (m *TurnRobot) Move(game *GameState, player PlayerPosition) error {
 	return nil
 }
 
-func (m TurnRobot) ToTrans
+func (m TurnRobot) ToTransport() BoardbotsMove {
+	var turn string
+	if m.Direction == Left {
+		turn = "Left"
+	} else {
+		turn = "Right"
+	}
+
+	retu

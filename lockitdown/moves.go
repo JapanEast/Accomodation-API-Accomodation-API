@@ -160,4 +160,13 @@ func (m *TurnRobot) Move(game *GameState, player PlayerPosition) error {
 	robot.IsBeamEnabled = false
 	game.activeBot = robot
 	robot.Direction.Rotate(m.Direction)
-	game.resol
+	game.resolveMove()
+
+	robot.IsBeamEnabled = !robot.IsLockedDown
+	game.activeBot = nil
+
+	game.MovesThisTurn -= 1
+	return nil
+}
+
+func (m TurnRobot) ToTrans

@@ -177,4 +177,14 @@ func (m TurnRobot) ToTransport() BoardbotsMove {
 		turn = "Right"
 	}
 
-	retu
+	return BoardbotsMove{
+		Position: m.Robot,
+		Action: TurnRobotT{
+			Turn: InnerTurnRobotT{
+				Side: turn,
+			},
+		},
+	}
+}
+
+func (m TurnRobot)

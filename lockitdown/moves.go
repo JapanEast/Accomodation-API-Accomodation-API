@@ -187,4 +187,11 @@ func (m TurnRobot) ToTransport() BoardbotsMove {
 	}
 }
 
-func (m TurnRobot)
+func (m TurnRobot) String() string {
+	var turn string
+	if m.Direction == Left {
+		turn = "Left"
+	} else {
+		turn = "Right"
+	}
+	return fmt.Spr

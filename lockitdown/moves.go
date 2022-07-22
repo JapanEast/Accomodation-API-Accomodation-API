@@ -194,4 +194,5 @@ func (m TurnRobot) String() string {
 	} else {
 		turn = "Right"
 	}
-	return fmt.Spr
+	return fmt.Sprintf("Turn %s %s", m.Robot.String(), turn)
+}

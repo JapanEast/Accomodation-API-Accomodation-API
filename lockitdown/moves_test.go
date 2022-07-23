@@ -24,4 +24,13 @@ func TestTurn(t *testing.T) {
 		// Roll it back!
 
 		{Right,
-			Pair{-1, 
+			Pair{-1, 1}},
+		{Right,
+			Pair{-1, 0}},
+		{Right,
+			Pair{0, -1}},
+	}
+
+	direction := Pair{1, -1}
+	for _, tc := range testcases {
+		directio

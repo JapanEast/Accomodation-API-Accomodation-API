@@ -33,4 +33,10 @@ func TestTurn(t *testing.T) {
 
 	direction := Pair{1, -1}
 	for _, tc := range testcases {
-		directio
+		direction.Rotate(tc.direction)
+		assert.EqualValues(t, tc.expected, direction, "Wrong turn!")
+	}
+}
+
+func TestAdvance(t *testing.T) {
+	stat

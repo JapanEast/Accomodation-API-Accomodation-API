@@ -39,4 +39,8 @@ func TestTurn(t *testing.T) {
 }
 
 func TestAdvance(t *testing.T) {
-	stat
+	state := NewGame(TwoPlayerGameDef)
+	state.Robots = []Robot{
+		{
+			Position:      Pair{2, 3},
+			Direction:    

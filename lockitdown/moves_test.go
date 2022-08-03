@@ -50,4 +50,11 @@ func TestAdvance(t *testing.T) {
 		},
 	}
 	move := NewMove(&AdvanceRobot{
-		Robot: Pair{2, 
+		Robot: Pair{2, 3},
+	}, 0)
+	err := state.Move(move)
+	assert.Nil(t, err)
+	assert.Equal(t, 2, state.MovesThisTurn)
+
+	err = state.Undo(move)
+

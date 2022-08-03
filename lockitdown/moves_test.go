@@ -58,3 +58,8 @@ func TestAdvance(t *testing.T) {
 
 	err = state.Undo(move)
 
+	assert.Nil(t, err)
+	assert.Equal(t, 3, state.MovesThisTurn)
+	bot := state.RobotAt(Pair{2, 3})
+	assert.True(t, bot != nil)
+	asse

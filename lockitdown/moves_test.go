@@ -43,4 +43,11 @@ func TestAdvance(t *testing.T) {
 	state.Robots = []Robot{
 		{
 			Position:      Pair{2, 3},
-			Direction:    
+			Direction:     NW,
+			IsBeamEnabled: false,
+			IsLockedDown:  false,
+			Player:        0,
+		},
+	}
+	move := NewMove(&AdvanceRobot{
+		Robot: Pair{2, 

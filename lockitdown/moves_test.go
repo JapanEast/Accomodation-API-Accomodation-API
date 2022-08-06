@@ -62,4 +62,9 @@ func TestAdvance(t *testing.T) {
 	assert.Equal(t, 3, state.MovesThisTurn)
 	bot := state.RobotAt(Pair{2, 3})
 	assert.True(t, bot != nil)
-	asse
+	assert.Equal(t, Pair{2, 3}, bot.Position)
+}
+
+func TestAdvanceBlocksLockdown(t *testing.T) {
+	state := NewGame(TwoPlayerGameDef)
+	state.Robots = []R

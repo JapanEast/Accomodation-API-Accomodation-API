@@ -67,4 +67,10 @@ func TestAdvance(t *testing.T) {
 
 func TestAdvanceBlocksLockdown(t *testing.T) {
 	state := NewGame(TwoPlayerGameDef)
-	state.Robots = []R
+	state.Robots = []Robot{
+		{
+			Position:      Pair{4, 0},
+			Direction:     W,
+			IsBeamEnabled: false,
+			IsLockedDown:  true,
+			Player:        0

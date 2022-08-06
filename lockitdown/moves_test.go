@@ -73,4 +73,13 @@ func TestAdvanceBlocksLockdown(t *testing.T) {
 			Direction:     W,
 			IsBeamEnabled: false,
 			IsLockedDown:  true,
-			Player:        0
+			Player:        0,
+		},
+		{
+			Position:      Pair{4, -4},
+			Direction:     SE,
+			IsBeamEnabled: true,
+			IsLockedDown:  false,
+			Player:        1,
+		},
+		

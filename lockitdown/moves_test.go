@@ -90,4 +90,12 @@ func TestAdvanceBlocksLockdown(t *testing.T) {
 			Player:        1,
 		},
 		{
-			P
+			Position:      Pair{2, 3},
+			Direction:     W,
+			IsBeamEnabled: true,
+			IsLockedDown:  false,
+			Player:        0,
+		},
+	}
+
+	move := NewMove(&Advanc

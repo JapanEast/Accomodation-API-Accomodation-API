@@ -98,4 +98,11 @@ func TestAdvanceBlocksLockdown(t *testing.T) {
 		},
 	}
 
-	move := NewMove(&Advanc
+	move := NewMove(&AdvanceRobot{
+		Robot: Pair{2, 3},
+	}, 0)
+	err := state.Move(move)
+
+	assert.Nil(t, err)
+	assert.False(t, state.RobotAt(Pair{4, 0}).IsLockedDown)
+	as

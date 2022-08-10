@@ -114,4 +114,9 @@ func TestAdvanceBlocksLockdown(t *testing.T) {
 }
 
 func TestAdvanceRemovesBot(t *testing.T) {
-	state := 
+	state := NewGame(TwoPlayerGameDef)
+	state.Robots = []Robot{
+		{
+			Position:      Pair{4, 0},
+			Direction:     W,
+			IsBeamEnabled: fa

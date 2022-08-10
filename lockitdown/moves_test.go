@@ -109,4 +109,9 @@ func TestAdvanceBlocksLockdown(t *testing.T) {
 
 	err = state.Undo(move)
 	assert.Nil(t, err)
-	assert.True(t, state.RobotAt(Pai
+	assert.True(t, state.RobotAt(Pair{4, 0}).IsLockedDown)
+	assert.False(t, state.RobotAt(Pair{4, 0}).IsBeamEnabled)
+}
+
+func TestAdvanceRemovesBot(t *testing.T) {
+	state := 

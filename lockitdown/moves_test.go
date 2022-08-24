@@ -133,4 +133,11 @@ func TestAdvanceRemovesBot(t *testing.T) {
 		{
 			Position:      Pair{-4, 0},
 			Direction:     E,
-			
+			IsBeamEnabled: true,
+			IsLockedDown:  false,
+			Player:        1,
+		},
+		{
+			Position:      Pair{-1, 5},
+			Direction:     NE,
+			IsBeamEnable

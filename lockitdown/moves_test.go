@@ -140,4 +140,12 @@ func TestAdvanceRemovesBot(t *testing.T) {
 		{
 			Position:      Pair{-1, 5},
 			Direction:     NE,
-			IsBeamEnable
+			IsBeamEnabled: true,
+			IsLockedDown:  false,
+			Player:        1,
+		},
+	}
+
+	state.PlayerTurn = 1
+	move := NewMove(&AdvanceRobot{
+		Robot: Pair{-1, 5},

@@ -149,3 +149,11 @@ func TestAdvanceRemovesBot(t *testing.T) {
 	state.PlayerTurn = 1
 	move := NewMove(&AdvanceRobot{
 		Robot: Pair{-1, 5},
+	}, 1)
+
+	err := state.Move(move)
+	assert.Nil(t, err)
+
+	assert.Nil(t, state.RobotAt(Pair{4, 0}))
+	assert.Equal(t, 3, state.Players[1].Points)
+	assert.Len(t, 

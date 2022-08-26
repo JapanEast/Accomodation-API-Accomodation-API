@@ -156,4 +156,10 @@ func TestAdvanceRemovesBot(t *testing.T) {
 
 	assert.Nil(t, state.RobotAt(Pair{4, 0}))
 	assert.Equal(t, 3, state.Players[1].Points)
-	assert.Len(t, 
+	assert.Len(t, state.Robots, 3)
+
+	state.Undo(move)
+
+	assert.NotNil(t, state.RobotAt(Pair{4, 0}))
+	assert.Equal(t, 0, state.Players[1].Points)
+	assert.Len(t, sta

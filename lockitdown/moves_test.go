@@ -162,4 +162,13 @@ func TestAdvanceRemovesBot(t *testing.T) {
 
 	assert.NotNil(t, state.RobotAt(Pair{4, 0}))
 	assert.Equal(t, 0, state.Players[1].Points)
-	assert.Len(t, sta
+	assert.Len(t, state.Robots, 4)
+}
+
+func TestTurnLockUnlock(t *testing.T) {
+	state := NewGame(TwoPlayerGameDef)
+
+	state.Robots = []Robot{
+		{
+			Position:      Pair{4, 0},
+			D

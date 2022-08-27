@@ -171,4 +171,11 @@ func TestTurnLockUnlock(t *testing.T) {
 	state.Robots = []Robot{
 		{
 			Position:      Pair{4, 0},
-			D
+			Direction:     W,
+			IsBeamEnabled: false,
+			IsLockedDown:  true,
+			Player:        0,
+		},
+		{
+			Position:      Pair{4, -4},
+			Direction:     SE,

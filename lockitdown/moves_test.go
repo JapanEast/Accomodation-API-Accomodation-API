@@ -193,4 +193,13 @@ func TestTurnLockUnlock(t *testing.T) {
 		{
 			Position:      Pair{0, -4},
 			Direction:     E,
-			IsBeamEnabled: true
+			IsBeamEnabled: true,
+			IsLockedDown:  false,
+			Player:        0,
+		},
+	}
+	state.PlayerTurn = 1
+	state.MovesThisTurn = 3
+
+	move1 := NewMove(&TurnRobot{
+		Robot:     Pa

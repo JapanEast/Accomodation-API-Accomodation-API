@@ -186,4 +186,11 @@ func TestTurnLockUnlock(t *testing.T) {
 		{
 			Position:      Pair{-4, 0},
 			Direction:     E,
-			IsBeamEnabl
+			IsBeamEnabled: true,
+			IsLockedDown:  false,
+			Player:        1,
+		},
+		{
+			Position:      Pair{0, -4},
+			Direction:     E,
+			IsBeamEnabled: true

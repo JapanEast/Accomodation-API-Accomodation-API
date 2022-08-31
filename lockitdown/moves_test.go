@@ -202,4 +202,10 @@ func TestTurnLockUnlock(t *testing.T) {
 	state.MovesThisTurn = 3
 
 	move1 := NewMove(&TurnRobot{
-		Robot:     Pa
+		Robot:     Pair{-4, 0},
+		Direction: Left,
+	}, 1)
+
+	err := state.Move(move1)
+	assert.Nil(t, err)
+	assert.False(t, state.RobotAt(Pair{4, 0}).IsLockedDown

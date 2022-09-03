@@ -233,4 +233,8 @@ func TestTurnLockUnlock(t *testing.T) {
 
 	err = state.Undo(move3)
 	assert.Nil(t, err)
-	ass
+	assert.False(t, state.RobotAt(Pair{4, 0}).IsLockedDown)
+	assert.False(t, state.RobotAt(Pair{0, -4}).IsLockedDown)
+
+	err = state.Undo(move2)
+	a

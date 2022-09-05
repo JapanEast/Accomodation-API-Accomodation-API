@@ -249,4 +249,10 @@ func TestTurnLockUnlock(t *testing.T) {
 
 func TestRemovedToLock(t *testing.T) {
 	game := NewGame(TwoPlayerGameDef)
-	game.Robot
+	game.Robots = []Robot{
+		{
+			Position:      Pair{0, 4},
+			Direction:     NW,
+			IsBeamEnabled: false,
+			IsLockedDown:  true,
+			Player

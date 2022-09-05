@@ -244,4 +244,9 @@ func TestTurnLockUnlock(t *testing.T) {
 	err = state.Undo(move1)
 	assert.Nil(t, err)
 	assert.True(t, state.RobotAt(Pair{4, 0}).IsLockedDown)
-	as
+	assert.False(t, state.RobotAt(Pair{0, -4}).IsLockedDown)
+}
+
+func TestRemovedToLock(t *testing.T) {
+	game := NewGame(TwoPlayerGameDef)
+	game.Robot

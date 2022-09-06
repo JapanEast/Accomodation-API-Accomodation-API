@@ -255,4 +255,11 @@ func TestRemovedToLock(t *testing.T) {
 			Direction:     NW,
 			IsBeamEnabled: false,
 			IsLockedDown:  true,
-			Player
+			Player:        0,
+		},
+		{
+			Position:      Pair{-4, 4},
+			Direction:     E,
+			IsBeamEnabled: true,
+			IsLockedDown:  false,
+			Player:  

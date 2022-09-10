@@ -281,4 +281,14 @@ func TestRemovedToLock(t *testing.T) {
 	}
 }
 
-func TestPlacedRobots(t *t
+func TestPlacedRobots(t *testing.T) {
+
+	game := NewGame(TwoPlayerGameDef)
+
+	m1 := NewMove(&PlaceRobot{
+		Robot:     Pair{0, 5},
+		Direction: NW,
+	}, 0)
+
+	err := game.Move(m1)
+	assert.Nil

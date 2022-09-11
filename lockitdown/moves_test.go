@@ -304,4 +304,12 @@ func TestPlacedRobots(t *testing.T) {
 	assert.Equal(t, 1, game.Players[1].PlacedRobots)
 
 	m3 := NewMove(&PlaceRobot{
-		Robot
+		Robot:     Pair{-5, 5},
+		Direction: SW,
+	}, 0)
+
+	err = game.Move(m3)
+	assert.Nil(t, err)
+	assert.Equal(t, 2, game.Players[0].PlacedRobots)
+
+	m4 

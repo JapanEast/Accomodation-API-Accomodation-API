@@ -319,4 +319,12 @@ func TestPlacedRobots(t *testing.T) {
 
 	err = game.Move(m4)
 	assert.Nil(t, err)
-	assert.Equal(t, 2, game.Players
+	assert.Equal(t, 2, game.Players[1].PlacedRobots)
+
+	game.Undo(m4)
+	game.Undo(m3)
+	game.Undo(m2)
+	game.Undo(m1)
+
+	assert.Equal(t, 0, game.Players[0].PlacedRobots)
+	assert.Equal(t, 0,

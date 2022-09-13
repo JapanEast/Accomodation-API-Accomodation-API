@@ -341,4 +341,12 @@ func TestCantMoveForwardWithIterator(t *testing.T) {
 		  "numOfPlayers": 2,
 		  "movesPerTurn": 3,
 		  "robotsPerPlayer": 6,
-		  
+		  "winCondition": "Elimination"
+		},
+		"players": [
+		  {
+			"points": 0,
+			"placedRobots": 1
+		  },
+		  {
+			"points":

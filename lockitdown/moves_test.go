@@ -327,4 +327,9 @@ func TestPlacedRobots(t *testing.T) {
 	game.Undo(m1)
 
 	assert.Equal(t, 0, game.Players[0].PlacedRobots)
-	assert.Equal(t, 0,
+	assert.Equal(t, 0, game.Players[1].PlacedRobots)
+}
+
+func TestCantMoveForwardWithIterator(t *testing.T) {
+	game := gameFromJson(`{
+		"gameDef": {

@@ -333,3 +333,12 @@ func TestPlacedRobots(t *testing.T) {
 func TestCantMoveForwardWithIterator(t *testing.T) {
 	game := gameFromJson(`{
 		"gameDef": {
+		  "board": {
+			"HexaBoard": {
+			  "arenaRadius": 4
+			}
+		  },
+		  "numOfPlayers": 2,
+		  "movesPerTurn": 3,
+		  "robotsPerPlayer": 6,
+		  

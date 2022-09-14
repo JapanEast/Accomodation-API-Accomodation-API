@@ -362,3 +362,17 @@ func TestCantMoveForwardWithIterator(t *testing.T) {
 			{
 			  "player": 1,
 			  "dir": {
+				"q": -1,
+				"r": 0
+			  },
+			  "isLocked": false,
+			  "isBeamEnabled": false
+			}
+		  ],
+		  [
+			{
+			  "q": 4,
+			  "r": -5
+			},
+			{
+			  "pl

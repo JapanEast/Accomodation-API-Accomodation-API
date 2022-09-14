@@ -349,4 +349,16 @@ func TestCantMoveForwardWithIterator(t *testing.T) {
 			"placedRobots": 1
 		  },
 		  {
-			"points":
+			"points": 0,
+			"placedRobots": 1
+		  }
+		],
+		"robots": [
+		  [
+			{
+			  "q": 5,
+			  "r": -5
+			},
+			{
+			  "player": 1,
+			  "dir": {

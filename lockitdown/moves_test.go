@@ -383,4 +383,12 @@ func TestCantMoveForwardWithIterator(t *testing.T) {
 			  "isLocked": false,
 			  "isBeamEnabled": false
 			}
-	
+		  ]
+		],
+		"playerTurn": 1,
+		"status": "OnGoing",
+		"movesThisTurn": 0,
+		"requiresTieBreak": false
+	  }`)
+
+	it := NewMoveIterator(game)

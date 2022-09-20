@@ -392,3 +392,11 @@ func TestCantMoveForwardWithIterator(t *testing.T) {
 	  }`)
 
 	it := NewMoveIterator(game)
+	for it.Next() {
+		m := it.Get()
+		err := game.Move(m)
+		assert.Nil(t, err)
+		game.Undo(m)
+	}
+
+}

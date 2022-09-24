@@ -53,3 +53,14 @@ func BuildQuoridorBoard(reader *bufio.Reader) (*Game, error) {
 				}
 				game.Players[playerPos] = player
 				game.Board[piecePos] = player.Pawn
+			} else if char != '.' {
+				panic(fmt.Sprintf("Unexpected character %b", char))
+			}
+		}
+		row++
+	}
+	if row != BoardSize {
+		return nil, errors.New("wrong number of rows")
+	}
+	return game, nil
+}

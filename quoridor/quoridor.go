@@ -9,4 +9,8 @@ import (
 )
 
 type (
-	// Refers to the position in t
+	// Refers to the position in the Game's Player slice.
+	PlayerPosition int
+
+	// Identifies the type of the piece - either a 'p' for Pawn, or 'b' for Barrier.
+	Typ

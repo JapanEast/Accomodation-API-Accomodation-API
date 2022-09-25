@@ -13,4 +13,12 @@ type (
 	PlayerPosition int
 
 	// Identifies the type of the piece - either a 'p' for Pawn, or 'b' for Barrier.
-	Typ
+	TypeId rune
+
+	// The coordinates to a cell on the game board.
+	Position struct {
+		X int `json:"x"`
+		Y int `json:"y"`
+	}
+
+	// Wrapper type around the

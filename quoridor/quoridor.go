@@ -21,4 +21,5 @@ type (
 		Y int `json:"y"`
 	}
 
-	// Wrapper type around the
+	// Wrapper type around the map from position to Piece. The board represents pieces that are on it. If a position
+	// isn't in the map, that positio

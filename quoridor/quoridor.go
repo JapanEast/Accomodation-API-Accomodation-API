@@ -28,4 +28,14 @@ type (
 	//
 	Player struct {
 		// The number of remaining barriers left to the player
-		Barriers 
+		Barriers int
+
+		// A copy of this players pawn in this game's board.
+		Pawn Piece
+
+		PlayerId uuid.UUID
+
+		PlayerName string
+	}
+
+	// The full represent

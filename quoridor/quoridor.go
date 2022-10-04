@@ -22,4 +22,10 @@ type (
 	}
 
 	// Wrapper type around the map from position to Piece. The board represents pieces that are on it. If a position
-	// isn't in the map, that positio
+	// isn't in the map, that position doesn't have a piece.
+	Board map[Position]Piece
+
+	//
+	Player struct {
+		// The number of remaining barriers left to the player
+		Barriers 

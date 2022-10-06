@@ -38,4 +38,8 @@ type (
 		PlayerName string
 	}
 
-	// The full represent
+	// The full representation of a Quoridor game.
+	Game struct {
+		// The game board.
+		Board              Board
+		Players            map[PlayerPos

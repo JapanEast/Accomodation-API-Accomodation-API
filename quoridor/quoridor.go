@@ -42,4 +42,8 @@ type (
 	Game struct {
 		// The game board.
 		Board              Board
-		Players            map[PlayerPos
+		Players            map[PlayerPosition]*Player
+		Id                 uuid.UUID
+		CurrentTurn        PlayerPosition
+		StartDate, EndDate time.Time
+		Winner             Player

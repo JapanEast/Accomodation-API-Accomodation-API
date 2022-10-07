@@ -46,4 +46,14 @@ type (
 		Id                 uuid.UUID
 		CurrentTurn        PlayerPosition
 		StartDate, EndDate time.Time
-		Winner             Player
+		Winner             PlayerPosition
+		Name               string
+	}
+
+	Piece struct {
+		Position Position
+		Owner    PlayerPosition
+		Type     TypeId
+	}
+
+	Move str

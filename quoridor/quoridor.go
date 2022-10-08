@@ -56,4 +56,12 @@ type (
 		Type     TypeId
 	}
 
-	Move str
+	Move struct {
+		Player PlayerPosition
+		Delta  []Position
+	}
+)
+
+// An enumeration of all possible player positions.
+const (
+	PlayerO

@@ -64,4 +64,14 @@ type (
 
 // An enumeration of all possible player positions.
 const (
-	PlayerO
+	PlayerOne PlayerPosition = iota
+	PlayerTwo
+	PlayerThree
+	PlayerFour
+)
+
+const (
+	Pawn    TypeId = 'p'
+	Barrier TypeId = 'b'
+)
+const B

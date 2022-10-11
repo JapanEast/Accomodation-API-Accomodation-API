@@ -80,4 +80,8 @@ var (
 	// Represents the row or column a Players pawn has to be to win the game. A value of -1 in X or Y means any value on
 	// that row or column is part of a winning position.
 	//
-	// For example, PlayerOne can win when their pawn reaches the 'top' row. If the pawn reache
+	// For example, PlayerOne can win when their pawn reaches the 'top' row. If the pawn reaches {Y: 0, X:2..16}
+	// PlayerOne wins.
+	winningPositions = map[PlayerPosition]Position{
+		PlayerOne:   {Y: 0, X: -1},
+		PlayerTwo: 

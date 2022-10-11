@@ -74,4 +74,7 @@ const (
 	Pawn    TypeId = 'p'
 	Barrier TypeId = 'b'
 )
-const B
+const BoardSize int = 17
+
+var (
+	// Represents the row or column a Players pawn has to be to win the game. A value of -1 in X or Y means any value on

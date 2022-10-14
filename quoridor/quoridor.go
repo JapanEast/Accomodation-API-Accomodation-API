@@ -89,4 +89,8 @@ var (
 		PlayerFour:  {Y: -1, X: 0},
 	}
 
-	startingPositions = map[PlayerPosition]Posit
+	startingPositions = map[PlayerPosition]Position{
+		PlayerOne:   {X: 8, Y: 16}, // Bottom
+		PlayerTwo:   {X: 8, Y: 0},  // Top
+		PlayerThree: {X: 0, Y: 8},  // Left
+		PlayerFour:  {X: 1

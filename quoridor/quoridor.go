@@ -84,4 +84,9 @@ var (
 	// PlayerOne wins.
 	winningPositions = map[PlayerPosition]Position{
 		PlayerOne:   {Y: 0, X: -1},
-		PlayerTwo: 
+		PlayerTwo:   {X: -1, Y: 16},
+		PlayerThree: {Y: -1, X: 16},
+		PlayerFour:  {Y: -1, X: 0},
+	}
+
+	startingPositions = map[PlayerPosition]Posit

@@ -104,4 +104,6 @@ var (
 	}
 )
 
-// Initialize with default values, a
+// Initialize with default values, and supplied game Id and Name.
+//
+// The game is initialized with an empty board and player slice. Defaults current turn to PlayerOne and winner to

@@ -107,3 +107,6 @@ var (
 // Initialize with default values, and supplied game Id and Name.
 //
 // The game is initialized with an empty board and player slice. Defaults current turn to PlayerOne and winner to
+// -1. Everything else defaults to their zero value.
+func NewGame(id uuid.UUID, name string) (*Game, error) {
+	if id == uuid.Nil {

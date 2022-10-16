@@ -113,4 +113,9 @@ func NewGame(id uuid.UUID, name string) (*Game, error) {
 		return nil, errors.New("unable to create game, need valid id")
 	}
 	if name == "" {
-		return nil, errors.New("unable to create game, n
+		return nil, errors.New("unable to create game, need non-empty name")
+	}
+	return &Game{
+		Board:       make(map[Position]Piece),
+		Players:     make(map[PlayerPosition]*Player),
+		CurrentTurn: PlayerOn

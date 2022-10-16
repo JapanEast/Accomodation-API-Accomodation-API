@@ -110,3 +110,7 @@ var (
 // -1. Everything else defaults to their zero value.
 func NewGame(id uuid.UUID, name string) (*Game, error) {
 	if id == uuid.Nil {
+		return nil, errors.New("unable to create game, need valid id")
+	}
+	if name == "" {
+		return nil, errors.New("unable to create game, n

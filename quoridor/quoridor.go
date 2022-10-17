@@ -118,4 +118,11 @@ func NewGame(id uuid.UUID, name string) (*Game, error) {
 	return &Game{
 		Board:       make(map[Position]Piece),
 		Players:     make(map[PlayerPosition]*Player),
-		CurrentTurn: PlayerOn
+		CurrentTurn: PlayerOne,
+		Id:          id,
+		Name:        name,
+		Winner:      -1,
+	}, nil
+}
+
+// Adds a new player to the player map at the next p

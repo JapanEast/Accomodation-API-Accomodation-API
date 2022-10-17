@@ -125,4 +125,6 @@ func NewGame(id uuid.UUID, name string) (*Game, error) {
 	}, nil
 }
 
-// Adds a new player to the player map at the next p
+// Adds a new player to the player map at the next possible player position. Will also update the barrier count when
+// the player count goes from two to three.
+// Players can only be add

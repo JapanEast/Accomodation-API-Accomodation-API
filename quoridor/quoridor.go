@@ -128,4 +128,7 @@ func NewGame(id uuid.UUID, name string) (*Game, error) {
 // Adds a new player to the player map at the next possible player position. Will also update the barrier count when
 // the player count goes from two to three.
 // Players can only be added if the game has not yet started, and they don't already exist in the game.
-func (game *Game) AddPlayer(id uuid.UUID, name string) (PlayerPosi
+func (game *Game) AddPlayer(id uuid.UUID, name string) (PlayerPosition, error) {
+	if !game.StartDate.IsZero() {
+		return -1, errors.New(fmt.Sprintf("cannot add player %s, game has already started", name))
+	

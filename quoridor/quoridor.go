@@ -138,4 +138,9 @@ func (game *Game) AddPlayer(id uuid.UUID, name string) (PlayerPosition, error) {
 			return 0, errors.New(fmt.Sprintf("player with id %s alreayd in this game", id.String()))
 		}
 	}
-	barriersForPlayer 
+	barriersForPlayer := 10
+	if len(game.Players) >= 2 {
+		barriersForPlayer = 5
+	}
+	// For each possible player
+	for playerNumber := PlayerOne; playerNumber <= PlayerFour

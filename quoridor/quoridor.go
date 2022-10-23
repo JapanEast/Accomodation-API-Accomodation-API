@@ -143,4 +143,8 @@ func (game *Game) AddPlayer(id uuid.UUID, name string) (PlayerPosition, error) {
 		barriersForPlayer = 5
 	}
 	// For each possible player
-	for playerNumber := PlayerOne; playerNumber <= PlayerFour
+	for playerNumber := PlayerOne; playerNumber <= PlayerFour; playerNumber++ {
+		p, present := game.Players[playerNumber]
+		if present {
+			// Make sure they have the correct number of barriers
+			p.B

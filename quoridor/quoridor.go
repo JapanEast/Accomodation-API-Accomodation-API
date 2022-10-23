@@ -133,4 +133,9 @@ func (game *Game) AddPlayer(id uuid.UUID, name string) (PlayerPosition, error) {
 		return -1, errors.New(fmt.Sprintf("cannot add player %s, game has already started", name))
 	}
 	// Make sure the player isn't already a part of this game. The same player cannot play against themselves.
-	for _, player := range game.Players 
+	for _, player := range game.Players {
+		if player.PlayerId == id {
+			return 0, errors.New(fmt.Sprintf("player with id %s alreayd in this game", id.String()))
+		}
+	}
+	barriersForPlayer 

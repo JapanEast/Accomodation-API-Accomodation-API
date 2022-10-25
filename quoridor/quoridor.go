@@ -147,4 +147,8 @@ func (game *Game) AddPlayer(id uuid.UUID, name string) (PlayerPosition, error) {
 		p, present := game.Players[playerNumber]
 		if present {
 			// Make sure they have the correct number of barriers
-			p.B
+			p.Barriers = barriersForPlayer
+			game.Players[playerNumber] = p
+		} else {
+			playerPawn := Piece{
+				Position: startingPositions[player

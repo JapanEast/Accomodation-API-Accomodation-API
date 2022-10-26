@@ -151,4 +151,8 @@ func (game *Game) AddPlayer(id uuid.UUID, name string) (PlayerPosition, error) {
 			game.Players[playerNumber] = p
 		} else {
 			playerPawn := Piece{
-				Position: startingPositions[player
+				Position: startingPositions[playerNumber],
+				Owner:    playerNumber,
+				Type:     Pawn,
+			}
+			// Create a new player with barrier count, 

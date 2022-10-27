@@ -155,4 +155,8 @@ func (game *Game) AddPlayer(id uuid.UUID, name string) (PlayerPosition, error) {
 				Owner:    playerNumber,
 				Type:     Pawn,
 			}
-			// Create a new player with barrier count, 
+			// Create a new player with barrier count, starting position, etc.
+			game.Players[playerNumber] = &Player{
+				Barriers:   barriersForPlayer,
+				PlayerId:   id,
+				PlayerName:

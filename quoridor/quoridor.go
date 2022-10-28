@@ -172,4 +172,6 @@ func (game *Game) AddPlayer(id uuid.UUID, name string) (PlayerPosition, error) {
 
 // Starts a game by setting the StartDate to the current instant of time. Returns an error if there aren't enough
 // players, or the game has already started.
-fun
+func (game *Game) StartGame() error {
+	if !(len(game.Players) == 2 || len(game.Players) == 4) {
+		return errors.New(fmt.Sprintf("can't start game, w

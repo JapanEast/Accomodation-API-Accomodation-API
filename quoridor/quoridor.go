@@ -159,4 +159,9 @@ func (game *Game) AddPlayer(id uuid.UUID, name string) (PlayerPosition, error) {
 			game.Players[playerNumber] = &Player{
 				Barriers:   barriersForPlayer,
 				PlayerId:   id,
-				PlayerName:
+				PlayerName: name,
+				Pawn:       playerPawn,
+			}
+			// Add pawn to board
+			game.Board[playerPawn.Position] = playerPawn
+			return playerN

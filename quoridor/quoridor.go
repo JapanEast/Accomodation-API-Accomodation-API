@@ -164,4 +164,10 @@ func (game *Game) AddPlayer(id uuid.UUID, name string) (PlayerPosition, error) {
 			}
 			// Add pawn to board
 			game.Board[playerPawn.Position] = playerPawn
-			return playerN
+			return playerNumber, nil
+		}
+	}
+	return -1, errors.New("no open player positions in this game")
+}
+
+// Starts a game by setting the StartDate to

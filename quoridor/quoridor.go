@@ -170,4 +170,6 @@ func (game *Game) AddPlayer(id uuid.UUID, name string) (PlayerPosition, error) {
 	return -1, errors.New("no open player positions in this game")
 }
 
-// Starts a game by setting the StartDate to
+// Starts a game by setting the StartDate to the current instant of time. Returns an error if there aren't enough
+// players, or the game has already started.
+fun

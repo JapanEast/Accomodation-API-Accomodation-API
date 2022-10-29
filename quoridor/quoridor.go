@@ -177,4 +177,10 @@ func (game *Game) StartGame() error {
 		return errors.New(fmt.Sprintf("can't start game, wrong number of players (%d)", len(game.Players)))
 	}
 	if !game.StartDate.IsZero() {
-		return errors.New(fmt.Sprintf("game already starte
+		return errors.New(fmt.Sprintf("game already started"))
+	}
+	game.StartDate = time.Now()
+	return nil
+}
+
+// Moves a pawn to the given new position for the give player. Retu

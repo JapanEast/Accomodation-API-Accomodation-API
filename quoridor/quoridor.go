@@ -174,4 +174,7 @@ func (game *Game) AddPlayer(id uuid.UUID, name string) (PlayerPosition, error) {
 // players, or the game has already started.
 func (game *Game) StartGame() error {
 	if !(len(game.Players) == 2 || len(game.Players) == 4) {
-		return errors.New(fmt.Sprintf("can't start game, w
+		return errors.New(fmt.Sprintf("can't start game, wrong number of players (%d)", len(game.Players)))
+	}
+	if !game.StartDate.IsZero() {
+		return errors.New(fmt.Sprintf("game already starte

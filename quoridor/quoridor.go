@@ -183,4 +183,6 @@ func (game *Game) StartGame() error {
 	return nil
 }
 
-// Moves a pawn to the given new position for the give player. Retu
+// Moves a pawn to the given new position for the give player. Returns an error if the move is invalid.
+//
+// The move is invalid if it's an invalid pawn location, the wrong player's turn, or the game is over.

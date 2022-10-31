@@ -188,4 +188,8 @@ func (game *Game) StartGame() error {
 // The move is invalid if it's an invalid pawn location, the wrong player's turn, or the game is over.
 func (game *Game) MovePawn(newPosition Position, player PlayerPosition) error {
 	pawn := &game.Players[player].Pawn
-	if !isValidPawnLocation(newPos
+	if !isValidPawnLocation(newPosition) {
+		return errors.New("invalid Pawn Location")
+	}
+	if game.CurrentTurn != player {
+		return errors.New(fmt.Sprintf("wrong turn, c

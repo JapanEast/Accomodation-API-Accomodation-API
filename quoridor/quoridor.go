@@ -194,4 +194,10 @@ func (game *Game) MovePawn(newPosition Position, player PlayerPosition) error {
 	if game.CurrentTurn != player {
 		return errors.New(fmt.Sprintf("wrong turn, current turn is for Player: %d", game.CurrentTurn))
 	}
-	if moveError := isValidPawnMove(newPosition, pawn.Position, game.Board); moveError 
+	if moveError := isValidPawnMove(newPosition, pawn.Position, game.Board); moveError != nil {
+		return moveError
+	}
+	if game.IsOver() {
+		return errors.New("invalid move, game is already over")
+	}
+	delete(game.Boar

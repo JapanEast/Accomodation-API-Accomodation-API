@@ -192,4 +192,6 @@ func (game *Game) MovePawn(newPosition Position, player PlayerPosition) error {
 		return errors.New("invalid Pawn Location")
 	}
 	if game.CurrentTurn != player {
-		return errors.New(fmt.Sprintf("wrong turn, c
+		return errors.New(fmt.Sprintf("wrong turn, current turn is for Player: %d", game.CurrentTurn))
+	}
+	if moveError := isValidPawnMove(newPosition, pawn.Position, game.Board); moveError 

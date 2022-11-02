@@ -200,4 +200,9 @@ func (game *Game) MovePawn(newPosition Position, player PlayerPosition) error {
 	if game.IsOver() {
 		return errors.New("invalid move, game is already over")
 	}
-	delete(game.Boar
+	delete(game.Board, pawn.Position)
+	pawn.Position = newPosition
+	game.Board[pawn.Position] = *pawn
+	checkGameOver(game)
+	game.nextTurn()
+	return nil

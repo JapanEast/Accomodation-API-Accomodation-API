@@ -210,4 +210,6 @@ func (game *Game) MovePawn(newPosition Position, player PlayerPosition) error {
 
 // GetValidMoveByDirection returns all possible valid positions a pawn can land in a given direction.
 // Returns nil if there is a barrier present. If there is a pawn present on the destination square, check to see if
-// a barrier is behind that pawn. If so, 
+// a barrier is behind that pawn. If so, return possible diagonal positions.
+func (board Board) getValidMoveByDirection(pawn, direction Position) []Position {
+	// check if 

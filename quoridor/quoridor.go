@@ -215,4 +215,11 @@ func (board Board) getValidMoveByDirection(pawn, direction Position) []Position 
 	// check if there is a barrier in direction
 	cursor := Position{Y: pawn.Y + direction.Y, X: pawn.X + direction.X}
 	if _, barrierPresent := board[cursor]; barrierPresent {
-	
+		return nil
+	}
+
+	// Advance pawn again - this is the square should land in.
+	cursor.Y += direction.Y
+	cursor.X += direction.X
+
+	// check for p

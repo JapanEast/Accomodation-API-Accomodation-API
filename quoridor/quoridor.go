@@ -212,4 +212,7 @@ func (game *Game) MovePawn(newPosition Position, player PlayerPosition) error {
 // Returns nil if there is a barrier present. If there is a pawn present on the destination square, check to see if
 // a barrier is behind that pawn. If so, return possible diagonal positions.
 func (board Board) getValidMoveByDirection(pawn, direction Position) []Position {
-	// check if 
+	// check if there is a barrier in direction
+	cursor := Position{Y: pawn.Y + direction.Y, X: pawn.X + direction.X}
+	if _, barrierPresent := board[cursor]; barrierPresent {
+	

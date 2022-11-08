@@ -227,4 +227,6 @@ func (board Board) getValidMoveByDirection(pawn, direction Position) []Position 
 	if _, pawnPresent := board[cursor]; pawnPresent {
 		// check for possible jumps
 		if _, barrierBeyondPawn := board[Position{Y: cursor.Y + direction.Y, X: cursor.X + direction.X}]; barrierBeyondPawn {
-			// look at diagonal
+			// look at diagonals instead
+			validPositions = append(validPositions, getDiagonalPositions(direction, cursor, board)...)
+		} else { /

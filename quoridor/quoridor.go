@@ -222,4 +222,8 @@ func (board Board) getValidMoveByDirection(pawn, direction Position) []Position 
 	cursor.Y += direction.Y
 	cursor.X += direction.X
 
-	// check for p
+	// check for pawn
+	validPositions := make([]Position, 0, 2)
+	if _, pawnPresent := board[cursor]; pawnPresent {
+		// check for possible jumps
+		if

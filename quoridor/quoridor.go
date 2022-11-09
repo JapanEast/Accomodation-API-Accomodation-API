@@ -242,4 +242,5 @@ func (board Board) getValidMoveByDirection(pawn, direction Position) []Position 
 	return validPositions
 }
 
-// getDiagonalPositions will return t
+// getDiagonalPositions will return the two positions to the left and right in a given direction.
+// For example, the cursor is at position (4, 4) and a vector pointing to the t

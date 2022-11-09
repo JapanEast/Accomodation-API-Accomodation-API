@@ -236,4 +236,10 @@ func (board Board) getValidMoveByDirection(pawn, direction Position) []Position 
 				validPositions = append(validPositions, jumpPos)
 			}
 		}
-	} else if 
+	} else if isOnBoard(cursor) {
+		validPositions = append(validPositions, cursor)
+	}
+	return validPositions
+}
+
+// getDiagonalPositions will return t

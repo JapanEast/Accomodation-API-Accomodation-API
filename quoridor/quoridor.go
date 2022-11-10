@@ -247,4 +247,9 @@ func (board Board) getValidMoveByDirection(pawn, direction Position) []Position 
 // positions are [(2, 2), (6, 2)]
 func getDiagonalPositions(vector Position, cursor Position, board Board) []Position {
 	validPositions := make([]Position, 0, 2)
-	leftVector := Position{Y: -1 * vector.X, X: -1 * vecto
+	leftVector := Position{Y: -1 * vector.X, X: -1 * vector.Y}
+	leftTurn := getValidTurnPosition(leftVector, cursor, board)
+	if leftTurn.Y != -1 {
+		validPositions = append(validPositions, leftTurn)
+	}
+	

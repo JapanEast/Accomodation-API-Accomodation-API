@@ -245,4 +245,6 @@ func (board Board) getValidMoveByDirection(pawn, direction Position) []Position 
 // getDiagonalPositions will return the two positions to the left and right in a given direction.
 // For example, the cursor is at position (4, 4) and a vector pointing to the top of the board (0, -1). The diagonal
 // positions are [(2, 2), (6, 2)]
-func getDiagonalPositions(vector Position, cursor Positi
+func getDiagonalPositions(vector Position, cursor Position, board Board) []Position {
+	validPositions := make([]Position, 0, 2)
+	leftVector := Position{Y: -1 * vector.X, X: -1 * vecto

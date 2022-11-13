@@ -252,4 +252,7 @@ func getDiagonalPositions(vector Position, cursor Position, board Board) []Posit
 	if leftTurn.Y != -1 {
 		validPositions = append(validPositions, leftTurn)
 	}
-	
+	rightVector := Position{Y: vector.X, X: vector.Y}
+	rightTurn := getValidTurnPosition(rightVector, cursor, board)
+	if rightTurn.Y != -1 {
+		v

@@ -269,4 +269,11 @@ func getValidTurnPosition(vector Position, cursor Position, board Board) Positio
 		turnCursor.Y += vector.Y
 		turnCursor.X += vector.X
 
-		if _, turnPawn := board[turnCurso
+		if _, turnPawn := board[turnCursor]; !turnPawn && isOnBoard(turnCursor) {
+			return turnCursor
+		}
+	}
+	return Position{Y: -1, X: -1}
+}
+
+// Bounds check for a Position rel

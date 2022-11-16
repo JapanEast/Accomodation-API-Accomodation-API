@@ -276,4 +276,6 @@ func getValidTurnPosition(vector Position, cursor Position, board Board) Positio
 	return Position{Y: -1, X: -1}
 }
 
-// Bounds check for a Position rel
+// Bounds check for a Position relative to the board.
+func isOnBoard(position Position) bool {
+	return !(position.Y < 0 || position.Y >= BoardSize || position.X < 0 ||

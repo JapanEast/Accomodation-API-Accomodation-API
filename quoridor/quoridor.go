@@ -263,4 +263,10 @@ func getDiagonalPositions(vector Position, cursor Position, board Board) []Posit
 // getValidTurnPosition returns a single valid pawn position for a given turn vector. Checks to make sure there are no
 // barriers or pawns in the way, and the resulting position is on the board.
 func getValidTurnPosition(vector Position, cursor Position, board Board) Position {
-	turnCursor := Position{Y: cursor.Y + vector.Y, X: cur
+	turnCursor := Position{Y: cursor.Y + vector.Y, X: cursor.X + vector.X}
+	_, turnBarrier := board[turnCursor]
+	if !turnBarrier {
+		turnCursor.Y += vector.Y
+		turnCursor.X += vector.X
+
+		if _, turnPawn := board[turnCurso

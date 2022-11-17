@@ -278,4 +278,7 @@ func getValidTurnPosition(vector Position, cursor Position, board Board) Positio
 
 // Bounds check for a Position relative to the board.
 func isOnBoard(position Position) bool {
-	return !(position.Y < 0 || position.Y >= BoardSize || position.X < 0 ||
+	return !(position.Y < 0 || position.Y >= BoardSize || position.X < 0 || position.X >= BoardSize)
+}
+
+// Places a barrier on the board at the specified position, for the specified player. Returns an err

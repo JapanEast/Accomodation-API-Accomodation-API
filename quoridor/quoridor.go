@@ -281,4 +281,8 @@ func isOnBoard(position Position) bool {
 	return !(position.Y < 0 || position.Y >= BoardSize || position.X < 0 || position.X >= BoardSize)
 }
 
-// Places a barrier on the board at the specified position, for the specified player. Returns an err
+// Places a barrier on the board at the specified position, for the specified player. Returns an error if the barrier
+// cannot be placed.
+//
+// This function will advance the player's turn and decrement the player's barrier count.
+func (game 

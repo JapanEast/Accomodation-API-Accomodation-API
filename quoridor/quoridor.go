@@ -287,4 +287,7 @@ func isOnBoard(position Position) bool {
 // This function will advance the player's turn and decrement the player's barrier count.
 func (game *Game) PlaceBarrier(position Position, player PlayerPosition) error {
 	if game.CurrentTurn != player {
-		return errors.New(fmt.Spr
+		return errors.New(fmt.Sprintf("wrong turn, current turn is for Player: %d", game.CurrentTurn))
+	}
+	if invalidPosition(position) {
+		return errors.

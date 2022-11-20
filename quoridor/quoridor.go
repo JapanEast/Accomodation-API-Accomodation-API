@@ -297,4 +297,7 @@ func (game *Game) PlaceBarrier(position Position, player PlayerPosition) error {
 	}
 	barrierPositions := createBarrierPositions(position)
 	if barriersAreInTheWay(barrierPositions, game.Board) {
-		return errors.New
+		return errors.New("the new barrier intersects with another")
+	}
+	if barrierPreventsWin(barrierPositions, game) {
+		return errors.New("the barrier prevents a play

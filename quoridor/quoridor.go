@@ -290,4 +290,7 @@ func (game *Game) PlaceBarrier(position Position, player PlayerPosition) error {
 		return errors.New(fmt.Sprintf("wrong turn, current turn is for Player: %d", game.CurrentTurn))
 	}
 	if invalidPosition(position) {
-		return errors.
+		return errors.New("invalid location for a barrier")
+	}
+	if playerHasNoMoreBarriers(game.Players[player]) {
+		return errors.New("the player has no more barr

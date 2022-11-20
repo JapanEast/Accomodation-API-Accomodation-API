@@ -300,4 +300,10 @@ func (game *Game) PlaceBarrier(position Position, player PlayerPosition) error {
 		return errors.New("the new barrier intersects with another")
 	}
 	if barrierPreventsWin(barrierPositions, game) {
-		return errors.New("the barrier prevents a play
+		return errors.New("the barrier prevents a players victory")
+	}
+	if game.IsOver() {
+		return errors.New("invalid move, game is already over")
+	}
+	game.Players[player].Barriers--
+	for _, pos := range b

@@ -293,4 +293,8 @@ func (game *Game) PlaceBarrier(position Position, player PlayerPosition) error {
 		return errors.New("invalid location for a barrier")
 	}
 	if playerHasNoMoreBarriers(game.Players[player]) {
-		return errors.New("the player has no more barr
+		return errors.New("the player has no more barriers to play")
+	}
+	barrierPositions := createBarrierPositions(position)
+	if barriersAreInTheWay(barrierPositions, game.Board) {
+		return errors.New

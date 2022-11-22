@@ -313,4 +313,6 @@ func (game *Game) PlaceBarrier(position Position, player PlayerPosition) error {
 	return nil
 }
 
-// You can never place a paw
+// You can never place a pawn or barrier at a double-odd position (the intersections of the gutters), or on the very
+// last row and column of the board.
+func invali

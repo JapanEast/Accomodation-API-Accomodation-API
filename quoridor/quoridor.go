@@ -306,4 +306,11 @@ func (game *Game) PlaceBarrier(position Position, player PlayerPosition) error {
 		return errors.New("invalid move, game is already over")
 	}
 	game.Players[player].Barriers--
-	for _, pos := range b
+	for _, pos := range barrierPositions {
+		game.Board[pos] = Piece{Position: pos, Owner: player, Type: Barrier}
+	}
+	game.nextTurn()
+	return nil
+}
+
+// You can never place a paw

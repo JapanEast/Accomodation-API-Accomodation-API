@@ -323,4 +323,8 @@ func invalidPosition(position Position) bool {
 }
 
 func playerHasNoMoreBarriers(player *Player) bool {
-	ret
+	return player.Barriers <= 0
+}
+
+// Check if a placed barrier will block a player's path to the goal. Uses a simple A-* algorithm.
+func barrierP

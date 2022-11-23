@@ -315,4 +315,6 @@ func (game *Game) PlaceBarrier(position Position, player PlayerPosition) error {
 
 // You can never place a pawn or barrier at a double-odd position (the intersections of the gutters), or on the very
 // last row and column of the board.
-func invali
+func invalidPosition(position Position) bool {
+	return position.Y&0x1 == position.X&0x1 || // both col and row are even or odd
+		// can't be on the last vali

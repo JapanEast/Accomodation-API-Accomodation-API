@@ -334,4 +334,9 @@ func barrierPreventsWin(positions [3]Position, game *Game) bool {
 	//remove those temporary barriers no matter what
 	defer func() {
 		for _, position := range positions {
-			del
+			delete(game.Board, position)
+		}
+	}()
+
+	for playerPosition, player := range game.Players {
+		path := game.FindPath(pla

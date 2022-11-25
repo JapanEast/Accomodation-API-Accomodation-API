@@ -327,4 +327,6 @@ func playerHasNoMoreBarriers(player *Player) bool {
 }
 
 // Check if a placed barrier will block a player's path to the goal. Uses a simple A-* algorithm.
-func barrierP
+func barrierPreventsWin(positions [3]Position, game *Game) bool {
+	for _, position := range positions {
+		game.Board[position] = Piece{Position: po

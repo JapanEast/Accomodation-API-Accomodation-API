@@ -339,4 +339,12 @@ func barrierPreventsWin(positions [3]Position, game *Game) bool {
 	}()
 
 	for playerPosition, player := range game.Players {
-		path := game.FindPath(pla
+		path := game.FindPath(player.Pawn.Position, winningPositions[playerPosition])
+		if path == nil {
+			return true
+		}
+	}
+	return false
+}
+
+func

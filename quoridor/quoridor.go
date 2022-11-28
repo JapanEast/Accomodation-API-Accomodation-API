@@ -350,4 +350,11 @@ func barrierPreventsWin(positions [3]Position, game *Game) bool {
 func createBarrierPositions(position Position) [3]Position {
 	var positions [3]Position
 	if isABarrierRow(position) {
-		positions = buildHorizont
+		positions = buildHorizontalBarriers(position)
+	} else if isABarrierColumn(position) {
+		positions = buildVerticalBarriers(position)
+	}
+	return positions
+}
+
+// Checks if any 

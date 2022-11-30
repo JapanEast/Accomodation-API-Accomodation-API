@@ -358,4 +358,10 @@ func createBarrierPositions(position Position) [3]Position {
 }
 
 // Checks if any new positions already on the board, i.e. the new barrier will intersect a current one.
-func barriersAreInTheWay(positions [3]Position,
+func barriersAreInTheWay(positions [3]Position, board Board) bool {
+	for _, pos := range positions {
+		if _, ok := board[pos]; ok {
+			return true
+		}
+	}
+	return false

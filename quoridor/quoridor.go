@@ -370,4 +370,10 @@ func barriersAreInTheWay(positions [3]Position, board Board) bool {
 func buildVerticalBarriers(position Position) [3]Position {
 	return [3]Position{
 		{position.X, position.Y + 0},
-		{position.X, pos
+		{position.X, position.Y + 1},
+		{position.X, position.Y + 2},
+	}
+}
+func buildHorizontalBarriers(position Position) [3]Position {
+	return [3]Position{
+		{po

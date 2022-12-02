@@ -376,4 +376,10 @@ func buildVerticalBarriers(position Position) [3]Position {
 }
 func buildHorizontalBarriers(position Position) [3]Position {
 	return [3]Position{
-		{po
+		{position.X + 0, position.Y},
+		{position.X + 1, position.Y},
+		{position.X + 2, position.Y},
+	}
+}
+
+func isABarrierColumn(position Position) bool

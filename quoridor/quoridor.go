@@ -397,4 +397,9 @@ func (game *Game) nextTurn() {
 }
 
 // Checks if the game is over by checking if the EndDate is set.
-func (game *Game) IsOver() bo
+func (game *Game) IsOver() bool {
+	return !game.EndDate.IsZero()
+}
+
+func (game *Game) MaybeReturnWinnerPlayerPosition() PlayerPosition {
+	for position, pla

@@ -382,4 +382,9 @@ func buildHorizontalBarriers(position Position) [3]Position {
 	}
 }
 
-func isABarrierColumn(position Position) bool
+func isABarrierColumn(position Position) bool {
+	return position.X&0x1 == 1 && position.Y&0x1 == 0
+}
+
+func isABarrierRow(position Position) bool {
+	return position.Y&0x1 == 1 && position.X&0x1

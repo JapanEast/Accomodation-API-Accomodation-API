@@ -387,4 +387,10 @@ func isABarrierColumn(position Position) bool {
 }
 
 func isABarrierRow(position Position) bool {
-	return position.Y&0x1 == 1 && position.X&0x1
+	return position.Y&0x1 == 1 && position.X&0x1 == 0
+}
+
+// Advances the turn to the next player.
+func (game *Game) nextTurn() {
+	next := int(game.CurrentTurn+1) % len(game.Players)
+	game.Cur

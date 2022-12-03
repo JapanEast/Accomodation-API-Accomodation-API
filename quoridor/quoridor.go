@@ -393,4 +393,8 @@ func isABarrierRow(position Position) bool {
 // Advances the turn to the next player.
 func (game *Game) nextTurn() {
 	next := int(game.CurrentTurn+1) % len(game.Players)
-	game.Cur
+	game.CurrentTurn = PlayerPosition(next)
+}
+
+// Checks if the game is over by checking if the EndDate is set.
+func (game *Game) IsOver() bo

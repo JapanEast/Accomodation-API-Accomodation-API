@@ -405,4 +405,12 @@ func (game *Game) MaybeReturnWinnerPlayerPosition() PlayerPosition {
 	for position, player := range game.Players {
 		winningPosition := winningPositions[position]
 		if player.Pawn.Position.Y == winningPosition.Y ||
-			player.Pawn.Po
+			player.Pawn.Position.X == winningPosition.X {
+			return position
+		}
+	}
+	return -1
+}
+
+// Deep copy of a game. Will copy all Players, Pieces, and Board.
+func (game *Game) Co

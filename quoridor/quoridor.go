@@ -413,4 +413,9 @@ func (game *Game) MaybeReturnWinnerPlayerPosition() PlayerPosition {
 }
 
 // Deep copy of a game. Will copy all Players, Pieces, and Board.
-func (game *Game) Co
+func (game *Game) Copy() Game {
+	newGame := Game{
+		Id:          game.Id,
+		CurrentTurn: game.CurrentTurn,
+		StartDate:   game.StartDate,
+		EndDate:     gam

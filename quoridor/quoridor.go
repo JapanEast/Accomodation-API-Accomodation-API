@@ -402,4 +402,7 @@ func (game *Game) IsOver() bool {
 }
 
 func (game *Game) MaybeReturnWinnerPlayerPosition() PlayerPosition {
-	for position, pla
+	for position, player := range game.Players {
+		winningPosition := winningPositions[position]
+		if player.Pawn.Position.Y == winningPosition.Y ||
+			player.Pawn.Po

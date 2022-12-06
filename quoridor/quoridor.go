@@ -424,4 +424,10 @@ func (game *Game) Copy() Game {
 	}
 
 	newGame.Board = make(Board)
-	for pos, piece := range game.B
+	for pos, piece := range game.Board {
+		newPiece := piece
+		newGame.Board[pos] = newPiece
+	}
+
+	newGame.Players = make(map[PlayerPosition]*Player)
+	for pos, player := ran

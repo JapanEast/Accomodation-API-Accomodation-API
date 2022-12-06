@@ -418,4 +418,10 @@ func (game *Game) Copy() Game {
 		Id:          game.Id,
 		CurrentTurn: game.CurrentTurn,
 		StartDate:   game.StartDate,
-		EndDate:     gam
+		EndDate:     game.EndDate,
+		Winner:      game.Winner,
+		Name:        game.Name,
+	}
+
+	newGame.Board = make(Board)
+	for pos, piece := range game.B

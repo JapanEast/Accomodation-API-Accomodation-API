@@ -446,4 +446,10 @@ func isValidPawnLocation(position Position) bool {
 }
 
 func isValidPawnMove(new Position, current Position, board Board) error {
-	validPawnMoves := board.GetValidPawnMoves(current
+	validPawnMoves := board.GetValidPawnMoves(current)
+	for _, validPosition := range validPawnMoves {
+		if validPosition == new {
+			return nil
+		}
+	}
+	retur

@@ -430,4 +430,9 @@ func (game *Game) Copy() Game {
 	}
 
 	newGame.Players = make(map[PlayerPosition]*Player)
-	for pos, player := ran
+	for pos, player := range game.Players {
+		newGame.Players[pos] = &Player{
+			Barriers:   player.Barriers,
+			Pawn:       player.Pawn,
+			PlayerId:   player.PlayerId,
+			Play

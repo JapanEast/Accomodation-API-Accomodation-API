@@ -435,4 +435,11 @@ func (game *Game) Copy() Game {
 			Barriers:   player.Barriers,
 			Pawn:       player.Pawn,
 			PlayerId:   player.PlayerId,
-			Play
+			PlayerName: player.PlayerName,
+		}
+	}
+	return newGame
+}
+
+func isValidPawnLocation(position Position) bool {
+	return position.X%2 == 0 && po

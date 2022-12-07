@@ -442,4 +442,8 @@ func (game *Game) Copy() Game {
 }
 
 func isValidPawnLocation(position Position) bool {
-	return position.X%2 == 0 && po
+	return position.X%2 == 0 && position.Y%2 == 0
+}
+
+func isValidPawnMove(new Position, current Position, board Board) error {
+	validPawnMoves := board.GetValidPawnMoves(current

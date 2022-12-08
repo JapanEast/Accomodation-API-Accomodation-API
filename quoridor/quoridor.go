@@ -456,4 +456,10 @@ func isValidPawnMove(new Position, current Position, board Board) error {
 }
 
 func checkGameOver(game *Game) {
-	if winner := game.MaybeReturnWinnerPlaye
+	if winner := game.MaybeReturnWinnerPlayerPosition(); winner != -1 {
+		game.EndDate = time.Now()
+		game.Winner = winner
+	}
+}
+
+// Returns a slice of all valid pawn moves fro

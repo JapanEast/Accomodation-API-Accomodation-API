@@ -452,4 +452,8 @@ func isValidPawnMove(new Position, current Position, board Board) error {
 			return nil
 		}
 	}
-	retur
+	return errors.New("the Pawn cannot reach that square")
+}
+
+func checkGameOver(game *Game) {
+	if winner := game.MaybeReturnWinnerPlaye

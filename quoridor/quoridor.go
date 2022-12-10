@@ -465,4 +465,7 @@ func checkGameOver(game *Game) {
 // Returns a slice of all valid pawn moves from a given position.
 func (board Board) GetValidPawnMoves(pawnPosition Position) []Position {
 	validPositions := make([]Position, 0, 6)
-	for _, d := r
+	for _, d := range directions {
+		validPositions = append(validPositions, board.getValidMoveByDirection(pawnPosition, d)...)
+	}
+	return validPosit

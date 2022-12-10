@@ -468,4 +468,5 @@ func (board Board) GetValidPawnMoves(pawnPosition Position) []Position {
 	for _, d := range directions {
 		validPositions = append(validPositions, board.getValidMoveByDirection(pawnPosition, d)...)
 	}
-	return validPosit
+	return validPositions
+}

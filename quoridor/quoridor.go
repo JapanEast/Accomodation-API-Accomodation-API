@@ -462,4 +462,7 @@ func checkGameOver(game *Game) {
 	}
 }
 
-// Returns a slice of all valid pawn moves fro
+// Returns a slice of all valid pawn moves from a given position.
+func (board Board) GetValidPawnMoves(pawnPosition Position) []Position {
+	validPositions := make([]Position, 0, 6)
+	for _, d := r

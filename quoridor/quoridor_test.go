@@ -17,4 +17,9 @@ var TestIds = []uuid.UUID{
 	uuid.MustParse("0ad943b2-6ea9-45ad-9098-f67714652fcd"),
 	uuid.MustParse("93ded37f-57d3-4b43-8933-1164e086a881"),
 	uuid.MustParse("5b399bd3-aa3e-4754-bb51-175b30b77400"),
-	
+	uuid.MustParse("f7ea9019-033b-41e7-a671-26231952cd8c"),
+}
+
+func Test_NewGame(t *testing.T) {
+	var testCases = []struct {
+		id             uui

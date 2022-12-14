@@ -22,4 +22,13 @@ var TestIds = []uuid.UUID{
 
 func Test_NewGame(t *testing.T) {
 	var testCases = []struct {
-		id             uui
+		id             uuid.UUID
+		gameName       string
+		expectGame     bool
+		expectedErrMsg string
+	}{
+		{
+			TestIds[0], "game 1", true, "",
+		},
+		{
+			uuid.Nil, "

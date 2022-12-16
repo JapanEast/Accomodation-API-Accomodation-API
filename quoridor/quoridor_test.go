@@ -34,4 +34,11 @@ func Test_NewGame(t *testing.T) {
 			uuid.Nil, "game name", false, "unable to create game, need valid id",
 		},
 		{
-			TestIds[0], "", false, "unable to create game, need non-empty nam
+			TestIds[0], "", false, "unable to create game, need non-empty name",
+		},
+	}
+	for _, tc := range testCases {
+		game, err := NewGame(tc.id, tc.gameName)
+		if tc.expectGame {
+			if game == nil {
+			

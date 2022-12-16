@@ -31,4 +31,7 @@ func Test_NewGame(t *testing.T) {
 			TestIds[0], "game 1", true, "",
 		},
 		{
-			uuid.Nil, "
+			uuid.Nil, "game name", false, "unable to create game, need valid id",
+		},
+		{
+			TestIds[0], "", false, "unable to create game, need non-empty nam

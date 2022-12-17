@@ -46,4 +46,8 @@ func Test_NewGame(t *testing.T) {
 			assert.NotNil(t, game.Board)
 			assert.Empty(t, game.Board)
 			assert.NotNil(t, game.Players)
-			assert.Empty(t, game.Players
+			assert.Empty(t, game.Players)
+			assert.Equal(t, tc.gameName, game.Name)
+			assert.Equal(t, PlayerOne, game.CurrentTurn)
+			assert.Equal(t, tc.id, game.Id)
+			assert.Equal(t, Player

@@ -41,4 +41,9 @@ func Test_NewGame(t *testing.T) {
 		game, err := NewGame(tc.id, tc.gameName)
 		if tc.expectGame {
 			if game == nil {
-			
+				t.Fail()
+			}
+			assert.NotNil(t, game.Board)
+			assert.Empty(t, game.Board)
+			assert.NotNil(t, game.Players)
+			assert.Empty(t, game.Players

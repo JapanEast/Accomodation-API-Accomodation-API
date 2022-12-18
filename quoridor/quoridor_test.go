@@ -50,4 +50,12 @@ func Test_NewGame(t *testing.T) {
 			assert.Equal(t, tc.gameName, game.Name)
 			assert.Equal(t, PlayerOne, game.CurrentTurn)
 			assert.Equal(t, tc.id, game.Id)
-			assert.Equal(t, Player
+			assert.Equal(t, PlayerPosition(-1), game.Winner)
+		} else {
+			assert.NotNil(t, err)
+			assert.Equal(t, tc.expectedErrMsg, err.Error())
+		}
+	}
+}
+
+func Test_AddPlay

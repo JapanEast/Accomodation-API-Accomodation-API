@@ -58,4 +58,10 @@ func Test_NewGame(t *testing.T) {
 	}
 }
 
-func Test_AddPlay
+func Test_AddPlayer(t *testing.T) {
+	var testCases = []struct {
+		name                 string
+		expectedBarrier      int
+		expectedPawnLocation Position
+	}{
+		{"player

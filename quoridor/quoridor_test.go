@@ -67,4 +67,8 @@ func Test_AddPlayer(t *testing.T) {
 		{"playerOne", 10, Position{X: 8, Y: 16}},
 		{"playerTwo", 10, Position{X: 8, Y: 0}},
 		{"playerThree", 5, Position{X: 0, Y: 8}},
-		{"playerFour", 5, Position{X: 16, Y
+		{"playerFour", 5, Position{X: 16, Y: 8}},
+	}
+	game, _ := NewGame(TestIds[0], "AddPlayerGame")
+	for idx, tc := range testCases {
+		playerPosition, err := game.AddP

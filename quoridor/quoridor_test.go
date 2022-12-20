@@ -64,4 +64,7 @@ func Test_AddPlayer(t *testing.T) {
 		expectedBarrier      int
 		expectedPawnLocation Position
 	}{
-		{"player
+		{"playerOne", 10, Position{X: 8, Y: 16}},
+		{"playerTwo", 10, Position{X: 8, Y: 0}},
+		{"playerThree", 5, Position{X: 0, Y: 8}},
+		{"playerFour", 5, Position{X: 16, Y

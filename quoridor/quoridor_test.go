@@ -74,4 +74,9 @@ func Test_AddPlayer(t *testing.T) {
 		playerPosition, err := game.AddPlayer(TestIds[idx], tc.name)
 		assert.Nil(t, err)
 		assert.Equal(t, PlayerPosition(idx), playerPosition)
-		assert.Len(t, ga
+		assert.Len(t, game.Players, idx+1)
+		for _, p := range game.Players {
+			assert.Equal(t, tc.expectedBarrier, p.Barriers)
+		}
+
+		addedPlayer := game.Play

@@ -79,4 +79,7 @@ func Test_AddPlayer(t *testing.T) {
 			assert.Equal(t, tc.expectedBarrier, p.Barriers)
 		}
 
-		addedPlayer := game.Play
+		addedPlayer := game.Players[PlayerPosition(idx)]
+		assert.Equal(t, tc.name, addedPlayer.PlayerName)
+		assert.Equal(t, TestIds[idx], addedPlayer.PlayerId)
+		assert.Equal

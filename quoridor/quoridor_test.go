@@ -82,4 +82,10 @@ func Test_AddPlayer(t *testing.T) {
 		addedPlayer := game.Players[PlayerPosition(idx)]
 		assert.Equal(t, tc.name, addedPlayer.PlayerName)
 		assert.Equal(t, TestIds[idx], addedPlayer.PlayerId)
-		assert.Equal
+		assert.Equal(t, Piece{
+			Position: tc.expectedPawnLocation,
+			Owner:    PlayerPosition(idx),
+			Type:     Pawn,
+		}, addedPlayer.Pawn)
+
+		assert.Len(t

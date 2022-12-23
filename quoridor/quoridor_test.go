@@ -93,4 +93,6 @@ func Test_AddPlayer(t *testing.T) {
 
 	// With a full board, we can test error cases
 	// First, can't add a player with the same id.
-	_, err := game.Add
+	_, err := game.AddPlayer(TestIds[1], "player one again")
+	assert.Error(t, err)
+	assert.EqualError(t, err, fmt.Sprintf("player with id %s alreayd in t

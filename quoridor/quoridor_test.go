@@ -88,4 +88,9 @@ func Test_AddPlayer(t *testing.T) {
 			Type:     Pawn,
 		}, addedPlayer.Pawn)
 
-		assert.Len(t
+		assert.Len(t, game.Board, idx+1)
+	}
+
+	// With a full board, we can test error cases
+	// First, can't add a player with the same id.
+	_, err := game.Add

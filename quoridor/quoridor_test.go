@@ -100,4 +100,8 @@ func Test_AddPlayer(t *testing.T) {
 	// Can't add more than 4 players
 	_, err = game.AddPlayer(TestIds[5], "player five")
 	assert.Error(t, err)
-	assert.Equal
+	assert.EqualError(t, err, "no open player positions in this game")
+
+	// Can't add after a game has started.
+	_ = game.StartGame()
+	_, err = game.AddPl

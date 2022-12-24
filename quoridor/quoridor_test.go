@@ -105,4 +105,9 @@ func Test_AddPlayer(t *testing.T) {
 	// Can't add after a game has started.
 	_ = game.StartGame()
 	_, err = game.AddPlayer(TestIds[6], "late comer")
-	assert.Error(t, err, fmt.Sprintf("cannot add player %s, game has already started", Tes
+	assert.Error(t, err, fmt.Sprintf("cannot add player %s, game has already started", TestIds[6].String()))
+}
+
+func NewGameWithPlayers(players int) *Game {
+	game, _ := NewGame(TestIds[0], "Four Player Game")
+	for i := 0; i <

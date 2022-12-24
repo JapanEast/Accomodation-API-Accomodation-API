@@ -95,4 +95,9 @@ func Test_AddPlayer(t *testing.T) {
 	// First, can't add a player with the same id.
 	_, err := game.AddPlayer(TestIds[1], "player one again")
 	assert.Error(t, err)
-	assert.EqualError(t, err, fmt.Sprintf("player with id %s alreayd in t
+	assert.EqualError(t, err, fmt.Sprintf("player with id %s alreayd in this game", TestIds[1].String()))
+
+	// Can't add more than 4 players
+	_, err = game.AddPlayer(TestIds[5], "player five")
+	assert.Error(t, err)
+	assert.Equal

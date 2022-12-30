@@ -115,4 +115,8 @@ func NewGameWithPlayers(players int) *Game {
 	}
 	return game
 }
-func Test_AllPlayersMove
+func Test_AllPlayersMoveForward(t *testing.T) {
+	game := NewGameWithPlayers(4)
+	var testCases = []struct {
+		position Position
+		player   PlayerP

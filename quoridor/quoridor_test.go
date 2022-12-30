@@ -119,4 +119,9 @@ func Test_AllPlayersMoveForward(t *testing.T) {
 	game := NewGameWithPlayers(4)
 	var testCases = []struct {
 		position Position
-		player   PlayerP
+		player   PlayerPosition
+	}{
+		{Position{X: 8, Y: 14}, PlayerOne},
+		{Position{X: 8, Y: 2}, PlayerTwo},
+		{Position{X: 2, Y: 8}, PlayerThree},
+		{Position{X: 14, Y: 8

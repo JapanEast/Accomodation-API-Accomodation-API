@@ -110,4 +110,9 @@ func Test_AddPlayer(t *testing.T) {
 
 func NewGameWithPlayers(players int) *Game {
 	game, _ := NewGame(TestIds[0], "Four Player Game")
-	for i := 0; i <
+	for i := 0; i < players; i++ {
+		_, _ = game.AddPlayer(TestIds[i+1], fmt.Sprint("Player ", i))
+	}
+	return game
+}
+func Test_AllPlayersMove

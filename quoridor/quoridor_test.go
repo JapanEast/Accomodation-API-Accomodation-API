@@ -124,4 +124,8 @@ func Test_AllPlayersMoveForward(t *testing.T) {
 		{Position{X: 8, Y: 14}, PlayerOne},
 		{Position{X: 8, Y: 2}, PlayerTwo},
 		{Position{X: 2, Y: 8}, PlayerThree},
-		{Position{X: 14, Y: 8
+		{Position{X: 14, Y: 8}, PlayerFour},
+
+		{Position{X: 8, Y: 12}, PlayerOne},
+		{Position{X: 8, Y: 4}, PlayerTwo},
+		{Position{X: 4, Y: 8}, Pl

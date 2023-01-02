@@ -140,4 +140,9 @@ func Test_AllPlayersMoveForward(t *testing.T) {
 	}
 
 	for idx, tc := range testCases {
-		move := fm
+		move := fmt.Sprint("Move ", idx)
+		err := game.MovePawn(tc.position, tc.player)
+		assert.Nil(t, err, move)
+		pawn, ok := game.Board[tc.position]
+		if ok {
+			assert.Equa

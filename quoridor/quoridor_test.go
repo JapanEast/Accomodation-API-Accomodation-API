@@ -133,4 +133,11 @@ func Test_AllPlayersMoveForward(t *testing.T) {
 
 		{Position{X: 8, Y: 10}, PlayerOne},
 		{Position{X: 8, Y: 6}, PlayerTwo},
-		{Po
+		{Position{X: 6, Y: 8}, PlayerThree},
+		{Position{X: 10, Y: 8}, PlayerFour},
+
+		{Position{X: 8, Y: 8}, PlayerOne},
+	}
+
+	for idx, tc := range testCases {
+		move := fm

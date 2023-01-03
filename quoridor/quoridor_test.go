@@ -149,4 +149,10 @@ func Test_AllPlayersMoveForward(t *testing.T) {
 			assert.Equal(t, tc.position, pawn.Position, move)
 			assert.Equal(t, Pawn, pawn.Type, move)
 		} else {
-			t
+			t.Fail()
+		}
+		assert.Equal(t, game.Players[tc.player].Pawn, pawn, move)
+		assert.Len(t, game.Board, 4, move) // No new pieces are ever added
+	}
+
+	err := game.MovePawn(Positi

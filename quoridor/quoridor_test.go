@@ -162,4 +162,10 @@ func Test_AllPlayersMoveForward(t *testing.T) {
 	// Test jump
 	err = game.MovePawn(Position{X: 8, Y: 10}, PlayerTwo)
 	assert.NoError(t, err)
-	asser
+	assert.Equal(t, PlayerThree, game.CurrentTurn)
+}
+
+func Test_InvalidMoves(t *testing.T) {
+	board :=
+		`........1........
+.................

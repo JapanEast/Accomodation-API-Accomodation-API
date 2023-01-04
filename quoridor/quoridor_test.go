@@ -155,4 +155,6 @@ func Test_AllPlayersMoveForward(t *testing.T) {
 		assert.Len(t, game.Board, 4, move) // No new pieces are ever added
 	}
 
-	err := game.MovePawn(Positi
+	err := game.MovePawn(Position{X: 8, Y: 8}, PlayerTwo)
+	assert.EqualError(t, err, "the Pawn cannot reach that square")
+	assert.Equal(t, PlayerTwo, game.Curr

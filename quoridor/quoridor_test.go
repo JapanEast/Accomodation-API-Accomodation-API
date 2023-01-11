@@ -188,4 +188,7 @@ func Test_InvalidMoves(t *testing.T) {
 	assert.NoError(t, err)
 
 	err = game.MovePawn(Position{X: 8, Y: 14}, PlayerOne)
-	assert.EqualError
+	assert.EqualError(t, err, "the Pawn cannot reach that square")
+
+	err = game.MovePawn(Position{X: 6, Y: 16}, PlayerOne)
+	assert

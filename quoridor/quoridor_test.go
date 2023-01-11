@@ -184,4 +184,8 @@ func Test_InvalidMoves(t *testing.T) {
 .......|.........
 .......|---......
 .......|0........`
-	game, err := BuildQuo
+	game, err := BuildQuoridorBoardFromString(board)
+	assert.NoError(t, err)
+
+	err = game.MovePawn(Position{X: 8, Y: 14}, PlayerOne)
+	assert.EqualError

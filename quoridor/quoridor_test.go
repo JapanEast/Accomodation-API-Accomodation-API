@@ -221,4 +221,8 @@ func Test_DiagonalJump(t *testing.T) {
 	assert.NoError(t, err)
 
 	// Try going to the wrong diagonal.
-	err = game.MovePawn(Position{X: 6, Y: 8}, PlayerOn
+	err = game.MovePawn(Position{X: 6, Y: 8}, PlayerOne)
+	assert.EqualError(t, err, "the Pawn cannot reach that square")
+
+	// Go to the correct diagonal
+	err = game.MovePawn(Position{X: 10, Y: 

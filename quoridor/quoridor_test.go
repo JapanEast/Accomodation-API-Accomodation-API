@@ -217,4 +217,8 @@ func Test_DiagonalJump(t *testing.T) {
 .................
 .................`
 
-	game, err := BuildQuoridorBo
+	game, err := BuildQuoridorBoardFromString(board)
+	assert.NoError(t, err)
+
+	// Try going to the wrong diagonal.
+	err = game.MovePawn(Position{X: 6, Y: 8}, PlayerOn

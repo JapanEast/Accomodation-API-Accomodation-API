@@ -231,4 +231,10 @@ func Test_DiagonalJump(t *testing.T) {
 
 	// Player two tries to use diagonal without a valid back barrier.
 	err = game.MovePawn(Position{X: 10, Y: 6}, PlayerTwo)
-	assert.EqualError(t, err, "the Pawn cannot r
+	assert.EqualError(t, err, "the Pawn cannot reach that square")
+}
+
+func Test_PlaceVerticalBarrier(t *testing.T) {
+	testCases := []struct {
+		position Position
+		player   PlayerPosi

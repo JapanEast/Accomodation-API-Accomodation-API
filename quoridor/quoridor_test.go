@@ -229,4 +229,6 @@ func Test_DiagonalJump(t *testing.T) {
 	assert.NoError(t, err)
 	assert.Equal(t, Position{X: 10, Y: 8}, game.Players[PlayerOne].Pawn.Position)
 
-	// Player two tri
+	// Player two tries to use diagonal without a valid back barrier.
+	err = game.MovePawn(Position{X: 10, Y: 6}, PlayerTwo)
+	assert.EqualError(t, err, "the Pawn cannot r

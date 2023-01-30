@@ -237,4 +237,11 @@ func Test_DiagonalJump(t *testing.T) {
 func Test_PlaceVerticalBarrier(t *testing.T) {
 	testCases := []struct {
 		position Position
-		player   PlayerPosi
+		player   PlayerPosition
+	}{
+		{Position{X: 1, Y: 0}, PlayerOne},
+		{Position{X: 3, Y: 0}, PlayerTwo},
+		{Position{X: 5, Y: 0}, PlayerThree},
+		{Position{X: 7, Y: 0}, PlayerFour},
+
+	

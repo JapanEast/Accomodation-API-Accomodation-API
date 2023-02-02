@@ -252,4 +252,8 @@ func Test_PlaceVerticalBarrier(t *testing.T) {
 		{Position{X: 1, Y: 4}, PlayerOne},
 		{Position{X: 3, Y: 4}, PlayerTwo},
 		{Position{X: 5, Y: 4}, PlayerThree},
-		{P
+		{Position{X: 7, Y: 4}, PlayerFour},
+
+		{Position{X: 9, Y: 4}, PlayerOne},
+		{Position{X: 11, Y: 4}, PlayerTwo},
+		{Position{X: 13, Y: 4}, PlayerThr

@@ -262,4 +262,10 @@ func Test_PlaceVerticalBarrier(t *testing.T) {
 		{Position{X: 1, Y: 8}, PlayerOne},
 		{Position{X: 3, Y: 8}, PlayerTwo},
 		{Position{X: 5, Y: 8}, PlayerThree},
-		{Posit
+		{Position{X: 7, Y: 8}, PlayerFour},
+	}
+
+	game := NewGameWithPlayers(4)
+
+	for idx, tc := range testCases {
+		err := game.PlaceBarrier(tc.positi

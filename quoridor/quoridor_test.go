@@ -272,4 +272,6 @@ func Test_PlaceVerticalBarrier(t *testing.T) {
 		assert.NoError(t, err)
 		for offset := 0; offset < 3; offset++ {
 			expectedPosition := tc.position
-			expec
+			expectedPosition.Y += offset
+			placedPiece, ok := game.Board[expectedPosition]
+			assert.True(t, ok, "expected piece at %v", expectedPosit

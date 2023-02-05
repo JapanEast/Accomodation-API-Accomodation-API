@@ -278,4 +278,11 @@ func Test_PlaceVerticalBarrier(t *testing.T) {
 			assert.Equal(t, tc.player, placedPiece.Owner)
 			assert.Equal(t, Barrier, placedPiece.Type)
 		}
-		assert.Equal(t, 4-(idx/4), game.Players[tc.play
+		assert.Equal(t, 4-(idx/4), game.Players[tc.player].Barriers)
+	}
+}
+
+func Test_PlaceHorizontalBarrier(t *testing.T) {
+	testCases := []struct {
+		position Position
+		player   Playe

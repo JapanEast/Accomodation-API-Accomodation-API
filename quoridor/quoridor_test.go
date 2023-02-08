@@ -285,4 +285,9 @@ func Test_PlaceVerticalBarrier(t *testing.T) {
 func Test_PlaceHorizontalBarrier(t *testing.T) {
 	testCases := []struct {
 		position Position
-		player   Playe
+		player   PlayerPosition
+	}{
+		{Position{X: 0, Y: 1}, PlayerOne},
+		{Position{X: 0, Y: 3}, PlayerTwo},
+		{Position{X: 0, Y: 5}, PlayerThree},
+		{Position{X: 0, Y: 7}, 

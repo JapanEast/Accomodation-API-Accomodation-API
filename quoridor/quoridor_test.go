@@ -299,4 +299,8 @@ func Test_PlaceHorizontalBarrier(t *testing.T) {
 
 		{Position{X: 4, Y: 1}, PlayerOne},
 		{Position{X: 4, Y: 3}, PlayerTwo},
-		{Position{X: 4, Y: 5}, P
+		{Position{X: 4, Y: 5}, PlayerThree},
+		{Position{X: 4, Y: 7}, PlayerFour},
+
+		{Position{X: 4, Y: 9}, PlayerOne},
+		{Position{X: 4, Y: 11}, Pla

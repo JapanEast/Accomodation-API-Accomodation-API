@@ -315,3 +315,8 @@ func Test_PlaceHorizontalBarrier(t *testing.T) {
 
 	game := NewGameWithPlayers(4)
 
+	for idx, tc := range testCases {
+		err := game.PlaceBarrier(tc.position, tc.player)
+		assert.NoError(t, err)
+		for offset := 0; offset < 3; offset++ {
+			expec

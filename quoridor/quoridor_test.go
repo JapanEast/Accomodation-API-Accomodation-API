@@ -308,4 +308,10 @@ func Test_PlaceHorizontalBarrier(t *testing.T) {
 		{Position{X: 4, Y: 15}, PlayerFour},
 
 		{Position{X: 8, Y: 1}, PlayerOne},
-		{Position{X
+		{Position{X: 8, Y: 3}, PlayerTwo},
+		{Position{X: 8, Y: 5}, PlayerThree},
+		{Position{X: 8, Y: 7}, PlayerFour},
+	}
+
+	game := NewGameWithPlayers(4)
+

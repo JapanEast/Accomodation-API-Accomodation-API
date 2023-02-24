@@ -319,4 +319,7 @@ func Test_PlaceHorizontalBarrier(t *testing.T) {
 		err := game.PlaceBarrier(tc.position, tc.player)
 		assert.NoError(t, err)
 		for offset := 0; offset < 3; offset++ {
-			expec
+			expectedPosition := tc.position
+			expectedPosition.X += offset
+			placedPiece, ok := game.Board[expectedPosition]
+			assert.True(t, ok, "expe

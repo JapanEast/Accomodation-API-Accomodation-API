@@ -322,4 +322,6 @@ func Test_PlaceHorizontalBarrier(t *testing.T) {
 			expectedPosition := tc.position
 			expectedPosition.X += offset
 			placedPiece, ok := game.Board[expectedPosition]
-			assert.True(t, ok, "expe
+			assert.True(t, ok, "expected piece at %v", expectedPosition)
+			assert.Equal(t, tc.player, placedPiece.Owner)
+			assert.Equal(t, Barrier, place

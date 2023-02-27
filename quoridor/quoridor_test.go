@@ -358,4 +358,8 @@ func Test_PlaceBarrierErrors(t *testing.T) {
 	err = game.PlaceBarrier(Position{X: 9, Y: 9}, PlayerOne)
 	assert.EqualError(t, err, "invalid location for a barrier")
 
-	err = game.PlaceBarrie
+	err = game.PlaceBarrier(Position{X: 1, Y: 0}, PlayerOne)
+	assert.EqualError(t, err, "the new barrier intersects with another")
+}
+
+func Test_WinCondition(t *test

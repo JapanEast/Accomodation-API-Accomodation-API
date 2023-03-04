@@ -362,4 +362,10 @@ func Test_PlaceBarrierErrors(t *testing.T) {
 	assert.EqualError(t, err, "the new barrier intersects with another")
 }
 
-func Test_WinCondition(t *test
+func Test_WinCondition(t *testing.T) {
+	game := NewGameWithPlayers(2)
+	turns := []struct {
+		position Position
+		player   PlayerPosition
+	}{
+		{Position{X: 

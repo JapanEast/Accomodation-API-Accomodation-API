@@ -378,4 +378,10 @@ func Test_WinCondition(t *testing.T) {
 		{Position{X: 8, Y: 6}, PlayerTwo},
 
 		{Position{X: 8, Y: 8}, PlayerOne},
-		{Position{X: 8, Y: 1
+		{Position{X: 8, Y: 10}, PlayerTwo},
+
+		{Position{X: 8, Y: 6}, PlayerOne},
+		{Position{X: 8, Y: 12}, PlayerTwo},
+
+		{Position{X: 8, Y: 4}, PlayerOne},
+		{Positio

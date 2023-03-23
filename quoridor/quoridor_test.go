@@ -384,4 +384,11 @@ func Test_WinCondition(t *testing.T) {
 		{Position{X: 8, Y: 12}, PlayerTwo},
 
 		{Position{X: 8, Y: 4}, PlayerOne},
-		{Positio
+		{Position{X: 8, Y: 14}, PlayerTwo},
+
+		{Position{X: 8, Y: 2}, PlayerOne},
+		{Position{X: 8, Y: 16}, PlayerTwo},
+	}
+
+	for _, turn := range turns {
+		err := game.Mov

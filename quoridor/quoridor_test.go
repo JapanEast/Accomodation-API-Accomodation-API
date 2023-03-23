@@ -391,4 +391,8 @@ func Test_WinCondition(t *testing.T) {
 	}
 
 	for _, turn := range turns {
-		err := game.Mov
+		err := game.MovePawn(turn.position, turn.player)
+		assert.NoError(t, err)
+	}
+
+	err := game.MovePawn(Position{X: 8, Y: 0}, Pl

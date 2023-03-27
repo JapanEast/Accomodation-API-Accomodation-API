@@ -399,4 +399,8 @@ func Test_WinCondition(t *testing.T) {
 	assert.EqualError(t, err, "invalid move, game is already over")
 
 	err = game.PlaceBarrier(Position{X: 1, Y: 0}, PlayerOne)
-	assert.EqualError(t, err, 
+	assert.EqualError(t, err, "invalid move, game is already over")
+
+	assert.Equal(t, PlayerTwo, game.Winner)
+	assert.False(t, game.EndDate.IsZero())
+}

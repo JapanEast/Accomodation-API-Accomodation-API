@@ -395,4 +395,8 @@ func Test_WinCondition(t *testing.T) {
 		assert.NoError(t, err)
 	}
 
-	err := game.MovePawn(Position{X: 8, Y: 0}, Pl
+	err := game.MovePawn(Position{X: 8, Y: 0}, PlayerOne)
+	assert.EqualError(t, err, "invalid move, game is already over")
+
+	err = game.PlaceBarrier(Position{X: 1, Y: 0}, PlayerOne)
+	assert.EqualError(t, err, 
